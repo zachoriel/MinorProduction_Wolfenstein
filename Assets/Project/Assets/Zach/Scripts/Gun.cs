@@ -18,7 +18,7 @@ public class Gun : MonoBehaviour
     public Camera fpsCam;
     //public ParticleSystem muzzleFlash;
     //public GameObject impactEffect;
-    //public AudioSource reloadSound;
+    public AudioSource reloadSound, fireSound;
 
     public float nextTimeToFire = 0f;
 
@@ -65,7 +65,7 @@ public class Gun : MonoBehaviour
     {
         isReloading = true;
 
-        //reloadSound.Play();
+        reloadSound.Play();
 
         Debug.Log("Reloading...");
 
@@ -83,6 +83,7 @@ public class Gun : MonoBehaviour
     void Shoot()
     {
         //muzzleFlash.Play();
+        fireSound.Play();
 
         currentAmo--;
 
