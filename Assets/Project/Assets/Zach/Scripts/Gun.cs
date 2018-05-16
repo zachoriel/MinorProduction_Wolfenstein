@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class Gun : MonoBehaviour
     public float nextTimeToFire = 0f;
 
     public Animator animator;
+
+    public Text ammoText;
 
 	// Use this for initialization
 	void Start ()
@@ -49,11 +52,13 @@ public class Gun : MonoBehaviour
             return;
         }
 
-            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentAmo > 0)
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentAmo > 0)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
+
+        ammoText.text = currentAmo.ToString();
 	}
 
     IEnumerator Reload()
