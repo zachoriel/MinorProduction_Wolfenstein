@@ -1,12 +1,23 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Target : MonoBehaviour
 {
-    public float health = 50f;
+    public float health;
+    public float startHealth = 100f;
+
+    public Image healthBar;
+
+    void Start()
+    {
+        health = startHealth;
+    }
 
     public void TakeDamage(float amount)
     {
         health -= amount;
+        healthBar.fillAmount = health / startHealth;
+
         if (health <= 0f)
         {
             Die(); 

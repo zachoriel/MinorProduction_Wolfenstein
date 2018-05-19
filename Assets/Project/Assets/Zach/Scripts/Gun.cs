@@ -17,7 +17,7 @@ public class Gun : MonoBehaviour
 
     public Camera fpsCam;
     //public ParticleSystem muzzleFlash;
-    //public GameObject impactEffect;
+    public GameObject impactEffect;
     public AudioSource reloadSound, fireSound;
 
     public float nextTimeToFire = 0f;
@@ -47,6 +47,12 @@ public class Gun : MonoBehaviour
         }
 
         if (currentAmo <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R) && currentAmo < maxAmmo)
         {
             StartCoroutine(Reload());
             return;
@@ -103,8 +109,8 @@ public class Gun : MonoBehaviour
                 hit.rigidbody.AddForce(hit.normal * -impactForce);
             }
 
-            //GameObject impactObject = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            //Destroy(impactObject, 2f);
+            GameObject impactObject = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(impactObject, 2f);
         }
     }
 }
