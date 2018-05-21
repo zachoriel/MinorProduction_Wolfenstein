@@ -20,7 +20,7 @@ public class LineOfSight : MonoBehaviour
     {
         int hoodSize = 0;
         Collider[] hood = Physics.OverlapSphere(transform.position, HoodRadius);
-
+        CanSeeTarget = false;
         foreach(Collider guyInHood in hood)
         {
             hoodSize++;
@@ -38,13 +38,13 @@ public class LineOfSight : MonoBehaviour
                     }
                     else if (player == null)
                     {
-                        CanSeeTarget = false;
+                        //CanSeeTarget = false;
                     }
                 }
             }
             else if(!guyInHood.transform.GetComponent<PlayerStats>())
             {
-                CanSeeTarget = false;
+               // CanSeeTarget = false;
             }
         }
     }
