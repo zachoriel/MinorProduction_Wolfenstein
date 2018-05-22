@@ -27,14 +27,4 @@ public class PlayerStats : MonoBehaviour
     {
         SceneManager.LoadScene("TestingScene");
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Bullet")
-        {
-            TakeDamage(gun.damage);
-        }
-
-        Destroy(other.gameObject);
-    }
 }

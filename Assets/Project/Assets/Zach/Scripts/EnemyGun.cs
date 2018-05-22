@@ -5,63 +5,70 @@ using UnityEngine;
 public class EnemyGun : MonoBehaviour
 {
     public LineOfSight lineofSight;
+    public PlayerStats playerStats;
 
-    public float damage = 10f;
-    public float range = 100f;
-    public float fireRate = 15f;
+    public Transform player, firePoint;
+    public GameObject enemyObject;
+    public LineRenderer lineRenderer;
+    public AudioSource laserSound;
 
-    public int maxAmmo = 10;
-    private int currentAmo;
-    public float reloadTime = 3f;
-    public bool isReloading = false;
+    public bool useLaser = true;
 
-    public float nextTimeToFire = 0f;
-
-    Transform player;
-    public Transform firePoint;
-    public GameObject bullet, enemyObject;
+    public float range = 15f;
+    public int damageOverTime = 30;
 
     void Awake()
     {
-        currentAmo = maxAmmo;
         player = GameObject.FindWithTag("Player").transform;
     }
 
     void Update()
     {
-        if (isReloading)
+        if (lineofSight.CanSeeTarget == false)
         {
-            return;
+            if (useLaser)
+            {
+                if (lineRenderer.enabled)
+                {
+                    laserSound.Stop();
+                    lineRenderer.enabled = false;
+                }
+            }
+            //return;
         }
-
-        if (currentAmo <= 0)
-        {
-            StartCoroutine(Reload());
-            return;
-        }
-
-        if (lineofSight.CanSeeTarget == true)
+        else if (lineofSight.CanSeeTarget == true)
         {
             enemyObject.transform.LookAt(player);
-            Shooting();
-        }
+
+            if (useLaser)
+            {
+                Laser();
+            }
+            else
+            {
+                Shoot();
+            } 
+        }        
     }
 
-    IEnumerator Reload()
+    void Laser()
     {
-        isReloading = true;
-
-        yield return new WaitForSeconds(reloadTime - 0.25f);
-
-        //yield return new WaitForSeconds(0.25f);
-
-        currentAmo = maxAmmo;
-        isReloading = false;
-    }
-
-    void Shooting()
-    {
-        Instantiate(bullet, firePoint.position, firePoint.rotation);
+        playerStats.TakeDamage(damageOverTime * Time.deltaTime);
         
+        if (!lineRenderer.enabled)
+        {
+            laserSound.Play();
+            lineRenderer.enabled = true;
+        }
+
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, player.position);
+
+        Vector3 dir = firePoint.position - player.position;  // For impact effects if used
+    }
+
+    void Shoot()
+    {
+        Debug.Log("Placeholder");
     }
 }
