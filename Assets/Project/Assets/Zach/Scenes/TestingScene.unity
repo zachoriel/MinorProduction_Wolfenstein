@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44574732, g: 0.4954601, b: 0.5742734, a: 1}
+  m_IndirectSpecularColor: {r: 0.44574797, g: 0.49546087, b: 0.5742742, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 174497748}
   - component: {fileID: 174497747}
   m_Layer: 0
-  m_Name: Mp_Renee_Gun_03_Model (2)
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,8 +317,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400006, guid: bb89211a491d37541b703a583315719e, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 174497745}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.93, y: 0, z: 30.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.63500214, y: 0, z: 0.09000015}
   m_LocalScale: {x: 0.5000005, y: 0.5, z: 0.5000005}
   m_Children:
   - {fileID: 1844980724}
@@ -327,7 +327,7 @@ Transform:
   - {fileID: 1257385088}
   - {fileID: 2113692143}
   - {fileID: 31887792}
-  m_Father: {fileID: 178157465}
+  m_Father: {fileID: 1172107886}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &174497747
@@ -341,11 +341,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c4e91b3e2eaa24086f223177f82820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineofSight: {fileID: 178157467}
+  lineofSight: {fileID: 1172107888}
   playerStats: {fileID: 1738249451}
   player: {fileID: 1738249445}
   firePoint: {fileID: 31887792}
-  enemyObject: {fileID: 178157459}
+  enemyObject: {fileID: 1172107880}
   lineRenderer: {fileID: 174497748}
   laserSound: {fileID: 174497749}
   useLaser: 1
@@ -649,7 +649,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1506463278}
-  - {fileID: 174497746}
+  - {fileID: 637352770}
   m_Father: {fileID: 1496942433}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1140,8 +1140,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 637352769}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -22.215002, y: 0, z: -30.27}
-  m_LocalScale: {x: 0.5000005, y: 0.5, z: 0.5000005}
+  m_LocalPosition: {x: 0.0799942, y: 0, z: 0.5299988}
+  m_LocalScale: {x: 0.5000007, y: 0.5, z: 0.5000007}
   m_Children:
   - {fileID: 862305807}
   - {fileID: 848858254}
@@ -1149,7 +1149,7 @@ Transform:
   - {fileID: 2101175069}
   - {fileID: 799261326}
   - {fileID: 809209343}
-  m_Father: {fileID: 1172107886}
+  m_Father: {fileID: 178157465}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &637352771
@@ -1163,11 +1163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c4e91b3e2eaa24086f223177f82820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineofSight: {fileID: 1172107888}
+  lineofSight: {fileID: 178157467}
   playerStats: {fileID: 1738249451}
   player: {fileID: 1738249445}
   firePoint: {fileID: 809209343}
-  enemyObject: {fileID: 1172107880}
+  enemyObject: {fileID: 178157459}
   lineRenderer: {fileID: 637352772}
   laserSound: {fileID: 637352773}
   useLaser: 1
@@ -2846,7 +2846,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 2035083984}
-  - {fileID: 637352770}
+  - {fileID: 174497746}
   m_Father: {fileID: 1496942433}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
