@@ -29,7 +29,7 @@ public class LineOfSight : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(gameObject.transform.position, (thePlayer.transform.position - gameObject.transform.position).normalized, out hit, range))
                 {
-                    Debug.Log(hit.transform.name);
+                    //Debug.Log(hit.transform.name);
                     //checks to see if an Abstract script named "Player" exists on the object colliding with this raycast
                     PlayerStats player = hit.transform.GetComponent<PlayerStats>();
                     if (player != null)

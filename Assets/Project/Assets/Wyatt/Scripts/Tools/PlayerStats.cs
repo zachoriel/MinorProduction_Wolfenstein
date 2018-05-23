@@ -1,37 +1,53 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public EnemyGun gun;
+    public GameObject spawnPoint;
+
+    [Header("UI")]
+    public Text scoreText;
+    public Text livesText;
+    public Text healthText;
+    public Text armorText;
+    public Text ammoText;
+
+    [Header("Stats")]
+    public float Armor;
+    private float startArmor = 50f;
+    public float Health;
+    private float startHealth = 100f;
+    public int maxAmmo;
+    public int currentAmmo;
     public int Lives;
     public float Score;
 
-    public GameObject spawnPoint;
-
-
-
-    public float armor;
-    public float health;
-    public float startHealth = 100f;
-
     void Start()
     {
-        health = startHealth;
+        scoreText.text = Score.ToString();
+        livesText.text = Lives.ToString();
+        Health = startHealth;
+        healthText.text = Health.ToString();
+        Armor = startArmor;
+        armorText.text = Armor.ToString();
+        currentAmmo = maxAmmo;
+        ammoText.text = currentAmmo.ToString();
     }
 
     public void TakeDamage(float amount)
     {
-        if(armor > 0)
+        if(Armor > 0)
         {
-             armor -= amount;
-
+             Armor -= amount;
+            armorText.text = Mathf.RoundToInt(Armor).ToString();
         }
-        else if(armor <= 0)
+        else if(Armor <= 0)
         {
-            health -= amount;
+            Health -= amount;
+            healthText.text = Mathf.RoundToInt(Health).ToString();
         }
-        if (health <= 0f)
+        if (Health <= 0f)
         {
             Die();
         }
@@ -39,10 +55,16 @@ public class PlayerStats : MonoBehaviour
 
     void Die()
     {
-        health = startHealth;
-        armor = 0;
-        gameObject.transform.position = spawnPoint.transform.position;
+        Health = startHealth;
+        healthText.text = Mathf.RoundToInt(Health).ToString();
+        Armor = startArmor;
+        armorText.text = Mathf.RoundToInt(Armor).ToString();
+        currentAmmo = maxAmmo;
+        ammoText.text = currentAmmo.ToString();
         Lives--;
+        livesText.text = Lives.ToString();
+        gameObject.transform.position = spawnPoint.transform.position;
+        gameObject.transform.rotation = spawnPoint.transform.rotation;
     }
 
     void GameOver()
@@ -51,5 +73,10 @@ public class PlayerStats : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+    }
+
+    void Update()
+    {
+        ammoText.text = currentAmmo.ToString();
     }
 }

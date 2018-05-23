@@ -5,13 +5,7 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
-    GameObject[] enemies;
-
-
-    //boss idea
-
-
-
+    public GameObject[] enemies;
 
     //typical win condition
     void Start()
@@ -21,15 +15,10 @@ public class Win : MonoBehaviour
 
     void Update()
     {
-
-        if(enemies.Length == 0)
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemies.Length == 0)
         {
-            
-            
+            Debug.Log(":P");            
         }
     }
-
-
-
-
 }
