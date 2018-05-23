@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
 
         if (camera != null)
         {
-            Vector3 dir = (forwardDir.normalized + rightDir.normalized);
+            Vector3 dir = (forwardDir + rightDir).normalized;
             Vector3 desiredVel = dir * speed;
             rb.AddForce(desiredVel - rb.velocity);
 
