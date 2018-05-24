@@ -151,7 +151,7 @@ public class Gun : MonoBehaviour
         Vector3 lazerEnd;
         //player.currentAmmo--;
         lazerStart = firePoint.position;
-        lazerEnd = transform.position + transform.forward * 5000;
+        lazerEnd = transform.position + transform.forward * 20000;
         lineRenderer.SetPosition(0, lazerStart);
 
         RaycastHit hit;
