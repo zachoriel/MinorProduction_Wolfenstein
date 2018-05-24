@@ -2659,6 +2659,11 @@ Prefab:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1246103716}
+    - target: {fileID: 114734250282815964, guid: 639ce983033939d46a7bbd9c1ef935bc,
+        type: 2}
+      propertyPath: impactEffect
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 639ce983033939d46a7bbd9c1ef935bc, type: 2}
   m_IsPrefabParent: 0
