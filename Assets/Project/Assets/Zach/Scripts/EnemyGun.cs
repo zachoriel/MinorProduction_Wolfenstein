@@ -10,7 +10,7 @@ public class EnemyGun : MonoBehaviour
     public Transform player, firePoint;
     public GameObject enemyObject;
     public LineRenderer lineRenderer;
-    public AudioSource laserSound;
+    public AudioSource laserBeam;
 
     public bool useLaser = true;
 
@@ -30,7 +30,7 @@ public class EnemyGun : MonoBehaviour
             {
                 if (lineRenderer.enabled)
                 {
-                    laserSound.Stop();
+                    laserBeam.Stop();
                     lineRenderer.enabled = false;
                 }
             }
@@ -57,7 +57,7 @@ public class EnemyGun : MonoBehaviour
         
         if (!lineRenderer.enabled)
         {
-            laserSound.Play();
+            laserBeam.Play();
             lineRenderer.enabled = true;
         }
 

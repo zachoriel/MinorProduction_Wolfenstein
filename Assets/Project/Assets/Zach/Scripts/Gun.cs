@@ -5,41 +5,43 @@ using UnityEngine.UI;
 public class Gun : MonoBehaviour
 {
     [Header("Setup")]
+    public Camera fpsCam;
     public PlayerStats player;
     public WeaponSwitch weapons;
+    public Animator animator;
+    public Text ammoText;
+
+    [Header("General")]
+    public float range = 15f;
+    public float reloadTime = 3f;
+    private bool isReloading = false;
+    private float nextTimeToFire = 0f;
 
     [Header("Laser")]
     public Transform firePoint;
     public LineRenderer lineRenderer;
-    public AudioSource laserSound;
+    public ParticleSystem laserImpact;
+    public Light laserImpactLight;
     public int damageOverTime = 10;
 
     [Header("Bullets")]
     public float damage = 10f;
     public float fireRate = 15f;
     public float impactForce = 30f;
-
-    [Header("General")]
-    public float range = 15f;
-    public float reloadTime = 3f;
-    public bool isReloading = false;
-
-    public Camera fpsCam;
     //public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
-    public AudioSource reloadSound, fireSound;
 
-    public float nextTimeToFire = 0f;
-
-    public Animator animator;
-
-    public Text ammoText;
+    [Header("Audio")]
+    public AudioSource reloadGun;
+    public AudioSource gunFire;
+    public AudioSource laserBeam;
+    public AudioSource emptyClip;
 
 	// Use this for initialization
 	void Start ()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        player.currentAmmo = player.maxAmmo;
+        player.currentGunAmmo = player.maxGunAmmo;
         lineRenderer.enabled = false;
 	}
 
@@ -52,30 +54,34 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-       
         if (isReloading)
         {
             return;
         }
 
-        if (player.currentAmmo <= 0)
+        if (player.currentGunAmmo <= 0 && player.totalAmmo > 0)
         {
             StartCoroutine(Reload());
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && player.currentAmmo < player.maxAmmo)
-        {
-            StartCoroutine(Reload());
-            return;
-        }
+        //if (Input.GetKeyDown(KeyCode.R) && player.currentGunAmmo < player.maxGunAmmo && player.totalAmmo > 0)
+        //{
+        //    StartCoroutine(Reload());
+        //    return;
+        //}
 
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && player.currentAmmo > 0)
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && player.currentGunAmmo > 0)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
-        if (Input.GetButton("Fire2") && player.currentAmmo > 0)
+        else if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && player.currentGunAmmo == 0 && player.totalAmmo == 0)
+        {
+            emptyClip.Play();
+        }
+
+        if (Input.GetButton("Fire2"))
         {
             Laser();
         }
@@ -83,8 +89,11 @@ public class Gun : MonoBehaviour
         {
             if (lineRenderer.enabled)
             {
-                laserSound.Stop();
+                laserBeam.Stop();
                 lineRenderer.enabled = false;
+                laserImpact.Stop();
+                laserImpactLight.enabled = false;
+                
             }
         }
 	}
@@ -94,8 +103,8 @@ public class Gun : MonoBehaviour
         isReloading = true;
         lineRenderer.enabled = false;
 
-        laserSound.Stop();
-        reloadSound.Play();
+        laserBeam.Stop();
+        reloadGun.Play();
 
         Debug.Log("Reloading...");
 
@@ -106,16 +115,18 @@ public class Gun : MonoBehaviour
         animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(0.25f);
 
-        player.currentAmmo = player.maxAmmo;
+        player.currentGunAmmo = player.maxGunAmmo;
+        player.totalAmmo -= player.maxGunAmmo;
+
         isReloading = false;
     }
 
     void Shoot()
     {
         //muzzleFlash.Play();
-        fireSound.Play();
+        gunFire.Play();
 
-        player.currentAmmo--;
+        player.currentGunAmmo--;
 
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
@@ -151,7 +162,7 @@ public class Gun : MonoBehaviour
         Vector3 lazerEnd;
         //player.currentAmmo--;
         lazerStart = firePoint.position;
-        lazerEnd = transform.position + transform.forward * 5000;
+        lazerEnd = transform.position + transform.forward * 50000;
         lineRenderer.SetPosition(0, lazerStart);
 
         RaycastHit hit;
@@ -161,6 +172,7 @@ public class Gun : MonoBehaviour
             EnemyStats enemyTarget = hit.transform.GetComponent<EnemyStats>();
             WallBreak wallTarget = hit.transform.GetComponent<WallBreak>();
             Transform target = hit.transform;
+
             if (enemyTarget != null)
             {
                 enemyTarget.TakeDamage(damageOverTime * Time.deltaTime);
@@ -172,13 +184,15 @@ public class Gun : MonoBehaviour
 
             if (!lineRenderer.enabled)
             {
-                laserSound.Play();
+                laserBeam.Play();
                 lineRenderer.enabled = true;
+                laserImpact.Play();
+                laserImpactLight.enabled = true;
             }
 
-            Vector3 dir = firePoint.position - hit.transform.position;
-            impactEffect.transform.position = target.position + dir.normalized;
-            impactEffect.transform.rotation = Quaternion.LookRotation(dir);
+            Vector3 dir = firePoint.position - target.position;
+            laserImpact.transform.position = target.position + dir.normalized;
+            laserImpact.transform.rotation = Quaternion.LookRotation(dir);
         }
 
         lineRenderer.SetPosition(0, lazerStart);
