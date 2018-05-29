@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour 
 {
     public GameObject spawnPoint;
 
@@ -45,8 +45,10 @@ public class PlayerStats : MonoBehaviour
         }
         else if(Armor <= 0)
         {
+            Armor = 0;
             Health -= amount;
             healthText.text = Mathf.RoundToInt(Health).ToString();
+            armorText.text = Mathf.RoundToInt(Armor).ToString();
         }
         if (Health <= 0f)
         {

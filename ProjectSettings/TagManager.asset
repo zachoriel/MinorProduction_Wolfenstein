@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Bullet
   - Enemy
+  - Armor
+  - Health
+  - Life
+  - Ammo
+  - BigAmmo
   layers:
   - Default
   - TransparentFX
