@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour 
 {
     public GameObject spawnPoint;
 
@@ -18,8 +18,9 @@ public class PlayerStats : MonoBehaviour
     private float startArmor = 50f;
     public float Health;
     private float startHealth = 100f;
-    public int maxAmmo;
-    public int currentAmmo;
+    public int maxGunAmmo = 25;
+    public int currentGunAmmo;
+    public int totalAmmo = 100;
     public int Lives;
     public float Score;
 
@@ -31,8 +32,8 @@ public class PlayerStats : MonoBehaviour
         healthText.text = Health.ToString();
         Armor = startArmor;
         armorText.text = Armor.ToString();
-        currentAmmo = maxAmmo;
-        ammoText.text = currentAmmo.ToString();
+        currentGunAmmo = maxGunAmmo;
+        ammoText.text = currentGunAmmo.ToString() + " / " + totalAmmo;
     }
 
     public void TakeDamage(float amount)
@@ -44,8 +45,10 @@ public class PlayerStats : MonoBehaviour
         }
         else if(Armor <= 0)
         {
+            Armor = 0;
             Health -= amount;
             healthText.text = Mathf.RoundToInt(Health).ToString();
+            armorText.text = Mathf.RoundToInt(Armor).ToString();
         }
         if (Health <= 0f)
         {
@@ -57,10 +60,8 @@ public class PlayerStats : MonoBehaviour
     {
         Health = startHealth;
         healthText.text = Mathf.RoundToInt(Health).ToString();
-        Armor = startArmor;
         armorText.text = Mathf.RoundToInt(Armor).ToString();
-        currentAmmo = maxAmmo;
-        ammoText.text = currentAmmo.ToString();
+        ammoText.text = currentGunAmmo.ToString() + " / " + totalAmmo;
         Lives--;
         livesText.text = Lives.ToString();
         gameObject.transform.position = spawnPoint.transform.position;
@@ -77,6 +78,6 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        ammoText.text = currentAmmo.ToString();
+        ammoText.text = currentGunAmmo.ToString() + " / " + totalAmmo;
     }
 }

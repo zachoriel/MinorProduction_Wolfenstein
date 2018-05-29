@@ -2770,7 +2770,7 @@ Prefab:
       value: 12
 >>>>>>> wyatt
       objectReference: {fileID: 0}
-    - target: {fileID: 114734250282815964, guid: 639ce983033939d46a7bbd9c1ef935bc,
+    - target: {fileID: 114717597487761098, guid: 639ce983033939d46a7bbd9c1ef935bc,
         type: 2}
       propertyPath: ammoText
       value: 
@@ -2780,7 +2780,7 @@ Prefab:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1246103716}
-    - target: {fileID: 114717597487761098, guid: 639ce983033939d46a7bbd9c1ef935bc,
+    - target: {fileID: 114734250282815964, guid: 639ce983033939d46a7bbd9c1ef935bc,
         type: 2}
       propertyPath: ammoText
       value: 
