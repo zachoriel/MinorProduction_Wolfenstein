@@ -10,7 +10,6 @@ public class Movement : MonoBehaviour
     public float speed;
     Vector3 forwardDir;
     Vector3 rightDir;
-    Vector3 myForwardDir;
 
     //Vector3 CameraYrot;
 
@@ -24,23 +23,17 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
-    {
-        //Debug.Log((forwardDir + rightDir) * speed );
-        //rb.AddForce((forwardDir + rightDir) * speed );
-        //rb.AddForce((forwardDir + rightDir) * speed);
-
-        if (camera != null)
-        {
-            Vector3 dir = (forwardDir + rightDir).normalized;
-            Vector3 desiredVel = dir * speed;
-            rb.AddForce(desiredVel - rb.velocity);
-
-        }
-    }
-
     void Update()
     {
+        if(Input.GetAxis("Horizontal")!= 0)
+        {
+            Debug.Log("This is the Horizontal Val: " + Input.GetAxis("Horizontal"));
+        }
+        if(Input.GetAxis("Vertical") != 0)
+        {
+            Debug.Log("This is the Vertical Val: " + Input.GetAxis("Vertical"));
+        }
+
         float horz = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
 
@@ -50,7 +43,24 @@ public class Movement : MonoBehaviour
             rightDir = camera.transform.right * horz;
             gameObject.transform.rotation = camera.transform.rotation;
         }
+    }
+    void FixedUpdate()
+    {
+        //Debug.Log((forwardDir + rightDir) * speed );
+        //rb.AddForce((forwardDir + rightDir) * speed );
+        //rb.AddForce((forwardDir + rightDir) * speed);
 
+        if (camera != null)
+        {
 
+            Vector3 dir = (forwardDir + rightDir).normalized;
+            Vector3 desiredVel = dir * speed;
+            rb.AddForce(desiredVel - rb.velocity);
+
+            if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+            {
+                gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            }
+        }
     }
 }
