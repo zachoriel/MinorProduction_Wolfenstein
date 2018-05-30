@@ -13,12 +13,6 @@ public class WallBreak : MonoBehaviour
         health = startHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void TakeDamage(float amount)
     {
         health -= amount;
