@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
+    [Header("Script Setup")]
+    public Win winCondition;
     public PlayerStats player;
+
+    [Header("UI Elements")]
     public GameObject pickupUI;
+    public GameObject winUI;
+
     private bool isEnabled;
+    private float range;
 
 	// Use this for initialization
 	void Start ()
@@ -17,6 +24,30 @@ public class PowerUp : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        range = Vector3.Distance(gameObject.transform.position, player.gameObject.transform.position);
+
+        if (range <= 10 && gameObject.tag != "WinItem")
+        {
+            PickupUI();
+        }
+        else if (range > 10 && gameObject.tag != "WinItem")
+        {
+            CloseUI();
+        }
+
+        if (range <= 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length == 0)
+        {
+            WinUI();
+        }
+        else if (range > 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length > 0)
+        {
+            CloseWinUI();
+        }
+        else if (range > 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length == 0)
+        {
+            CloseWinUI();
+        }
+
 		if (isEnabled == true)
         {
             if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "Armor")
@@ -54,29 +85,32 @@ public class PowerUp : MonoBehaviour
                 pickupUI.SetActive(false);
                 Destroy(gameObject);
             }
+            else if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "WinItem")
+            {
+                winCondition.WinLevel();
+            }
         }
 	}
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.rigidbody)
-        {
-            PickupUI();
-        }
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        if (other.rigidbody)
-        {
-            pickupUI.SetActive(false);
-        }
-    }
 
     void PickupUI()
     {
         pickupUI.SetActive(true);
         isEnabled = true;
+    }
+    void CloseUI()
+    {
+        pickupUI.SetActive(false);
+        isEnabled = false;
+    }
+    void WinUI()
+    {
+        winUI.SetActive(true);
+        isEnabled = true;
+    }
+    void CloseWinUI()
+    {
+        winUI.SetActive(false);
+        isEnabled = false;
     }
 
     void AddArmor()

@@ -144,6 +144,7 @@ public class Gun : MonoBehaviour
                 wallTarget.TakeDamage(damage);
             }
 
+            // Knockback (not currently used in any meaningful way)
             if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(hit.normal * -impactForce);

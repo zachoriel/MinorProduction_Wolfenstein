@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WallBreak : MonoBehaviour
 {
+    [Header("Stats")]
     public float health;
     private float startHealth = 100f;
 

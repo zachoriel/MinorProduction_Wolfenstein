@@ -6,7 +6,10 @@ using UnityEngine.UI;
 
 public class Win : MonoBehaviour
 {
+    [Header("Number Of Enemies Array")]
     public GameObject[] enemies;
+
+    [Header("UI Element")]
     public Text enemiesAlive;
 
     //typical win condition
@@ -25,5 +28,10 @@ public class Win : MonoBehaviour
         {
             Debug.Log(":P");            
         }
+    }
+
+    public void WinLevel()
+    {
+        SceneManager.LoadScene("NewTestScene"); // replace when implementing win
     }
 }

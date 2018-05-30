@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class EnemyGun : MonoBehaviour
 {
+    [Header("Script Setup")]
     public LineOfSight lineofSight;
     public PlayerStats playerStats;
 
-    public Transform player, firePoint;
+    [Header("Component Setup")]
+    public Transform player;
+    public Transform firePoint;
     public GameObject enemyObject;
     public LineRenderer lineRenderer;
     public AudioSource laserBeam;
 
+    [Header("Type Of Enemy")]
     public bool useLaser = true;
 
+    [Header("Stats")]
     public float range = 15f;
     public int damageOverTime = 30;
 
@@ -64,7 +69,7 @@ public class EnemyGun : MonoBehaviour
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, player.position);
 
-        Vector3 dir = firePoint.position - player.position;  // For impact effects if used
+        //Vector3 dir = firePoint.position - player.position;  // For impact effects if used
     }
 
     void Shoot()

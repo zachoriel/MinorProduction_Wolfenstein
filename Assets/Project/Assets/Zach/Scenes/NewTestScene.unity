@@ -197,8 +197,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23ed8b9c11265a43a68ec4cf0ecb0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winCondition: {fileID: 0}
   player: {fileID: 1738249451}
   pickupUI: {fileID: 1748284869}
+  winUI: {fileID: 0}
 --- !u!23 &136539578
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -896,8 +898,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23ed8b9c11265a43a68ec4cf0ecb0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winCondition: {fileID: 0}
   player: {fileID: 1738249451}
   pickupUI: {fileID: 1748284869}
+  winUI: {fileID: 0}
 --- !u!23 &656950602
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1034,6 +1038,11 @@ Prefab:
       propertyPath: endPathPoint
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114580349882299762, guid: bb74c533f613e044f84b12b79de58f5d,
+        type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 1051097280}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb74c533f613e044f84b12b79de58f5d, type: 2}
   m_IsPrefabParent: 0
@@ -1744,7 +1753,7 @@ GameObject:
   - component: {fileID: 937183291}
   m_Layer: 0
   m_Name: TempWinItem
-  m_TagString: Untagged
+  m_TagString: WinItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1825,8 +1834,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23ed8b9c11265a43a68ec4cf0ecb0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winCondition: {fileID: 408321688}
   player: {fileID: 1738249451}
-  pickupUI: {fileID: 461141161}
+  pickupUI: {fileID: 1748284869}
+  winUI: {fileID: 461141161}
 --- !u!1 &944217456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,6 +1977,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e53206fd4633af940bcc7b1dd83c99f4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1051097280 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1760700475922788, guid: 639ce983033939d46a7bbd9c1ef935bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 396404727}
 --- !u!1001 &1056565384
 Prefab:
   m_ObjectHideFlags: 0
@@ -2360,8 +2376,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23ed8b9c11265a43a68ec4cf0ecb0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winCondition: {fileID: 0}
   player: {fileID: 1738249451}
   pickupUI: {fileID: 1748284869}
+  winUI: {fileID: 0}
 --- !u!23 &1201102677
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3035,6 +3053,11 @@ Prefab:
       propertyPath: endPathPoint
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114580349882299762, guid: bb74c533f613e044f84b12b79de58f5d,
+        type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 1051097280}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb74c533f613e044f84b12b79de58f5d, type: 2}
   m_IsPrefabParent: 0
@@ -3448,8 +3471,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23ed8b9c11265a43a68ec4cf0ecb0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winCondition: {fileID: 0}
   player: {fileID: 1738249451}
   pickupUI: {fileID: 1748284869}
+  winUI: {fileID: 0}
 --- !u!23 &1582900526
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3729,6 +3754,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114580349882299762, guid: bb74c533f613e044f84b12b79de58f5d,
+        type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 1051097280}
+    - target: {fileID: 114586851100702702, guid: bb74c533f613e044f84b12b79de58f5d,
+        type: 2}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 1738249451}
     - target: {fileID: 114850673823622988, guid: bb74c533f613e044f84b12b79de58f5d,
         type: 2}
       propertyPath: playerStats
@@ -3739,11 +3774,6 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1738249445}
-    - target: {fileID: 114586851100702702, guid: bb74c533f613e044f84b12b79de58f5d,
-        type: 2}
-      propertyPath: playerStats
-      value: 
-      objectReference: {fileID: 1738249451}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb74c533f613e044f84b12b79de58f5d, type: 2}
   m_IsPrefabParent: 0
@@ -4328,7 +4358,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press 'e' to win the game, cunt!
+  m_Text: 'Press ''e'' to win the game!
+
+    (NYI)'
 --- !u!222 &1865780829
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4902,8 +4934,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23ed8b9c11265a43a68ec4cf0ecb0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winCondition: {fileID: 0}
   player: {fileID: 1738249451}
   pickupUI: {fileID: 1748284869}
+  winUI: {fileID: 0}
 --- !u!23 &2124010902
 MeshRenderer:
   m_ObjectHideFlags: 0

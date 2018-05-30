@@ -4,9 +4,10 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour 
 {
+    [Header("Setup")]
     public GameObject spawnPoint;
 
-    [Header("UI")]
+    [Header("UI Elements")]
     public Text scoreText;
     public Text livesText;
     public Text healthText;

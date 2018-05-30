@@ -466,10 +466,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b542058452ae2644b061d1dd5c1f853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanSeeTarget: 0
   thePlayer: {fileID: 0}
   HoodRadius: 120
   range: 120
+  CanSeeTarget: 0
 --- !u!114 &114586851100702702
 MonoBehaviour:
   m_ObjectHideFlags: 1
