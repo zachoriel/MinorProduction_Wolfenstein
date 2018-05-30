@@ -57,10 +57,7 @@ public class Movement : MonoBehaviour
             Vector3 desiredVel = dir * speed;
             rb.AddForce(desiredVel - rb.velocity);
 
-            if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
-            {
-                gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-            }
+
         }
     }
 }

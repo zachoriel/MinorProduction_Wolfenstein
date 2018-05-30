@@ -26,30 +26,32 @@ public class PowerUp : MonoBehaviour
     {
         range = Vector3.Distance(gameObject.transform.position, player.gameObject.transform.position);
 
-        if (range <= 10 && gameObject.tag != "WinItem")
+        if (range <= 10) // && gameObject.tag != "WinItem"
         {
-            PickupUI();
+            isEnabled = true;
         }
-        else if (range > 10 && gameObject.tag != "WinItem")
+        else if (range > 10) // && gameObject.tag != "WinItem"
         {
-            CloseUI();
+            isEnabled = false;
         }
 
-        if (range <= 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length == 0)
-        {
-            WinUI();
-        }
-        else if (range > 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length > 0)
-        {
-            CloseWinUI();
-        }
-        else if (range > 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length == 0)
-        {
-            CloseWinUI();
-        }
+        //if (range <= 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length == 0)
+        //{
+        //    WinUI();
+        //}
+        //else if (range > 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length > 0)
+        //{
+        //    CloseWinUI();
+        //}
+        //else if (range > 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length == 0)
+        //{
+        //    CloseWinUI();
+        //}
 
 		if (isEnabled == true)
         {
+            pickupUI.SetActive(true);
+
             if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "Armor")
             {
                 AddArmor();
@@ -85,23 +87,27 @@ public class PowerUp : MonoBehaviour
                 pickupUI.SetActive(false);
                 Destroy(gameObject);
             }
-            else if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "WinItem")
-            {
-                winCondition.WinLevel();
-            }
+            //else if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "WinItem")
+            //{
+            //    winCondition.WinLevel();
+            //}
+        }
+        else
+        {
+            pickupUI.SetActive(false);
         }
 	}
 
-    void PickupUI()
-    {
-        pickupUI.SetActive(true);
-        isEnabled = true;
-    }
-    void CloseUI()
-    {
-        pickupUI.SetActive(false);
-        isEnabled = false;
-    }
+    //void PickupUI()
+    //{
+    //    pickupUI.SetActive(true);
+    //    isEnabled = true;
+    //}
+    //void CloseUI()
+    //{
+    //    pickupUI.SetActive(false);
+    //    isEnabled = false;
+    //}
     void WinUI()
     {
         winUI.SetActive(true);

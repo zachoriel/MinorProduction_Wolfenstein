@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Project/Assets/Zach/Scenes/TestingScene.unity
-    guid: 904886b6f0ba2934ab6673c463750e1c
+    path: Assets/Project/Assets/Zach/Scenes/NewTestScene.unity
+    guid: a9450aa5083411c489238635582e5175

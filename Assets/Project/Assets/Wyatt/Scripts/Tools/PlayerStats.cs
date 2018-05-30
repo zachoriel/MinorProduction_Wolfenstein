@@ -73,7 +73,7 @@ public class PlayerStats : MonoBehaviour
     {
         if(Lives <= 0)
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("NewTestScene");  // Replace when adding game over screen
         }
     }
 
