@@ -2,6 +2,7 @@
 
 public class WeaponSwitch : MonoBehaviour
 {
+    [Header("Current Weapon")]
     public int selectedWeapon = 0;
 
 	// Use this for initialization

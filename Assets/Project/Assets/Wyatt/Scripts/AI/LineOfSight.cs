@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class LineOfSight : MonoBehaviour
 {
-    public bool CanSeeTarget = false;
+    [Header("Component Setup")]
     public GameObject thePlayer;
 
+    [Header("Detection")]
     public float HoodRadius;
     public float range;
+
+    [HideInInspector]
+    public bool CanSeeTarget = false;
     //public Transform gameObject = null;
 
 

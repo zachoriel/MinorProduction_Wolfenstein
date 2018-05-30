@@ -11,6 +11,7 @@ TagManager:
   - Life
   - Ammo
   - BigAmmo
+  - WinItem
   layers:
   - Default
   - TransparentFX

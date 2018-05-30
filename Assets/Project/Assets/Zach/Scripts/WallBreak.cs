@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WallBreak : MonoBehaviour
 {
+    [Header("Stats")]
     public float health;
     private float startHealth = 100f;
 
@@ -11,12 +12,6 @@ public class WallBreak : MonoBehaviour
     void Start()
     {
         health = startHealth;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void TakeDamage(float amount)

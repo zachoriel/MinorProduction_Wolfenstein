@@ -3,12 +3,15 @@ using UnityEngine.UI;
 
 public class EnemyStats : MonoBehaviour
 {
+    [Header("Script Setup")]
     public PlayerStats playerStats;
 
+    [Header("Component Setup")]
+    public Image healthBar;
+
+    [Header("Stats")]
     public float health;
     public float startHealth = 100f;
-
-    public Image healthBar;
 
     void Start()
     {

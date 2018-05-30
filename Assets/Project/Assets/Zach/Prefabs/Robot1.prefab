@@ -57,7 +57,6 @@ GameObject:
   - component: {fileID: 4100751238911160}
   - component: {fileID: 33841438524348188}
   - component: {fileID: 23172080618697742}
-  - component: {fileID: 65101499439542768}
   m_Layer: 0
   m_Name: Robot_Body
   m_TagString: Untagged
@@ -130,6 +129,7 @@ GameObject:
   - component: {fileID: 114586851100702702}
   - component: {fileID: 114792160386610526}
   - component: {fileID: 114580349882299762}
+  - component: {fileID: 65181632776704320}
   m_Layer: 0
   m_Name: Robot1
   m_TagString: Enemy
@@ -286,18 +286,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65101499439542768
+--- !u!65 &65181632776704320
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1215205024300956}
+  m_GameObject: {fileID: 1826342119187114}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 199.55664, y: 380.09714, z: 166.31339}
-  m_Center: {x: 3.7030334, y: 190.20442, z: -1.4703751}
+  m_Size: {x: 164.39507, y: 389.5469, z: 174.3196}
+  m_Center: {x: 19.887157, y: 194.23706, z: -4.214027}
 --- !u!65 &65813536291525264
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -466,10 +466,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b542058452ae2644b061d1dd5c1f853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanSeeTarget: 0
   thePlayer: {fileID: 0}
   HoodRadius: 120
   range: 120
+  CanSeeTarget: 0
 --- !u!114 &114586851100702702
 MonoBehaviour:
   m_ObjectHideFlags: 1

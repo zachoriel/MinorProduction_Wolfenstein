@@ -5,11 +5,15 @@ using UnityEngine;
 public class PatrollingEnemyMovement : MonoBehaviour
 {
     private Transform target;
+
+    [Header("Wavepoint Info")]
     public int wavepointIndex;
-    public int speed;
-    public int startSpeed = 10;
     public int startWaypoint;
     public int endPathPoint;
+
+    [Header("Stats")]
+    public int speed;
+    public int startSpeed = 10;
 
 	// Use this for initialization
 	void Start () 
