@@ -27,27 +27,6 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        if(scoreText != null)
-        {
-            scoreText = GameObject.Find("/UI/UICanvas/BasePanel/ScorePanel/scoreText").GetComponent<Text>();
-        }
-        if (livesText != null)
-        {
-            livesText = GameObject.Find("/UI/UICanvas/BasePanel/LivesPanel/livesText").GetComponent<Text>();
-        }
-        if (healthText != null)
-        {
-            healthText = GameObject.Find("/UI/UICanvas/BasePanel/HealthPanel/healthText").GetComponent<Text>();
-        }
-        if (armorText != null)
-        {
-            armorText = GameObject.Find("/UI/UICanvas/BasePanel/ArmorPanel/armorText").GetComponent<Text>();
-        }
-        if (ammoText != null)
-        {
-            ammoText = GameObject.Find("/UI/UICanvas/BasePanel/AmmoPanel/ammoText").GetComponent<Text>();
-        }
-
         scoreText.text = Score.ToString();
         livesText.text = Lives.ToString();
         Health = startHealth;
