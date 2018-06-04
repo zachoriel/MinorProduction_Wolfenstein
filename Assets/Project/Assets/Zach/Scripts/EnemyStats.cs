@@ -15,6 +15,8 @@ public class EnemyStats : MonoBehaviour
 
     void Start()
     {
+        playerStats = FindObjectOfType<GameObject>().GetComponent<PlayerStats>();
+
         health = startHealth;
     }
 

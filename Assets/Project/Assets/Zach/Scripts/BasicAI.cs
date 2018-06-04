@@ -30,8 +30,10 @@ using UnityEngine.AI;
 
         void Start()
         {
+            sight = GetComponent<LineOfSight>();
             agent = GetComponent<NavMeshAgent>();
             character = GetComponent<EnemyMovement>();
+            player = GameObject.FindGameObjectWithTag("Player");    
 
             agent.updatePosition = true;
             agent.updateRotation = false;
