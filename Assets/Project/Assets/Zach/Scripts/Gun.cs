@@ -20,8 +20,8 @@ public class Gun : MonoBehaviour
     [Header("Laser")]
     public Transform firePoint;
     public LineRenderer lineRenderer;
-    public ParticleSystem laserImpact;
-    public Light laserImpactLight;
+    //public ParticleSystem laserImpact;
+    //public Light laserImpactLight;
     public int damageOverTime = 10;
 
     [Header("Bullets")]
@@ -91,8 +91,8 @@ public class Gun : MonoBehaviour
             {
                 laserBeam.Stop();
                 lineRenderer.enabled = false;
-                laserImpact.Stop();
-                laserImpactLight.enabled = false;
+                //laserImpact.Stop();
+                //laserImpactLight.enabled = false;
                 
             }
         }
@@ -187,13 +187,13 @@ public class Gun : MonoBehaviour
             {
                 laserBeam.Play();
                 lineRenderer.enabled = true;
-                laserImpact.Play();
-                laserImpactLight.enabled = true;
+                //laserImpact.Play();
+                //laserImpactLight.enabled = true;
             }
 
             Vector3 dir = firePoint.position - target.position;
-            laserImpact.transform.position = target.position + dir.normalized;
-            laserImpact.transform.rotation = Quaternion.LookRotation(dir);
+            //laserImpact.transform.position = target.position + dir.normalized;
+            //laserImpact.transform.rotation = Quaternion.LookRotation(dir);
         }
 
         lineRenderer.SetPosition(0, lazerStart);
