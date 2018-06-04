@@ -25,17 +25,17 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetAxis("Horizontal")!= 0)
+        /*if(Input.GetAxis("Horizontal")!= 0)
         {
             Debug.Log("This is the Horizontal Val: " + Input.GetAxis("Horizontal"));
         }
         if(Input.GetAxis("Vertical") != 0)
         {
             Debug.Log("This is the Vertical Val: " + Input.GetAxis("Vertical"));
-        }
+        }*/
 
-        float horz = Input.GetAxis("Horizontal");
-        float vert = Input.GetAxis("Vertical");
+        float horz = Input.GetAxisRaw("Horizontal");
+        float vert = Input.GetAxisRaw("Vertical");
 
         if (camera != null)
         {
@@ -57,6 +57,10 @@ public class Movement : MonoBehaviour
             Vector3 desiredVel = dir * speed;
             rb.AddForce(desiredVel - rb.velocity);
 
+            if(Input.GetAxisRaw("Horizontal").Equals(0)&&Input.GetAxisRaw("Vertical").Equals(0))
+            {
+                rb.velocity = new Vector3(0,0,0);
+            }
 
         }
     }
