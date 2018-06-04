@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 114363292981840326}
   - component: {fileID: 114220308233178360}
   - component: {fileID: 82810911452876010}
+  - component: {fileID: 65959841518627898}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -521,7 +522,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1717481474391314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -174.7, y: 3.71, z: -499}
+  m_LocalPosition: {x: -174.7, y: 2.7, z: -499}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4110201182402566}
@@ -1062,6 +1063,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!65 &65959841518627898
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1717481474391314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.3, z: 1}
+  m_Center: {x: 0, y: -0.35, z: 0}
 --- !u!81 &81841867094520372
 AudioListener:
   m_ObjectHideFlags: 1
@@ -1594,6 +1607,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 120
+<<<<<<< HEAD
+=======
+--- !u!114 &114365397156518762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1933650307268974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789e92afc83916e44a3a2c16a61797c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpsCam: {fileID: 20295933634997006}
+  player: {fileID: 114220308233178360}
+  weapons: {fileID: 114500396636774780}
+  animator: {fileID: 95812721922773682}
+  ammoText: {fileID: 0}
+  range: 500
+  reloadTime: 1
+  firePoint: {fileID: 4996863361022512}
+  lineRenderer: {fileID: 120101013010080702}
+  damageOverTime: 30
+  damage: 30
+  fireRate: 15
+  impactForce: 20
+  muzzleFlash: {fileID: 0}
+  impactEffect: {fileID: 1685545750784954, guid: 98e92d158c0f25646af934fbd31b020f,
+    type: 2}
+  reloadGun: {fileID: 82099266486888386}
+  gunFire: {fileID: 82529289353317230}
+  laserBeam: {fileID: 82450756504951038}
+  emptyClip: {fileID: 82280297765576090}
+>>>>>>> wyatt
 --- !u!114 &114500396636774780
 MonoBehaviour:
   m_ObjectHideFlags: 1

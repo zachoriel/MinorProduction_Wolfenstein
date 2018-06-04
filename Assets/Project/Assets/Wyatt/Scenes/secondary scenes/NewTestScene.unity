@@ -216,10 +216,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b542058452ae2644b061d1dd5c1f853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanSeeTarget: 0
   thePlayer: {fileID: 0}
   HoodRadius: 120
   range: 120
+  CanSeeTarget: 0
 --- !u!114 &84069998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,10 +233,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wavepointIndex: 0
-  speed: 0
-  startSpeed: 30
   startWaypoint: 0
   endPathPoint: 5
+  speed: 0
+  startSpeed: 30
 --- !u!114 &84069999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,9 +250,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1738249451}
+  healthBar: {fileID: 1258455125}
   health: 100
   startHealth: 100
-  healthBar: {fileID: 1258455125}
 --- !u!54 &84070000
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -393,8 +393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23ed8b9c11265a43a68ec4cf0ecb0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winCondition: {fileID: 0}
   player: {fileID: 1738249451}
   pickupUI: {fileID: 1748284869}
+  winUI: {fileID: 0}
 --- !u!23 &136539578
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -961,6 +963,11 @@ Prefab:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1246103716}
+    - target: {fileID: 114798824424556402, guid: 639ce983033939d46a7bbd9c1ef935bc,
+        type: 2}
+      propertyPath: speedH
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 639ce983033939d46a7bbd9c1ef935bc, type: 2}
   m_IsPrefabParent: 0
@@ -1005,6 +1012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
+  enemiesAlive: {fileID: 0}
 --- !u!1 &470499607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,8 +1480,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23ed8b9c11265a43a68ec4cf0ecb0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winCondition: {fileID: 0}
   player: {fileID: 1738249451}
   pickupUI: {fileID: 1748284869}
+  winUI: {fileID: 0}
 --- !u!23 &656950602
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3499,8 +3509,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23ed8b9c11265a43a68ec4cf0ecb0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winCondition: {fileID: 0}
   player: {fileID: 1738249451}
   pickupUI: {fileID: 1748284869}
+  winUI: {fileID: 0}
 --- !u!23 &1201102677
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4822,8 +4834,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23ed8b9c11265a43a68ec4cf0ecb0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winCondition: {fileID: 0}
   player: {fileID: 1738249451}
   pickupUI: {fileID: 1748284869}
+  winUI: {fileID: 0}
 --- !u!23 &1582900526
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6048,10 +6062,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b542058452ae2644b061d1dd5c1f853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanSeeTarget: 0
   thePlayer: {fileID: 0}
   HoodRadius: 120
   range: 120
+  CanSeeTarget: 0
 --- !u!114 &1934619822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6065,10 +6079,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wavepointIndex: 0
-  speed: 0
-  startSpeed: 30
   startWaypoint: 4
   endPathPoint: 1
+  speed: 0
+  startSpeed: 30
 --- !u!114 &1934619823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6082,9 +6096,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1738249451}
+  healthBar: {fileID: 1064665253}
   health: 100
   startHealth: 100
-  healthBar: {fileID: 1064665253}
 --- !u!54 &1934619824
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6634,10 +6648,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b542058452ae2644b061d1dd5c1f853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanSeeTarget: 0
   thePlayer: {fileID: 0}
   HoodRadius: 120
   range: 120
+  CanSeeTarget: 0
 --- !u!114 &2051203463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6651,10 +6665,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wavepointIndex: 0
-  speed: 0
-  startSpeed: 30
   startWaypoint: 2
   endPathPoint: 3
+  speed: 0
+  startSpeed: 30
 --- !u!114 &2051203464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6668,9 +6682,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1738249451}
+  healthBar: {fileID: 625073499}
   health: 100
   startHealth: 100
-  healthBar: {fileID: 625073499}
 --- !u!54 &2051203465
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7117,8 +7131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23ed8b9c11265a43a68ec4cf0ecb0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winCondition: {fileID: 0}
   player: {fileID: 1738249451}
   pickupUI: {fileID: 1748284869}
+  winUI: {fileID: 0}
 --- !u!23 &2124010902
 MeshRenderer:
   m_ObjectHideFlags: 0
