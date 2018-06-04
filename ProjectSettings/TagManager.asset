@@ -12,6 +12,7 @@ TagManager:
   - Ammo
   - BigAmmo
   - WinItem
+  - UI
   layers:
   - Default
   - TransparentFX

@@ -29,7 +29,11 @@ public class PlayerStats : MonoBehaviour
     {
         if(scoreText != null)
         {
+<<<<<<< HEAD
             scoreText = GameObject.Find("/UI/UICanvas/BasePanel/ScorePanel/scoreText").GetComponent<Text>();
+=======
+            scoreText = GameObject.Find("/UI/UICanvas/BasePanel/ScorePanel/scoreText").GetComponent<Text>(); 
+>>>>>>> dev
         }
         if (livesText != null)
         {
