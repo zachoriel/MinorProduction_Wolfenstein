@@ -41,7 +41,7 @@ public class Gun : MonoBehaviour
 	void Start ()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        player.currentGunAmmo = player.maxGunAmmo;
+        //player.currentGunAmmo = player.maxGunAmmo;
         lineRenderer.enabled = false;
 	}
 

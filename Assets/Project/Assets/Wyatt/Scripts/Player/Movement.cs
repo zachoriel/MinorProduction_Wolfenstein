@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour
 
     Rigidbody rb;
     public float speed;
+
+    public bool toggle;
+
     Vector3 forwardDir;
     Vector3 rightDir;
 
@@ -60,6 +63,41 @@ public class Movement : MonoBehaviour
             if(Input.GetAxisRaw("Horizontal").Equals(0)&&Input.GetAxisRaw("Vertical").Equals(0))
             {
                 rb.velocity = new Vector3(0,0,0);
+            }
+
+            //Press and hold code
+            /*if(Input.GetKey(KeyCode.LeftControl))
+            {
+                gameObject.GetComponent<BoxCollider>().enabled = true;
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            }
+            else
+            {
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+                gameObject.GetComponent<CapsuleCollider>().enabled = true;
+            }*/
+            
+            
+            //Toggle Code
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                toggle = !toggle;
+            }
+
+            //toggle crouch On
+            if(toggle == true)
+            {
+                //camera.transform.position = camera.;
+
+
+                gameObject.GetComponent<BoxCollider>().enabled = true;
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            }
+            //toggle crouch off
+            else
+            {
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+                gameObject.GetComponent<CapsuleCollider>().enabled = true;
             }
 
         }
