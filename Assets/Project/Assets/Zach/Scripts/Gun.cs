@@ -28,7 +28,7 @@ public class Gun : MonoBehaviour
     public float damage = 10f;
     public float fireRate = 15f;
     public float impactForce = 30f;
-    //public ParticleSystem muzzleFlash;
+    public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
     [Header("Audio")]
@@ -123,7 +123,7 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        //muzzleFlash.Play();
+        muzzleFlash.Play();
         gunFire.Play();
 
         player.currentGunAmmo--;

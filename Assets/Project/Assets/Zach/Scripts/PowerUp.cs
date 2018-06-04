@@ -26,29 +26,29 @@ public class PowerUp : MonoBehaviour
     {
         range = Vector3.Distance(gameObject.transform.position, player.gameObject.transform.position);
 
-        if (range <= 10) // && gameObject.tag != "WinItem"
+        if (range <= 10 && gameObject.tag != "WinItem")
         {
             isEnabled = true;
         }
-        else if (range > 10) // && gameObject.tag != "WinItem"
+        else if (range > 10 && gameObject.tag != "WinItem")
         {
             isEnabled = false;
         }
 
-        //if (range <= 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length == 0)
-        //{
-        //    WinUI();
-        //}
-        //else if (range > 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length > 0)
-        //{
-        //    CloseWinUI();
-        //}
-        //else if (range > 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length == 0)
-        //{
-        //    CloseWinUI();
-        //}
+        if (range <= 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length == 0)
+        {
+            WinUI();
+        }
+        else if (range > 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length > 0)
+        {
+            CloseWinUI();
+        }
+        else if (range > 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length == 0)
+        {
+            CloseWinUI();
+        }
 
-		if (isEnabled == true)
+        if (isEnabled == true)
         {
             pickupUI.SetActive(true);
 
@@ -87,10 +87,10 @@ public class PowerUp : MonoBehaviour
                 pickupUI.SetActive(false);
                 Destroy(gameObject);
             }
-            //else if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "WinItem")
-            //{
-            //    winCondition.WinLevel();
-            //}
+            else if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "WinItem")
+            {
+                winCondition.WinLevel();
+            }
         }
         else
         {
