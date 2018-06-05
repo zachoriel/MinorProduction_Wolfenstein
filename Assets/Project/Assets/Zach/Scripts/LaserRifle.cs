@@ -1,0 +1,96 @@
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
+public class LaserRifle : MonoBehaviour
+{
+    [Header("Setup")]
+    public Camera fpsCam;
+    public PlayerStats player;
+    public WeaponSwitch weapons;
+    public Animator animator;
+    public Text ammoText;
+
+    [Header("General")]
+    public float range = 15f;
+
+    [Header("Laser")]
+    public Transform firePoint;
+    public LineRenderer lineRenderer;
+    //public ParticleSystem laserImpact;
+    //public Light laserImpactLight;
+    public int damageOverTime = 10;
+
+    [Header("Audio")]
+    public AudioSource laserBeam;
+
+	// Use this for initialization
+	void Start ()
+    {
+        lineRenderer = GetComponent<LineRenderer>();
+        player.currentGunAmmo = player.maxGunAmmo;
+        lineRenderer.enabled = false;
+	}
+
+    // Update is called once per frame
+    void Update ()
+    {
+        if (Input.GetButton("Fire1"))
+        {
+            Laser();
+        }
+        else
+        {
+            if (lineRenderer.enabled)
+            {
+                laserBeam.Stop();
+                lineRenderer.enabled = false;
+                //laserImpact.Stop();
+                //laserImpactLight.enabled = false;
+                
+            }
+        }
+	}   
+
+    void Laser()
+    {
+        Vector3 lazerStart;
+        Vector3 lazerEnd;
+        lazerStart = firePoint.position;
+        lazerEnd = transform.position + transform.forward * 50000;
+        lineRenderer.SetPosition(0, lazerStart);
+
+        RaycastHit hit;
+        if (Physics.Raycast(firePoint.transform.position, firePoint.transform.forward, out hit, range))
+        {
+            lazerEnd = hit.point;
+            EnemyStats enemyTarget = hit.transform.GetComponent<EnemyStats>();
+            WallBreak wallTarget = hit.transform.GetComponent<WallBreak>();
+            Transform target = hit.transform;
+
+            if (enemyTarget != null)
+            {
+                enemyTarget.TakeDamage(damageOverTime * Time.deltaTime);
+            }
+            if (wallTarget != null)
+            {
+                wallTarget.TakeDamage(damageOverTime * Time.deltaTime);
+            }
+
+            if (!lineRenderer.enabled)
+            {
+                laserBeam.Play();
+                lineRenderer.enabled = true;
+                //laserImpact.Play();
+                //laserImpactLight.enabled = true;
+            }
+
+            Vector3 dir = firePoint.position - target.position;
+            //laserImpact.transform.position = target.position + dir.normalized;
+            //laserImpact.transform.rotation = Quaternion.LookRotation(dir);
+        }
+
+        lineRenderer.SetPosition(0, lazerStart);
+        lineRenderer.SetPosition(1, lazerEnd);
+    }
+}

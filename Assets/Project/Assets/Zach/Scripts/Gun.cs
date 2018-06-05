@@ -17,32 +17,22 @@ public class Gun : MonoBehaviour
     private bool isReloading = false;
     private float nextTimeToFire = 0f;
 
-    [Header("Laser")]
-    public Transform firePoint;
-    public LineRenderer lineRenderer;
-    //public ParticleSystem laserImpact;
-    //public Light laserImpactLight;
-    public int damageOverTime = 10;
-
     [Header("Bullets")]
-    public float damage = 10f;
+    public float damage = 30f;
     public float fireRate = 15f;
-    public float impactForce = 30f;
+    public float impactForce = 20f;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
     [Header("Audio")]
     public AudioSource reloadGun;
     public AudioSource gunFire;
-    public AudioSource laserBeam;
     public AudioSource emptyClip;
 
 	// Use this for initialization
 	void Start ()
     {
-        lineRenderer = GetComponent<LineRenderer>();
-        //player.currentGunAmmo = player.maxGunAmmo;
-        lineRenderer.enabled = false;
+        player.currentGunAmmo = player.maxGunAmmo;
 	}
 
     void OnEnable()
@@ -80,30 +70,12 @@ public class Gun : MonoBehaviour
         {
             emptyClip.Play();
         }
-
-        if (Input.GetButton("Fire2"))
-        {
-            Laser();
-        }
-        else
-        {
-            if (lineRenderer.enabled)
-            {
-                laserBeam.Stop();
-                lineRenderer.enabled = false;
-                //laserImpact.Stop();
-                //laserImpactLight.enabled = false;
-                
-            }
-        }
 	}
 
     IEnumerator Reload()
     {
         isReloading = true;
-        lineRenderer.enabled = false;
 
-        laserBeam.Stop();
         reloadGun.Play();
 
         Debug.Log("Reloading...");
@@ -131,8 +103,6 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            //Debug.Log(hit.transform.name);
-
             EnemyStats enemyTarget = hit.transform.GetComponent<EnemyStats>();
             WallBreak wallTarget = hit.transform.GetComponent<WallBreak>();
             if (enemyTarget != null)
@@ -153,50 +123,5 @@ public class Gun : MonoBehaviour
             GameObject impactObject = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactObject, 2f);
         }
-    }
-
-   
-
-    void Laser()
-    {
-        Vector3 lazerStart;
-        Vector3 lazerEnd;
-        //player.currentAmmo--;
-        lazerStart = firePoint.position;
-        lazerEnd = transform.position + transform.forward * 50000;
-        lineRenderer.SetPosition(0, lazerStart);
-
-        RaycastHit hit;
-        if (Physics.Raycast(firePoint.transform.position, firePoint.transform.forward, out hit, range))
-        {
-            lazerEnd = hit.point;
-            EnemyStats enemyTarget = hit.transform.GetComponent<EnemyStats>();
-            WallBreak wallTarget = hit.transform.GetComponent<WallBreak>();
-            Transform target = hit.transform;
-
-            if (enemyTarget != null)
-            {
-                enemyTarget.TakeDamage(damageOverTime * Time.deltaTime);
-            }
-            if (wallTarget != null)
-            {
-                wallTarget.TakeDamage(damageOverTime * Time.deltaTime);
-            }
-
-            if (!lineRenderer.enabled)
-            {
-                laserBeam.Play();
-                lineRenderer.enabled = true;
-                //laserImpact.Play();
-                //laserImpactLight.enabled = true;
-            }
-
-            Vector3 dir = firePoint.position - target.position;
-            //laserImpact.transform.position = target.position + dir.normalized;
-            //laserImpact.transform.rotation = Quaternion.LookRotation(dir);
-        }
-
-        lineRenderer.SetPosition(0, lazerStart);
-        lineRenderer.SetPosition(1, lazerEnd);
     }
 }

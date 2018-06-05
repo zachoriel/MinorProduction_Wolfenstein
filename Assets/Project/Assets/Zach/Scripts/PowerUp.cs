@@ -9,7 +9,6 @@ public class PowerUp : MonoBehaviour
     public PlayerStats player;
 
     [Header("UI Elements")]
-    public GameObject pickupUI;
     public GameObject winUI;
 
     private bool isEnabled;
@@ -19,21 +18,12 @@ public class PowerUp : MonoBehaviour
 	void Start ()
     {
         isEnabled = false;
-	}
+	} 
 	
 	// Update is called once per frame
 	void Update ()
     {
         range = Vector3.Distance(gameObject.transform.position, player.gameObject.transform.position);
-
-        if (range <= 10 && gameObject.tag != "WinItem")
-        {
-            isEnabled = true;
-        }
-        else if (range > 10 && gameObject.tag != "WinItem")
-        {
-            isEnabled = false;
-        }
 
         if (range <= 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length == 0)
         {
@@ -47,67 +37,37 @@ public class PowerUp : MonoBehaviour
         {
             CloseWinUI();
         }
-
-        if (isEnabled == true)
-        {
-            pickupUI.SetActive(true);
-
-            if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "Armor")
-            {
-                AddArmor();
-                isEnabled = false;
-                pickupUI.SetActive(false);
-                Destroy(gameObject);
-            }
-            else if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "Health")
-            {
-                AddHealth();
-                isEnabled = false;
-                pickupUI.SetActive(false);
-                Destroy(gameObject);
-            }
-            else if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "Life")
-            {
-                AddLife();
-                isEnabled = false;
-                pickupUI.SetActive(false);
-                Destroy(gameObject);
-            }
-            else if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "Ammo")
-            {
-                AddAmmo();
-                isEnabled = false;
-                pickupUI.SetActive(false);
-                Destroy(gameObject);
-            }
-            else if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "BigAmmo")
-            {
-                RestoreAmmo();
-                isEnabled = false;
-                pickupUI.SetActive(false);
-                Destroy(gameObject);
-            }
-            else if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "WinItem")
-            {
-                winCondition.WinLevel();
-            }
-        }
-        else
-        {
-            pickupUI.SetActive(false);
-        }
 	}
 
-    //void PickupUI()
-    //{
-    //    pickupUI.SetActive(true);
-    //    isEnabled = true;
-    //}
-    //void CloseUI()
-    //{
-    //    pickupUI.SetActive(false);
-    //    isEnabled = false;
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player" && gameObject.tag == "Armor")
+        {
+            AddArmor();
+            Destroy(gameObject);
+        }
+        else if (other.tag == "Player" && gameObject.tag == "Health")
+        {
+            AddHealth();
+            Destroy(gameObject);
+        }
+        else if (other.tag == "Player" && gameObject.tag == "Life")
+        {
+            AddLife();
+            Destroy(gameObject);
+        }
+        else if (other.tag == "Player" && gameObject.tag == "Ammo")
+        {
+            AddAmmo();
+            Destroy(gameObject);
+        }
+        else if (other.tag == "Player" && gameObject.tag == "BigAmmo")
+        {
+            RestoreAmmo();
+            Destroy(gameObject);
+        }
+    }
+
     void WinUI()
     {
         winUI.SetActive(true);
