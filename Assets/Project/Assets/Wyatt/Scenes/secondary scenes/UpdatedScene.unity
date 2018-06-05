@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: c61a59551f9fb4647a915255b78cb50f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44574732, g: 0.4954601, b: 0.5742734, a: 1}
+  m_IndirectSpecularColor: {r: 0.15789059, g: 0.14416784, b: 0.17948279, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ Prefab:
         type: 2}
       propertyPath: playerStats
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1143276277}
     - target: {fileID: 114850673823622988, guid: bb74c533f613e044f84b12b79de58f5d,
         type: 2}
       propertyPath: playerStats
@@ -23214,7 +23214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winCondition: {fileID: 408321688}
   player: {fileID: 0}
-  pickupUI: {fileID: 1748284869}
   winUI: {fileID: 461141161}
 --- !u!65 &235340885
 BoxCollider:
@@ -24329,7 +24328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b542058452ae2644b061d1dd5c1f853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thePlayer: {fileID: 0}
+  thePlayer: {fileID: 1143276275}
   HoodRadius: 120
   range: 120
   CanSeeTarget: 0
@@ -24361,7 +24360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sight: {fileID: 478495652}
-  player: {fileID: 0}
+  player: {fileID: 1143276275}
   agent: {fileID: 0}
   character: {fileID: 0}
   state: 0
@@ -24384,7 +24383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85fdc28dde1f1e942a68a4858789a253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 1143276277}
   healthBar: {fileID: 1390587555}
   health: 100
   startHealth: 100
@@ -24582,7 +24581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b542058452ae2644b061d1dd5c1f853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thePlayer: {fileID: 0}
+  thePlayer: {fileID: 1143276275}
   HoodRadius: 120
   range: 120
   CanSeeTarget: 0
@@ -24599,7 +24598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sight: {fileID: 543338225}
-  player: {fileID: 0}
+  player: {fileID: 1143276275}
   agent: {fileID: 0}
   character: {fileID: 0}
   state: 0
@@ -24638,7 +24637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85fdc28dde1f1e942a68a4858789a253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 1143276277}
   healthBar: {fileID: 1529610692}
   health: 100
   startHealth: 100
@@ -24874,7 +24873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b542058452ae2644b061d1dd5c1f853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thePlayer: {fileID: 0}
+  thePlayer: {fileID: 1143276275}
   HoodRadius: 120
   range: 120
   CanSeeTarget: 0
@@ -24890,7 +24889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sight: {fileID: 652001059}
-  player: {fileID: 0}
+  player: {fileID: 1143276275}
   agent: {fileID: 0}
   character: {fileID: 0}
   state: 0
@@ -24928,7 +24927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85fdc28dde1f1e942a68a4858789a253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 1143276277}
   healthBar: {fileID: 671294004}
   health: 100
   startHealth: 100
@@ -25547,7 +25546,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winCondition: {fileID: 408321688}
   player: {fileID: 0}
-  pickupUI: {fileID: 1748284869}
   winUI: {fileID: 461141161}
 --- !u!1 &850738140
 GameObject:
@@ -26445,7 +26443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1090318253
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26824,7 +26822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b542058452ae2644b061d1dd5c1f853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thePlayer: {fileID: 0}
+  thePlayer: {fileID: 1143276275}
   HoodRadius: 120
   range: 120
   CanSeeTarget: 0
@@ -26840,7 +26838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sight: {fileID: 1237777537}
-  player: {fileID: 0}
+  player: {fileID: 1143276275}
   agent: {fileID: 0}
   character: {fileID: 0}
   state: 0
@@ -26878,7 +26876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85fdc28dde1f1e942a68a4858789a253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 1143276277}
   healthBar: {fileID: 1805957932}
   health: 100
   startHealth: 100
@@ -27488,7 +27486,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winCondition: {fileID: 408321688}
   player: {fileID: 0}
-  pickupUI: {fileID: 1748284869}
   winUI: {fileID: 461141161}
 --- !u!65 &1325156106
 BoxCollider:
@@ -27724,7 +27721,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winCondition: {fileID: 408321688}
   player: {fileID: 0}
-  pickupUI: {fileID: 1748284869}
   winUI: {fileID: 461141161}
 --- !u!65 &1381803013
 BoxCollider:
@@ -29051,7 +29047,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winCondition: {fileID: 408321688}
   player: {fileID: 0}
-  pickupUI: {fileID: 1748284869}
   winUI: {fileID: 461141161}
 --- !u!65 &1682900891
 BoxCollider:
@@ -29200,7 +29195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winCondition: {fileID: 408321688}
   player: {fileID: 0}
-  pickupUI: {fileID: 1748284869}
   winUI: {fileID: 461141161}
 --- !u!65 &1721717458
 BoxCollider:
