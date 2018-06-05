@@ -43,7 +43,9 @@ public class EnemyGun : MonoBehaviour
         }
         else if (lineofSight.CanSeeTarget == true)
         {
-            enemyObject.transform.LookAt(player);
+            //enemyObject.transform.rotation = new Quaternion(0,0,0,0);
+            //enemyObject.transform.LookAt(player);                             // NO LONGER NEEDED CAUSE NAVMESH DOES IT
+            
 
             if (useLaser)
             {

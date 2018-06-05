@@ -8,9 +8,6 @@ public class PowerUp : MonoBehaviour
     public Win winCondition;
     public PlayerStats player;
 
-    [Header("UI Elements")]
-    public GameObject winUI;
-
     private bool isEnabled;
     private float range;
 
@@ -19,25 +16,6 @@ public class PowerUp : MonoBehaviour
     {
         isEnabled = false;
 	} 
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        range = Vector3.Distance(gameObject.transform.position, player.gameObject.transform.position);
-
-        if (range <= 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length == 0)
-        {
-            WinUI();
-        }
-        else if (range > 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length > 0)
-        {
-            CloseWinUI();
-        }
-        else if (range > 10 && gameObject.tag == "WinItem" && winCondition.enemies.Length == 0)
-        {
-            CloseWinUI();
-        }
-	}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -66,17 +44,10 @@ public class PowerUp : MonoBehaviour
             RestoreAmmo();
             Destroy(gameObject);
         }
-    }
-
-    void WinUI()
-    {
-        winUI.SetActive(true);
-        isEnabled = true;
-    }
-    void CloseWinUI()
-    {
-        winUI.SetActive(false);
-        isEnabled = false;
+        else if (other.tag == "Player" && gameObject.tag == "WinItem" && winCondition.enemies.Length <= 0)
+        {
+            winCondition.WinLevel();
+        }
     }
 
     void AddArmor()

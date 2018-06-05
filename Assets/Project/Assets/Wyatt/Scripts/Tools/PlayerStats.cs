@@ -51,6 +51,10 @@ public class PlayerStats : MonoBehaviour
             healthText.text = Mathf.RoundToInt(Health).ToString();
             armorText.text = Mathf.RoundToInt(Armor).ToString();
         }
+        if (Health < 1f && Health > 0f)
+        {
+            Health = 0f;
+        }
         if (Health <= 0f)
         {
             Die();
