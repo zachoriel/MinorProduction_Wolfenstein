@@ -7,6 +7,9 @@ public class PowerUp : MonoBehaviour
     [Header("Script Setup")]
     public Win winCondition;
     public PlayerStats player;
+    public Gun gun;
+    public Shotgun shotgun;
+    public LaserRifle laser;
 
     [Header("Audio")]
     public AudioSource pickupSound;
@@ -39,12 +42,12 @@ public class PowerUp : MonoBehaviour
         }
         else if (other.tag == "Player" && gameObject.tag == "Ammo")
         {
-            //AddAmmo();
+            AddAmmo();
             Destroy(gameObject);
         }
         else if (other.tag == "Player" && gameObject.tag == "BigAmmo")
         {
-            //RestoreAmmo();
+            RestoreAmmo();
             Destroy(gameObject);
         }
         else if (other.tag == "Player" && gameObject.tag == "WinItem" && winCondition.enemies.Length <= 0)
@@ -71,18 +74,27 @@ public class PowerUp : MonoBehaviour
         player.livesText.text = Mathf.RoundToInt(player.Lives).ToString();
     }
 
-    //void AddAmmo()
-    //{
-    //    pickupSound.Play();
-    //    player.currentGunAmmo = player.maxGunAmmo;
-    //    player.ammoText.text = Mathf.RoundToInt(player.currentGunAmmo).ToString() + " / " + player.totalAmmo;
-    //}
+    void AddAmmo()
+    {
+        pickupSound.Play();
+        gun.currentGunAmmoMG = gun.maxGunAmmoMG;
+        shotgun.currentGunAmmoSG = shotgun.maxGunAmmoSG;
+        laser.energy = laser.maxEnergy;
+        //gun.ammoText.text = Mathf.RoundToInt(gun.currentGunAmmoMG).ToString() + " / " + gun.totalAmmoMG;
+        //shotgun.ammoText.text = Mathf.RoundToInt(shotgun.currentGunAmmoSG).ToString() + " / " + shotgun.totalAmmoSG;            // NO LONGER NEEDED CAUSE THE TEXT IS CHECKED IN UPDATE
+        //laser.ammoText.text = Mathf.RoundToInt(laser.energy).ToString() + "%";
+    }
 
-    //void RestoreAmmo()
-    //{
-    //    pickupSound.Play();
-    //    player.currentGunAmmo = player.maxGunAmmo;
-    //    player.totalAmmo = 100;
-    //    player.ammoText.text = Mathf.RoundToInt(player.currentGunAmmo).ToString() + " / " + player.totalAmmo;
-    //}
+    void RestoreAmmo()
+    {
+        pickupSound.Play();
+        gun.currentGunAmmoMG = gun.maxGunAmmoMG;
+        gun.totalAmmoMG = 100;
+        shotgun.currentGunAmmoSG = shotgun.maxGunAmmoSG;
+        shotgun.totalAmmoSG = 30;
+        laser.energy = laser.maxEnergy;
+        //gun.ammoText.text = Mathf.RoundToInt(gun.currentGunAmmoMG).ToString() + " / " + gun.totalAmmoMG;
+        //shotgun.ammoText.text = Mathf.RoundToInt(shotgun.currentGunAmmoSG).ToString() + " / " + shotgun.totalAmmoSG;            // NO LONGER NEEDED CAUSE THE TEXT IS CHECKED IN UPDATE
+        //laser.ammoText.text = Mathf.RoundToInt(laser.energy).ToString() + "%";
+    }
 }

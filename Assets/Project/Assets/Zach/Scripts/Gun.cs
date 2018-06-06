@@ -25,6 +25,7 @@ public class Gun : MonoBehaviour
     public int maxGunAmmoMG = 25;
     public int currentGunAmmoMG;
     public int totalAmmoMG = 100;
+    private int amountNeeded;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
@@ -60,11 +61,11 @@ public class Gun : MonoBehaviour
             return;
         }
 
-        //if (Input.GetKeyDown(KeyCode.R) && player.currentGunAmmo < player.maxGunAmmo && player.totalAmmo > 0)
-        //{
-        //    StartCoroutine(Reload());
-        //    return;
-        //}
+        if (Input.GetKeyDown(KeyCode.R) && currentGunAmmoMG < maxGunAmmoMG && totalAmmoMG > 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentGunAmmoMG > 0)
         {
@@ -77,6 +78,7 @@ public class Gun : MonoBehaviour
         }
 
         ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
+        amountNeeded = maxGunAmmoMG - currentGunAmmoMG;
     }
 
     IEnumerator Reload()
@@ -94,8 +96,17 @@ public class Gun : MonoBehaviour
         animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(0.25f);
 
-        currentGunAmmoMG = maxGunAmmoMG;
-        totalAmmoMG -= maxGunAmmoMG;
+        if (amountNeeded <= totalAmmoMG)
+        {
+            currentGunAmmoMG = maxGunAmmoMG;
+            totalAmmoMG -= amountNeeded;
+        }
+        else if (amountNeeded > totalAmmoMG)
+        {
+            currentGunAmmoMG += totalAmmoMG;
+            totalAmmoMG = 0;
+        }
+
         //ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
 
         isReloading = false;
@@ -107,7 +118,7 @@ public class Gun : MonoBehaviour
         gunFire.Play();
 
         currentGunAmmoMG--;
-        //ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
+        ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
 
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))

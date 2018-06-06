@@ -13,7 +13,7 @@ public class LaserRifle : MonoBehaviour
 
     [Header("General")]
     public float range = 15f;
-    public float reloadTime = 1f;
+    public float reloadTime = 1.5f;
     private bool isReloading = false;
 
     [Header("Laser")]
@@ -23,7 +23,8 @@ public class LaserRifle : MonoBehaviour
     //public Light laserImpactLight;
     public int damageOverTime = 10;
     public float energy;
-    private float maxEnergy = 10;
+    public float maxEnergy = 100f;
+    private int wholeEnergy;
 
     [Header("Audio")]
     public AudioSource laserBeam;
@@ -32,10 +33,9 @@ public class LaserRifle : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        energy = Mathf.RoundToInt(energy);
         lineRenderer = GetComponent<LineRenderer>();
         energy = maxEnergy;
-        ammoText.text = energy.ToString();
+        ammoText.text = energy.ToString() + "%";
         lineRenderer.enabled = false;
 	}
 
@@ -53,7 +53,13 @@ public class LaserRifle : MonoBehaviour
             return;
         }
 
-        if (energy <= 0)
+        if (energy < 0.5f && energy >= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R) && energy < maxEnergy)
         {
             StartCoroutine(Reload());
             return;
@@ -75,7 +81,8 @@ public class LaserRifle : MonoBehaviour
             }
         }
 
-        ammoText.text = energy.ToString();
+        wholeEnergy = Mathf.RoundToInt(energy);
+        ammoText.text = wholeEnergy.ToString() + "%";
     }
 
     IEnumerator Reload()
@@ -104,7 +111,7 @@ public class LaserRifle : MonoBehaviour
 
     void Laser()
     {
-        energy -= 1 * Time.deltaTime;
+        energy -= 10 * Time.deltaTime;
 
         Vector3 lazerStart;
         Vector3 lazerEnd;

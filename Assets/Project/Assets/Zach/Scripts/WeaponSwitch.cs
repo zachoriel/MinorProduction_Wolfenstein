@@ -90,7 +90,7 @@ public class WeaponSwitch : MonoBehaviour
             }
             else if (i == 3)
             {
-                ammoText.text = lr.energy.ToString();
+                ammoText.text = lr.energy.ToString() + "%";
             }
             else if (i == 4)
             {
