@@ -17,10 +17,15 @@ public class Gun : MonoBehaviour
     private bool isReloading = false;
     private float nextTimeToFire = 0f;
 
+
     [Header("Bullets")]
     public float damage = 30f;
     public float fireRate = 15f;
     public float impactForce = 20f;
+    public int maxGunAmmoMG = 25;
+    public int currentGunAmmoMG;
+    public int totalAmmoMG = 100;
+    private int amountNeeded;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
@@ -32,8 +37,9 @@ public class Gun : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        player.currentGunAmmo = player.maxGunAmmo;
-	}
+        currentGunAmmoMG = maxGunAmmoMG;
+        ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
+    }
 
     void OnEnable()
     {
@@ -49,28 +55,31 @@ public class Gun : MonoBehaviour
             return;
         }
 
-        if (player.currentGunAmmo <= 0 && player.totalAmmo > 0)
+        if (currentGunAmmoMG <= 0 && totalAmmoMG > 0)
         {
             StartCoroutine(Reload());
             return;
         }
 
-        //if (Input.GetKeyDown(KeyCode.R) && player.currentGunAmmo < player.maxGunAmmo && player.totalAmmo > 0)
-        //{
-        //    StartCoroutine(Reload());
-        //    return;
-        //}
+        if (Input.GetKeyDown(KeyCode.R) && currentGunAmmoMG < maxGunAmmoMG && totalAmmoMG > 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
 
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && player.currentGunAmmo > 0)
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentGunAmmoMG > 0)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
-        else if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && player.currentGunAmmo == 0 && player.totalAmmo == 0)
+        else if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && currentGunAmmoMG == 0 && totalAmmoMG == 0)
         {
             emptyClip.Play();
         }
-	}
+
+        ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
+        amountNeeded = maxGunAmmoMG - currentGunAmmoMG;
+    }
 
     IEnumerator Reload()
     {
@@ -87,8 +96,18 @@ public class Gun : MonoBehaviour
         animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(0.25f);
 
-        player.currentGunAmmo = player.maxGunAmmo;
-        player.totalAmmo -= player.maxGunAmmo;
+        if (amountNeeded <= totalAmmoMG)
+        {
+            currentGunAmmoMG = maxGunAmmoMG;
+            totalAmmoMG -= amountNeeded;
+        }
+        else if (amountNeeded > totalAmmoMG)
+        {
+            currentGunAmmoMG += totalAmmoMG;
+            totalAmmoMG = 0;
+        }
+
+        //ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
 
         isReloading = false;
     }
@@ -98,7 +117,8 @@ public class Gun : MonoBehaviour
         muzzleFlash.Play();
         gunFire.Play();
 
-        player.currentGunAmmo--;
+        currentGunAmmoMG--;
+        ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
 
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))

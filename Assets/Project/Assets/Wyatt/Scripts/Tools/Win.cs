@@ -30,6 +30,14 @@ public class Win : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player" && gameObject.tag == "WinItem" && enemies.Length <= 0)
+        {
+            WinLevel();
+        }
+    }
+
     public void WinLevel()
     {
         SceneManager.LoadScene("NewTestScene"); // replace when implementing win

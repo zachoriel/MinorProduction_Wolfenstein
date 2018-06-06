@@ -5,17 +5,14 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     [Header("Script Setup")]
-    public Win winCondition;
     public PlayerStats player;
+    public Gun gun;
+    public Shotgun shotgun;
+    public LaserRifle laser;
 
-    private bool isEnabled;
-    private float range;
+    [Header("Audio")]
+    public AudioSource pickupSound;
 
-	// Use this for initialization
-	void Start ()
-    {
-        isEnabled = false;
-	} 
 
     private void OnTriggerEnter(Collider other)
     {
@@ -44,10 +41,6 @@ public class PowerUp : MonoBehaviour
             RestoreAmmo();
             Destroy(gameObject);
         }
-        else if (other.tag == "Player" && gameObject.tag == "WinItem" && winCondition.enemies.Length <= 0)
-        {
-            winCondition.WinLevel();
-        }
     }
 
     void AddArmor()
@@ -70,14 +63,25 @@ public class PowerUp : MonoBehaviour
 
     void AddAmmo()
     {
-        player.currentGunAmmo = player.maxGunAmmo;
-        player.ammoText.text = Mathf.RoundToInt(player.currentGunAmmo).ToString() + " / " + player.totalAmmo;
+        pickupSound.Play();
+        gun.currentGunAmmoMG = gun.maxGunAmmoMG;
+        shotgun.currentGunAmmoSG = shotgun.maxGunAmmoSG;
+        laser.energy = laser.maxEnergy;
+        //gun.ammoText.text = Mathf.RoundToInt(gun.currentGunAmmoMG).ToString() + " / " + gun.totalAmmoMG;
+        //shotgun.ammoText.text = Mathf.RoundToInt(shotgun.currentGunAmmoSG).ToString() + " / " + shotgun.totalAmmoSG;            // NO LONGER NEEDED CAUSE THE TEXT IS CHECKED IN UPDATE
+        //laser.ammoText.text = Mathf.RoundToInt(laser.energy).ToString() + "%";
     }
 
     void RestoreAmmo()
     {
-        player.currentGunAmmo = player.maxGunAmmo;
-        player.totalAmmo = 100;
-        player.ammoText.text = Mathf.RoundToInt(player.currentGunAmmo).ToString() + " / " + player.totalAmmo;
+        pickupSound.Play();
+        gun.currentGunAmmoMG = gun.maxGunAmmoMG;
+        gun.totalAmmoMG = 100;
+        shotgun.currentGunAmmoSG = shotgun.maxGunAmmoSG;
+        shotgun.totalAmmoSG = 30;
+        laser.energy = laser.maxEnergy;
+        //gun.ammoText.text = Mathf.RoundToInt(gun.currentGunAmmoMG).ToString() + " / " + gun.totalAmmoMG;
+        //shotgun.ammoText.text = Mathf.RoundToInt(shotgun.currentGunAmmoSG).ToString() + " / " + shotgun.totalAmmoSG;            // NO LONGER NEEDED CAUSE THE TEXT IS CHECKED IN UPDATE
+        //laser.ammoText.text = Mathf.RoundToInt(laser.energy).ToString() + "%";
     }
 }

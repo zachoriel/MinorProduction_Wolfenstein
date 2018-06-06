@@ -53,16 +53,13 @@ using UnityEngine.AI;
                 {
                     case State.PATROL:
                         Patrol();
-                    //Debug.Log("PATROL");
                         break;
                     case State.CHASE:
                         Chase();
-                    //Debug.Log("Chase");
-                    break;
+                        break;
                 }
                 yield return null;
             }
-        //Debug.Log("AI has left state update");
         }
 
         void Patrol()
@@ -71,7 +68,6 @@ using UnityEngine.AI;
         
             if (Vector3.Distance(transform.position, waypoints[waypointIndex].transform.position) >= 2)
             {
-               //agent.SetDestination(waypoints[waypointIndex].transform.position);
                 agent.destination = waypoints[waypointIndex].transform.position;
                 character.Move(agent.desiredVelocity, false, false);
             }
@@ -96,27 +92,25 @@ using UnityEngine.AI;
         {
             agent.speed = chaseSpeed;
             agent.destination = target.gameObject.transform.position;
-            //agent.SetDestination(target.gameObject.transform.position);
-            //Debug.DrawLine(transform.position, target.transform.position, Color.red);
         
             character.Move(agent.desiredVelocity, false, false);
         }
 
         void Update()
         {
-       
+
             if (sight.CanSeeTarget)
             {
                 state = State.CHASE;
-                 
-                 target = player.gameObject;
-            Chase();
-        }
+
+                target = player.gameObject;
+                Chase();
+            }
+
             else
             {
                 state = State.PATROL;
                 target = null;
             }
-        //Debug.DrawLine(transform.position, agent.destination, Color.cyan);
-    }
+        }
     }
