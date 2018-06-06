@@ -5,7 +5,6 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     [Header("Script Setup")]
-    public Win winCondition;
     public PlayerStats player;
     public Gun gun;
     public Shotgun shotgun;
@@ -14,14 +13,6 @@ public class PowerUp : MonoBehaviour
     [Header("Audio")]
     public AudioSource pickupSound;
 
-    private bool isEnabled;
-    private float range;
-
-	// Use this for initialization
-	void Start ()
-    {
-        isEnabled = false;
-	} 
 
     private void OnTriggerEnter(Collider other)
     {
@@ -49,10 +40,6 @@ public class PowerUp : MonoBehaviour
         {
             RestoreAmmo();
             Destroy(gameObject);
-        }
-        else if (other.tag == "Player" && gameObject.tag == "WinItem" && winCondition.enemies.Length <= 0)
-        {
-            winCondition.WinLevel();
         }
     }
 
