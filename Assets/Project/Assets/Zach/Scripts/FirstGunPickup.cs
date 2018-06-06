@@ -11,6 +11,7 @@ public class FirstGunPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            weapons.hasPickedUpGun = true;
             gunPickup.Play();
             weapons.SelectWeapon();
             Destroy(gameObject);
