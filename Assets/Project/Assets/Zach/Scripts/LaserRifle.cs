@@ -13,6 +13,8 @@ public class LaserRifle : MonoBehaviour
 
     [Header("General")]
     public float range = 15f;
+    public float reloadTime = 1f;
+    private bool isReloading = false;
 
     [Header("Laser")]
     public Transform firePoint;
@@ -20,21 +22,43 @@ public class LaserRifle : MonoBehaviour
     //public ParticleSystem laserImpact;
     //public Light laserImpactLight;
     public int damageOverTime = 10;
+    public float energy;
+    private float maxEnergy = 10;
 
     [Header("Audio")]
     public AudioSource laserBeam;
+    public AudioSource rechargeGun;
 
 	// Use this for initialization
 	void Start ()
     {
+        energy = Mathf.RoundToInt(energy);
         lineRenderer = GetComponent<LineRenderer>();
-        player.currentGunAmmo = player.maxGunAmmo;
+        energy = maxEnergy;
+        ammoText.text = energy.ToString();
         lineRenderer.enabled = false;
 	}
+
+    void OnEnable()
+    {
+        isReloading = false;
+        animator.SetBool("Reloading", false);
+    }
 
     // Update is called once per frame
     void Update ()
     {
+        if (isReloading)
+        {
+            return;
+        }
+
+        if (energy <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
         if (Input.GetButton("Fire1"))
         {
             Laser();
@@ -50,10 +74,38 @@ public class LaserRifle : MonoBehaviour
                 
             }
         }
-	}   
+
+        ammoText.text = energy.ToString();
+    }
+
+    IEnumerator Reload()
+    {
+        laserBeam.Stop();
+        lineRenderer.enabled = false;
+
+        isReloading = true;
+
+        rechargeGun.Play();
+
+        Debug.Log("Reloading...");
+
+        animator.SetBool("Reloading", true);
+
+        yield return new WaitForSeconds(reloadTime - 0.25f);
+
+        animator.SetBool("Reloading", false);
+        yield return new WaitForSeconds(0.25f);
+
+        energy = maxEnergy;
+        //ammoText.text = energy.ToString();
+
+        isReloading = false;
+    }
 
     void Laser()
     {
+        energy -= 1 * Time.deltaTime;
+
         Vector3 lazerStart;
         Vector3 lazerEnd;
         lazerStart = firePoint.position;

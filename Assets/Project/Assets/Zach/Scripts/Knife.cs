@@ -21,7 +21,7 @@ public class Knife : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        player.currentGunAmmo = player.maxGunAmmo;
+        ammoText.text = "NA";
 	}
 
     // Update is called once per frame

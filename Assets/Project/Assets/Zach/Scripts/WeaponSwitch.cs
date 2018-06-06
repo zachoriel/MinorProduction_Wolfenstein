@@ -1,14 +1,20 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponSwitch : MonoBehaviour
 {
+    public Text ammoText;
+    public Gun mg;
+    public Shotgun sg;
+    public LaserRifle lr;
+
     [Header("Current Weapon")]
     public int selectedWeapon = 0;
 
 	// Use this for initialization
 	void Start ()
     {
-        SelectWeapon();
+        //SelectWeapon();
 	}
 	
 	// Update is called once per frame
@@ -59,7 +65,7 @@ public class WeaponSwitch : MonoBehaviour
         }
     }
 
-    void SelectWeapon()
+    public void SelectWeapon()
     {
         int i = 0;
         foreach (Transform weapon in transform)
@@ -73,6 +79,23 @@ public class WeaponSwitch : MonoBehaviour
                 weapon.gameObject.SetActive(false);
             }
             i++;
+
+            if (i == 1)
+            {
+                ammoText.text = mg.currentGunAmmoMG.ToString() + " / " + mg.totalAmmoMG;
+            }
+            else if (i == 2)
+            {
+                ammoText.text = sg.currentGunAmmoSG.ToString() + " / " + sg.totalAmmoSG;
+            }
+            else if (i == 3)
+            {
+                ammoText.text = lr.energy.ToString();
+            }
+            else if (i == 4)
+            {
+                ammoText.text = "NA";
+            }
         }
     }
 }

@@ -21,6 +21,9 @@ public class Shotgun : MonoBehaviour
     public float damage = 30f;
     public float fireRate;
     public float impactForce = 20f;
+    public int maxGunAmmoSG = 10;
+    public int currentGunAmmoSG;
+    public int totalAmmoSG = 30;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
@@ -32,7 +35,8 @@ public class Shotgun : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        player.currentGunAmmo = player.maxGunAmmo;
+        currentGunAmmoSG = maxGunAmmoSG;
+        ammoText.text = currentGunAmmoSG.ToString() + " / " + totalAmmoSG;
     }
 
     void OnEnable()
@@ -49,7 +53,7 @@ public class Shotgun : MonoBehaviour
             return;
         }
 
-        if (player.currentGunAmmo <= 0 && player.totalAmmo > 0)
+        if (currentGunAmmoSG <= 0 && totalAmmoSG > 0)
         {
             StartCoroutine(Reload());
             return;
@@ -61,15 +65,17 @@ public class Shotgun : MonoBehaviour
         //    return;
         //}
 
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && player.currentGunAmmo > 0)
+        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && currentGunAmmoSG > 0)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
-        else if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && player.currentGunAmmo == 0 && player.totalAmmo == 0)
+        else if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && currentGunAmmoSG == 0 && totalAmmoSG == 0)
         {
             emptyClip.Play();
         }
+
+        ammoText.text = currentGunAmmoSG.ToString() + " / " + totalAmmoSG;
     }
 
     IEnumerator Reload()
@@ -87,8 +93,9 @@ public class Shotgun : MonoBehaviour
         animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(0.25f);
 
-        player.currentGunAmmo = player.maxGunAmmo;
-        player.totalAmmo -= player.maxGunAmmo;
+        currentGunAmmoSG = maxGunAmmoSG;
+        totalAmmoSG -= maxGunAmmoSG;
+        //ammoText.text = currentGunAmmoSG.ToString() + " / " + totalAmmoSG;
 
         isReloading = false;
     }
@@ -98,7 +105,8 @@ public class Shotgun : MonoBehaviour
         muzzleFlash.Play();
         gunFire.Play();
 
-        player.currentGunAmmo--;
+        currentGunAmmoSG--;
+        //ammoText.text = currentGunAmmoSG.ToString() + " / " + totalAmmoSG;
 
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))

@@ -8,6 +8,9 @@ public class PowerUp : MonoBehaviour
     public Win winCondition;
     public PlayerStats player;
 
+    [Header("Audio")]
+    public AudioSource pickupSound;
+
     private bool isEnabled;
     private float range;
 
@@ -36,12 +39,12 @@ public class PowerUp : MonoBehaviour
         }
         else if (other.tag == "Player" && gameObject.tag == "Ammo")
         {
-            AddAmmo();
+            //AddAmmo();
             Destroy(gameObject);
         }
         else if (other.tag == "Player" && gameObject.tag == "BigAmmo")
         {
-            RestoreAmmo();
+            //RestoreAmmo();
             Destroy(gameObject);
         }
         else if (other.tag == "Player" && gameObject.tag == "WinItem" && winCondition.enemies.Length <= 0)
@@ -68,16 +71,18 @@ public class PowerUp : MonoBehaviour
         player.livesText.text = Mathf.RoundToInt(player.Lives).ToString();
     }
 
-    void AddAmmo()
-    {
-        player.currentGunAmmo = player.maxGunAmmo;
-        player.ammoText.text = Mathf.RoundToInt(player.currentGunAmmo).ToString() + " / " + player.totalAmmo;
-    }
+    //void AddAmmo()
+    //{
+    //    pickupSound.Play();
+    //    player.currentGunAmmo = player.maxGunAmmo;
+    //    player.ammoText.text = Mathf.RoundToInt(player.currentGunAmmo).ToString() + " / " + player.totalAmmo;
+    //}
 
-    void RestoreAmmo()
-    {
-        player.currentGunAmmo = player.maxGunAmmo;
-        player.totalAmmo = 100;
-        player.ammoText.text = Mathf.RoundToInt(player.currentGunAmmo).ToString() + " / " + player.totalAmmo;
-    }
+    //void RestoreAmmo()
+    //{
+    //    pickupSound.Play();
+    //    player.currentGunAmmo = player.maxGunAmmo;
+    //    player.totalAmmo = 100;
+    //    player.ammoText.text = Mathf.RoundToInt(player.currentGunAmmo).ToString() + " / " + player.totalAmmo;
+    //}
 }

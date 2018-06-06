@@ -6,6 +6,8 @@ public class PlayerStats : MonoBehaviour
 {
     [Header("Setup")]
     public GameObject spawnPoint;
+    public Gun gun; // THIS IS JUST FOR RESETTING TEXT ON DEATH
+    public WeaponSwitch weapons;
 
     [Header("UI Elements")]
     public Text scoreText;
@@ -19,9 +21,9 @@ public class PlayerStats : MonoBehaviour
     private float startArmor = 50f;
     public float Health;
     private float startHealth = 100f;
-    public int maxGunAmmo = 25;
-    public int currentGunAmmo;
-    public int totalAmmo = 100;
+    //public int maxGunAmmo = 25;
+    //public int currentGunAmmo;
+    //public int totalAmmo = 100;
     public int Lives;
     public float Score;
 
@@ -33,8 +35,8 @@ public class PlayerStats : MonoBehaviour
         healthText.text = Health.ToString();
         Armor = startArmor;
         armorText.text = Armor.ToString();
-        currentGunAmmo = maxGunAmmo;
-        ammoText.text = currentGunAmmo.ToString() + " / " + totalAmmo;
+        //currentGunAmmo = maxGunAmmo;
+        ammoText.text = "NA";
     }
 
     public void TakeDamage(float amount)
@@ -63,10 +65,11 @@ public class PlayerStats : MonoBehaviour
 
     void Die()
     {
+        weapons.selectedWeapon = 1;
         Health = startHealth;
         healthText.text = Mathf.RoundToInt(Health).ToString();
         armorText.text = Mathf.RoundToInt(Armor).ToString();
-        ammoText.text = currentGunAmmo.ToString() + " / " + totalAmmo;
+        ammoText.text = gun.currentGunAmmoMG.ToString() + " / " + gun.totalAmmoMG;
         Lives--;
         livesText.text = Lives.ToString();
         gameObject.transform.position = spawnPoint.transform.position;
@@ -81,8 +84,8 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    void Update()
+    void Update()  // REMOVE WHEN YOU'RE DONE WITH AMMO FUCKER
     {
-        ammoText.text = currentGunAmmo.ToString() + " / " + totalAmmo;
+        //ammoText.text = currentGunAmmo.ToString() + " / " + totalAmmo;
     }
 }
