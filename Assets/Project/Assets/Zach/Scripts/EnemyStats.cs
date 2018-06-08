@@ -5,9 +5,11 @@ public class EnemyStats : MonoBehaviour
 {
     [Header("Script Setup")]
     public PlayerStats playerStats;
+    public bool inMenu;
 
     [Header("Component Setup")]
     public Image healthBar;
+    public GameObject spawnPoint;
 
     [Header("Stats")]
     public float health;
@@ -39,6 +41,17 @@ public class EnemyStats : MonoBehaviour
             playerStats.Lives++;
         }
 
-        Destroy(gameObject);
+        if (inMenu == true)
+        {
+            gameObject.transform.position = spawnPoint.transform.position;
+            gameObject.transform.rotation = spawnPoint.transform.rotation;
+
+            health = startHealth;
+            healthBar.fillAmount = health / startHealth;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

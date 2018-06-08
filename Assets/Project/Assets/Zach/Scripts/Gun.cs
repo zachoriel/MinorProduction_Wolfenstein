@@ -4,19 +4,28 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
+    [Header("Menu Stuff")]
+    public CameraScript mainCamera;
+    public ChangeVolume volumeSetting;
+    public AimAndControlsSetting aim;
+    public Text volumeText;
+    public Toggle aimToggle;
+    public Toggle invertedToggle;
+    public bool inMenu;
+
     [Header("Setup")]
     public Camera fpsCam;
     public PlayerStats player;
     public WeaponSwitch weapons;
     public Animator animator;
-    public Text ammoText;
+    public Text ammoText; 
 
     [Header("General")]
     public float range = 15f;
+    private float distanceToEnemy;
     public float reloadTime = 3f;
     private bool isReloading = false;
     private float nextTimeToFire = 0f;
-
 
     [Header("Bullets")]
     public float damage = 30f;
@@ -37,6 +46,17 @@ public class Gun : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+        //ServiceLocator.instance.toggleOptions = gameObject;
+
+        if (inMenu == true)
+        {
+            totalAmmoMG = 1000000;
+        }
+        else
+        {
+            totalAmmoMG = 100;
+        }
+
         currentGunAmmoMG = maxGunAmmoMG;
         ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
     }
@@ -50,6 +70,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
+
         if (isReloading)
         {
             return;
@@ -75,6 +96,15 @@ public class Gun : MonoBehaviour
         else if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && currentGunAmmoMG == 0 && totalAmmoMG == 0)
         {
             emptyClip.Play();
+        }
+
+        if (Input.GetButton("Fire2") && aim.aimAssist == true)
+        {
+            mainCamera.speedH = 1;
+        }
+        else
+        {
+            mainCamera.speedH = 5;
         }
 
         ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
@@ -123,15 +153,59 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
+            Debug.Log(hit.transform.name);
             EnemyStats enemyTarget = hit.transform.GetComponent<EnemyStats>();
             WallBreak wallTarget = hit.transform.GetComponent<WallBreak>();
+            SceneLoader buttonsTarget = hit.transform.GetComponent<SceneLoader>();
+
             if (enemyTarget != null)
-            {
+            {            
                 enemyTarget.TakeDamage(damage);
             }
             if (wallTarget != null)
             {
                 wallTarget.TakeDamage(damage);
+            }
+            if (buttonsTarget != null)
+            {
+                if (buttonsTarget.tag == "PlayButton")
+                {
+                    buttonsTarget.Play();
+                }
+                else if (buttonsTarget.tag == "SettingsButton")
+                {
+                    buttonsTarget.Settings();
+                }
+                else if (buttonsTarget.tag == "AimToggle")
+                {
+                    if (aimToggle.isOn == true)
+                    {
+                        aimToggle.isOn = false;
+                    }
+                    else
+                    {
+                        aimToggle.isOn = true;
+                    }
+                }
+                else if (buttonsTarget.tag == "UpVolume")
+                {
+                    volumeSetting.UpVol();
+                }
+                else if (buttonsTarget.tag == "DownVolume")
+                {
+                    volumeSetting.DownVol();
+                }
+                else if (buttonsTarget.tag == "InvertedToggle")
+                {
+                    if (invertedToggle.isOn == false)
+                    {
+                        invertedToggle.isOn = true;
+                    }
+                    else
+                    {
+                        invertedToggle.isOn = false;
+                    }
+                }
             }
 
             // Knockback (not currently used in any meaningful way)

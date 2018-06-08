@@ -5,7 +5,10 @@ using UnityEngine.UI;
 public class Shotgun : MonoBehaviour
 {
     [Header("Setup")]
-    public Camera fpsCam;
+    public CameraScript mainCamera; // For controls
+    public ChangeVolume volumeSetting;
+    public AimAndControlsSetting aim;
+    public Camera fpsCam;  // For shooting
     public PlayerStats player;
     public WeaponSwitch weapons;
     public Animator animator;
@@ -36,6 +39,8 @@ public class Shotgun : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        //ServiceLocator.instance.toggleOptions = gameObject;
+
         currentGunAmmoSG = maxGunAmmoSG;
         ammoText.text = currentGunAmmoSG.ToString() + " / " + totalAmmoSG;
     }
@@ -74,6 +79,15 @@ public class Shotgun : MonoBehaviour
         else if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && currentGunAmmoSG == 0 && totalAmmoSG == 0)
         {
             emptyClip.Play();
+        }
+
+        if (Input.GetButton("Fire2") && aim.aimAssist == true)
+        {
+            mainCamera.speedH = 1;
+        }
+        else
+        {
+            mainCamera.speedH = 5;
         }
 
         ammoText.text = currentGunAmmoSG.ToString() + " / " + totalAmmoSG;

@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject spawnPoint;
     public Gun gun; // THIS IS JUST FOR RESETTING TEXT ON DEATH
     public WeaponSwitch weapons;
+    public bool inMenu;
 
     [Header("UI Elements")]
     public Text scoreText;
@@ -21,9 +22,6 @@ public class PlayerStats : MonoBehaviour
     private float startArmor = 50f;
     public float Health;
     private float startHealth = 100f;
-    //public int maxGunAmmo = 25;
-    //public int currentGunAmmo;
-    //public int totalAmmo = 100;
     public int Lives;
     public float Score;
 
@@ -31,11 +29,17 @@ public class PlayerStats : MonoBehaviour
     {
         scoreText.text = Score.ToString();
         livesText.text = Lives.ToString();
-        Health = startHealth;
+        if (inMenu == true)
+        {
+            Health = 1000000;
+        }
+        else
+        {
+            Health = startHealth;
+        }
         healthText.text = Health.ToString();
         Armor = startArmor;
         armorText.text = Armor.ToString();
-        //currentGunAmmo = maxGunAmmo;
         ammoText.text = "NA";
     }
 
@@ -82,10 +86,5 @@ public class PlayerStats : MonoBehaviour
         {
             SceneManager.LoadScene("NewTestScene");  // Replace when adding game over screen
         }
-    }
-
-    void Update()  // REMOVE WHEN YOU'RE DONE WITH AMMO FUCKER
-    {
-        //ammoText.text = currentGunAmmo.ToString() + " / " + totalAmmo;
     }
 }

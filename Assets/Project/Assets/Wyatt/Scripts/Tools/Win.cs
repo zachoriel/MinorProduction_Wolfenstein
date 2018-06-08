@@ -40,6 +40,6 @@ public class Win : MonoBehaviour
 
     public void WinLevel()
     {
-        SceneManager.LoadScene("NewTestScene"); // replace when implementing win
+        SceneManager.LoadScene("ShipLevel"); // replace when implementing win
     }
 }
