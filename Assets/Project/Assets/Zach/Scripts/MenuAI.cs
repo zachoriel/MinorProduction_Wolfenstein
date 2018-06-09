@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-    public class MenuAI : MonoBehaviour 
+    public class MenuAI : MonoBehaviour // Same as Basic AI?
     {
         public LineOfSight sight;
         public GameObject player;

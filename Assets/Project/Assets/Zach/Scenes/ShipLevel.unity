@@ -530,7 +530,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &194629137
 GameObject:
@@ -1050,7 +1050,7 @@ Transform:
   - {fileID: 1448718738}
   - {fileID: 315351952}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &292173665 stripped
 MonoBehaviour:
@@ -1312,6 +1312,69 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 362247971}
+--- !u!1 &369894701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 369894705}
+  - component: {fileID: 369894704}
+  - component: {fileID: 369894703}
+  - component: {fileID: 369894702}
+  m_Layer: 0
+  m_Name: CrossSceneManager (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &369894702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 369894701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68f349aafb483745bbf5e5b23ec423c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimAssist: 1
+  invertedMouse: 0
+--- !u!114 &369894703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 369894701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5859c3431afd3974b9111905abb893cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeText: {fileID: 0}
+--- !u!81 &369894704
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 369894701}
+  m_Enabled: 1
+--- !u!4 &369894705
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 369894701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 272.8447, y: 37.78818, z: -697.7727}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &403712725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,7 +1501,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &408321689
 AudioSource:
@@ -3837,7 +3900,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &930058220
 GameObject:
@@ -3872,7 +3935,7 @@ Transform:
   - {fileID: 1196122731}
   - {fileID: 835168542}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &936875858
 GameObject:
@@ -6748,7 +6811,7 @@ Transform:
   - {fileID: 262158793}
   - {fileID: 424442678}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1497056809
 Transform:
@@ -18180,7 +18243,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4057079340937816, guid: beea5a3068c8d4d4aaf97f9a3549c1da, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: beea5a3068c8d4d4aaf97f9a3549c1da, type: 2}
@@ -18337,7 +18400,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -232.345, y: -30, z: -0.000015258789}
 --- !u!114 &1839970689 stripped
 MonoBehaviour:
@@ -19003,7 +19066,7 @@ Transform:
   - {fileID: 1721717455}
   - {fileID: 235340882}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1980767118
 AudioSource:
@@ -19133,7 +19196,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4124193333059096, guid: 196fe22fb2011f74992da1b438d7c824, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114471410935669660, guid: 196fe22fb2011f74992da1b438d7c824,
         type: 2}
@@ -19198,7 +19261,7 @@ Prefab:
         type: 2}
       propertyPath: mainCamera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2018516612}
     - target: {fileID: 1936515356877560, guid: 196fe22fb2011f74992da1b438d7c824, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -19207,17 +19270,17 @@ Prefab:
         type: 2}
       propertyPath: invertedControls
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 369894702}
     - target: {fileID: 114321249232766248, guid: 196fe22fb2011f74992da1b438d7c824,
         type: 2}
       propertyPath: volumeSetting
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 369894703}
     - target: {fileID: 114321249232766248, guid: 196fe22fb2011f74992da1b438d7c824,
         type: 2}
       propertyPath: aim
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 369894702}
     - target: {fileID: 114337494252137800, guid: 196fe22fb2011f74992da1b438d7c824,
         type: 2}
       propertyPath: volumeSetting
@@ -19247,6 +19310,21 @@ Prefab:
         type: 2}
       propertyPath: aim
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 82239759947149498, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82654375196107340, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82693876360441422, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 81190597583061034, guid: 196fe22fb2011f74992da1b438d7c824, type: 2}

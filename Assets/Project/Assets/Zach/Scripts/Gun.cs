@@ -153,7 +153,6 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
             EnemyStats enemyTarget = hit.transform.GetComponent<EnemyStats>();
             WallBreak wallTarget = hit.transform.GetComponent<WallBreak>();
             SceneLoader buttonsTarget = hit.transform.GetComponent<SceneLoader>();
@@ -166,6 +165,7 @@ public class Gun : MonoBehaviour
             {
                 wallTarget.TakeDamage(damage);
             }
+
             if (buttonsTarget != null)
             {
                 if (buttonsTarget.tag == "PlayButton")
