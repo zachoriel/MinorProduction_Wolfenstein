@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 3122425c115d547408992bf6e4824413
 timeCreated: 1528303161
+=======
+guid: bd6727cde31d9cb41be3db2ca63ae2a3
+timeCreated: 1528731639
+>>>>>>> zach
 licenseType: Free
 NativeFormatImporter:
   mainObjectFileID: 2100000

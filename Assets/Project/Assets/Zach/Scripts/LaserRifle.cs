@@ -5,7 +5,10 @@ using UnityEngine.UI;
 public class LaserRifle : MonoBehaviour
 {
     [Header("Setup")]
-    public Camera fpsCam;
+    public CameraScript mainCamera; // For controls
+    public ChangeVolume volumeSetting;
+    public AimAndControlsSetting aim;
+    public Camera fpsCam; // For shooting
     public PlayerStats player;
     public WeaponSwitch weapons;
     public Animator animator;
@@ -33,6 +36,8 @@ public class LaserRifle : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+        //ServiceLocator.instance.toggleOptions = gameObject;
+
         lineRenderer = GetComponent<LineRenderer>();
         energy = maxEnergy;
         ammoText.text = energy.ToString() + "%";
@@ -79,6 +84,15 @@ public class LaserRifle : MonoBehaviour
                 //laserImpactLight.enabled = false;
                 
             }
+        }
+
+        if (Input.GetButton("Fire2") && aim.aimAssist == true)
+        {
+            mainCamera.speedH = 1;
+        }
+        else
+        {
+            mainCamera.speedH = 5;
         }
 
         wholeEnergy = Mathf.RoundToInt(energy);

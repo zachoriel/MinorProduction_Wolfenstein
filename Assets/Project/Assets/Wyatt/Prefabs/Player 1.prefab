@@ -490,7 +490,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1936515356877560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -172.3, y: 3.71, z: -501.5}
+  m_LocalPosition: {x: -77.6, y: 3.71, z: -242.2}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4410967281096026}
@@ -2315,6 +2315,7 @@ MonoBehaviour:
   mg: {fileID: 114321249232766248}
   sg: {fileID: 114337494252137800}
   lr: {fileID: 114970217926975960}
+  hasPickedUpGun: 0
   selectedWeapon: 0
 --- !u!114 &114321249232766248
 MonoBehaviour:
@@ -2328,10 +2329,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpsCam: {fileID: 20567445458599584}
+  camera: {fileID: 114016869615751476}
   player: {fileID: 114351430234218542}
   weapons: {fileID: 114204371203180312}
   animator: {fileID: 95891628418041210}
   ammoText: {fileID: 0}
+  inMenu: 0
   range: 500
   reloadTime: 1
   damage: 30
@@ -2390,6 +2393,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   gun: {fileID: 114321249232766248}
   weapons: {fileID: 114204371203180312}
+  inMenu: 0
   scoreText: {fileID: 0}
   livesText: {fileID: 0}
   healthText: {fileID: 0}

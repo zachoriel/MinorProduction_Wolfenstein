@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Project/Assets/Zach/Scenes/NewTestScene.unity
+    path: Assets/Project/Assets/Zach/Scenes/MainMenu.unity
+    guid: cd06693ac0e79294ea66eab5f75df506
+  - enabled: 1
+    path: Assets/Project/Assets/Zach/Scenes/ShipLevel.unity
     guid: a9450aa5083411c489238635582e5175

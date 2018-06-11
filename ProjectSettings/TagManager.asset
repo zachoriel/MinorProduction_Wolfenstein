@@ -13,6 +13,13 @@ TagManager:
   - BigAmmo
   - WinItem
   - UI
+  - PlayButton
+  - SettingsButton
+  - QuitButton
+  - UpVolume
+  - DownVolume
+  - AimToggle
+  - InvertedToggle
   layers:
   - Default
   - TransparentFX
