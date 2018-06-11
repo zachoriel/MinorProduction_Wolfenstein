@@ -45,22 +45,12 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        if(Armor > 0)
-        {
-             Armor -= amount;
-            armorText.text = Mathf.RoundToInt(Armor).ToString();
-        }
-        else if(Armor <= 0)
-        {
-            Armor = 0;
-            Health -= amount;
-            healthText.text = Mathf.RoundToInt(Health).ToString();
-            armorText.text = Mathf.RoundToInt(Armor).ToString();
-        }
-        if (Health < 0.5f && Health > 0f)
-        {
-            Health = 0f;
-        }
+        Armor -= amount / 2f;
+        armorText.text = Mathf.RoundToInt(Armor).ToString();
+
+        float damageAfterArmor = Armor - amount ;
+        Health -= damageAfterArmor;
+        healthText.text = Mathf.RoundToInt(Health).ToString();
         if (Health <= 0f)
         {
             Die();

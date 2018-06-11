@@ -11,7 +11,7 @@ public class LineOfSight : MonoBehaviour
     public float HoodRadius;
     public float range;
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool CanSeeTarget = false;
     //public Transform gameObject = null;
 
@@ -40,16 +40,16 @@ public class LineOfSight : MonoBehaviour
                     {
                         CanSeeTarget = true;
                     }
-                    else if (player == null)
-                    {
-                        //CanSeeTarget = false;
-                    }
+                    //else if (player == null)
+                    //{
+                    //    //CanSeeTarget = false;
+                    //}
                 }
             }
-            else if(!guyInHood.transform.GetComponent<PlayerStats>())
-            {
-               // CanSeeTarget = false;
-            }
+            //else if(!guyInHood.transform.GetComponent<PlayerStats>())
+            //{
+            //   // CanSeeTarget = false;
+            //}
         }
     }
 
