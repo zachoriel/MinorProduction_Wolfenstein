@@ -12,7 +12,7 @@ public class LineOfSight : MonoBehaviour
     public float range;
 
     //[HideInInspector]
-    public bool CanSeeTarget = false;
+    public bool CanSeeTarget;
     //public Transform gameObject = null;
 
 

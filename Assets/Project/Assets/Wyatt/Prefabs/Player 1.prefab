@@ -2306,7 +2306,7 @@ MonoBehaviour:
   ammoText: {fileID: 0}
   range: 500
   reloadTime: 1
-  damage: 30
+  damage: 20
   fireRate: 15
   impactForce: 20
   maxGunAmmoMG: 25
@@ -2339,12 +2339,12 @@ MonoBehaviour:
   ammoText: {fileID: 0}
   range: 500
   reloadTime: 3
-  damage: 60
+  damage: 50
   fireRate: 1
   impactForce: 40
-  maxGunAmmoSG: 10
+  maxGunAmmoSG: 9
   currentGunAmmoSG: 0
-  totalAmmoSG: 30
+  totalAmmoSG: 27
   muzzleFlash: {fileID: 198419285507664206}
   impactEffect: {fileID: 1685545750784954, guid: 4d5b98d71e899bc47bc767cf560412ed,
     type: 2}

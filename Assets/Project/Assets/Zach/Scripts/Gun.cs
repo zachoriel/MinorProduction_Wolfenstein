@@ -28,7 +28,7 @@ public class Gun : MonoBehaviour
     private float nextTimeToFire = 0f;
 
     [Header("Bullets")]
-    public float damage = 30f;
+    public float damage = 20f;
     public float fireRate = 15f;
     public float impactForce = 20f;
     public int maxGunAmmoMG = 25;
