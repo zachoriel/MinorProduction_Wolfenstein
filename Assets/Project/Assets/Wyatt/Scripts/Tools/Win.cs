@@ -8,11 +8,17 @@ public class Win : MonoBehaviour
 {
     [Header("Number Of Enemies Array")]
     public GameObject[] enemies;
+    public int enemiesAlive;
+
+    [Header("UI")]
+    public Text enemiesAliveText;
 
     //typical win condition
     void Start()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        enemiesAlive = enemies.Length;
+        enemiesAliveText.text = "Enemies Alive: " + enemies.Length.ToString();
     }
      
     void Update()
@@ -27,7 +33,7 @@ public class Win : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && gameObject.tag == "WinItem" && enemies.Length <= 0)
+        if (other.tag == "Player" && gameObject.tag == "WinItem" && enemiesAlive == 0)
         {
             WinLevel();
         }

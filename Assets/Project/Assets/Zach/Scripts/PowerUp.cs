@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +12,10 @@ public class PowerUp : MonoBehaviour
     public LaserRifle laser;
 
     [Header("Audio")]
-    public AudioSource pickupSound;
+    public AudioSource ammoPickup;
+    public AudioSource armorPickup;
+    public AudioSource healthPickup;
+    public AudioSource lifePickup;
 
 
     private void OnTriggerEnter(Collider other)
@@ -45,25 +49,28 @@ public class PowerUp : MonoBehaviour
 
     void AddArmor()
     {
+        armorPickup.Play();
         player.Armor += 25;
         player.armorText.text = Mathf.RoundToInt(player.Armor).ToString();
     }
 
     void AddHealth()
     {
+        healthPickup.Play();
         player.Health += 25;
         player.healthText.text = Mathf.RoundToInt(player.Health).ToString();
     }
 
     void AddLife()
     {
+        lifePickup.Play();
         player.Lives += 1;
         player.livesText.text = Mathf.RoundToInt(player.Lives).ToString();
     }
 
     void AddAmmo()
     {
-        pickupSound.Play();
+        ammoPickup.Play();
         gun.currentGunAmmoMG = gun.maxGunAmmoMG;
         shotgun.currentGunAmmoSG = shotgun.maxGunAmmoSG;
         laser.energy = laser.maxEnergy;
@@ -74,7 +81,7 @@ public class PowerUp : MonoBehaviour
 
     void RestoreAmmo()
     {
-        pickupSound.Play();
+        ammoPickup.Play();
         gun.currentGunAmmoMG = gun.maxGunAmmoMG;
         gun.totalAmmoMG = 100;
         shotgun.currentGunAmmoSG = shotgun.maxGunAmmoSG;

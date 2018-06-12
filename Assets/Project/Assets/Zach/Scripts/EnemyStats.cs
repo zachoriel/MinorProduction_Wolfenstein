@@ -22,9 +22,6 @@ public class EnemyStats : MonoBehaviour
     public Text enemiesAliveText;
     Rigidbody rb;
 
-    [HideInInspector]
-    public int enemiesAlive;
-
     [Header("Stats")]
     public float health;
     public float startHealth = 100f;
@@ -34,8 +31,6 @@ public class EnemyStats : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        enemiesAlive = winCondition.enemies.Length;
-        enemiesAliveText.text = "Enemies Alive: " + enemiesAlive;
         health = startHealth;
     }
 
@@ -77,8 +72,8 @@ public class EnemyStats : MonoBehaviour
             agent.enabled = false;
             sight.enabled = false;
             sight.CanSeeTarget = false;         // Disabling just the script doesn't switch off the bool, and just disabling the bool for some reason doesn't work. 
-            enemiesAlive--;
-            enemiesAliveText.text = "Enemies Alive: " + enemiesAlive;
+            winCondition.enemiesAlive--;
+            enemiesAliveText.text = "Enemies Alive: " + winCondition.enemiesAlive.ToString();
 
             StartCoroutine("DeathTimer");
         }
