@@ -21,12 +21,12 @@ public class Shotgun : MonoBehaviour
     private float nextTimeToFire = 0f;
 
     [Header("Bullets")]
-    public float damage = 30f;
+    public float damage = 50f;
     public float fireRate;
     public float impactForce = 20f;
-    public int maxGunAmmoSG = 10;
+    public int maxGunAmmoSG = 9;
     public int currentGunAmmoSG;
-    public int totalAmmoSG = 30;
+    public int totalAmmoSG = 27;
     private int amountNeeded;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
@@ -130,7 +130,7 @@ public class Shotgun : MonoBehaviour
         muzzleFlash.Play();
         gunFire.Play();
 
-        currentGunAmmoSG--;
+        currentGunAmmoSG -= 3;
         ammoText.text = currentGunAmmoSG.ToString() + " / " + totalAmmoSG;
 
         RaycastHit hit;

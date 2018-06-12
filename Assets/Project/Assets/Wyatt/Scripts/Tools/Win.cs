@@ -9,9 +9,6 @@ public class Win : MonoBehaviour
     [Header("Number Of Enemies Array")]
     public GameObject[] enemies;
 
-    [Header("UI Element")]
-    public Text enemiesAlive;
-
     //typical win condition
     void Start()
     {
@@ -21,8 +18,6 @@ public class Win : MonoBehaviour
     void Update()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        enemiesAlive.text = "Enemies Alive: " + enemies.Length;
 
         if (enemies.Length == 0)
         {

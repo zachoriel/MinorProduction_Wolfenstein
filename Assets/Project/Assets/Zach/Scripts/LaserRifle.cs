@@ -24,7 +24,7 @@ public class LaserRifle : MonoBehaviour
     public LineRenderer lineRenderer;
     //public ParticleSystem laserImpact;
     //public Light laserImpactLight;
-    public int damageOverTime = 10;
+    public int damageOverTime = 20;
     public float energy;
     public float maxEnergy = 100f;
     private int wholeEnergy;
