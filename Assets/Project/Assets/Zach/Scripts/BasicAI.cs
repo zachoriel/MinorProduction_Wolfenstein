@@ -17,7 +17,7 @@ using UnityEngine.AI;
         }
 
         public State state;
-        private bool isAlive;
+        public bool isAlive;
 
         // Patrolling variables
         public GameObject[] waypoints;
@@ -57,7 +57,7 @@ using UnityEngine.AI;
                     case State.CHASE:
                         Chase();
                         break;
-                }
+            }
                 yield return null;
             }
         }
