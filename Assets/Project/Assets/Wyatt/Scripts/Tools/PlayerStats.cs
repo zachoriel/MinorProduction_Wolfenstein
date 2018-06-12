@@ -51,6 +51,10 @@ public class PlayerStats : MonoBehaviour
             Armor -= amount / 2;
             Health -= amount / 2;
         }
+        if(Armor < 0)
+        {
+            Armor = 0;
+        }
         if(Armor <=0)
         {
             Health -= amount;
