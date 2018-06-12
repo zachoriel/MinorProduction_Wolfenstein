@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class EnemyStats : MonoBehaviour
 {
     [Header("Script Setup")]
     public PlayerStats playerStats;
+    public BasicAI aiMovement;
+    public LineOfSight sight;
     public bool inMenu;
 
     [Header("Component Setup")]
     public Image healthBar;
     public GameObject spawnPoint;
+    public Animator animator;
+    public NavMeshAgent agent;
 
     [Header("Stats")]
     public float health;
@@ -27,12 +32,14 @@ public class EnemyStats : MonoBehaviour
 
         if (health <= 0f)
         {
+            animator.SetBool("isKilled", true);
             Die(); 
         }
     }
 
     void Die()
     {
+
         playerStats.Score += 10;
         playerStats.scoreText.text = playerStats.Score.ToString();
 
@@ -51,7 +58,9 @@ public class EnemyStats : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            aiMovement.isAlive = false;
+            agent.enabled = false;
+            sight.enabled = false;
         }
     }
 }
