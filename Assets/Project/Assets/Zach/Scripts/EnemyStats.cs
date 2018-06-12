@@ -7,6 +7,7 @@ public class EnemyStats : MonoBehaviour
     [Header("Script Setup")]
     public PlayerStats playerStats;
     public BasicAI aiMovement;
+    public LineOfSight sight;
     public bool inMenu;
 
     [Header("Component Setup")]
@@ -59,6 +60,7 @@ public class EnemyStats : MonoBehaviour
         {
             aiMovement.isAlive = false;
             agent.enabled = false;
+            sight.enabled = false;
         }
     }
 }

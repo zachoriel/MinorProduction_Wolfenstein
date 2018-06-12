@@ -246,7 +246,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1655982567160952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -294.3925, y: -1.2828658, z: 30.96202}
+  m_LocalPosition: {x: -94.6, y: -1.2828658, z: 130}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4503222270150086}
@@ -292,7 +292,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1152030067817454}
-  m_LocalRotation: {x: 0.16911833, y: -0.16911833, z: -0.68658507, w: 0.68658507}
+  m_LocalRotation: {x: 0.16911831, y: -0.16911831, z: -0.686585, w: 0.686585}
   m_LocalPosition: {x: -0.560168, y: 0.06892085, z: 0.0973061}
   m_LocalScale: {x: 0.0006613294, y: 0.003968053, z: 0.0006613294}
   m_Children:
@@ -430,12 +430,11 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c7aa31d2a7d5c034babc6965a627f152, type: 3}
+  - {fileID: 2100000, guid: c647164b0f65155458ae20bdfc36e2e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -446,7 +445,6 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -502,7 +500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23ed8b9c11265a43a68ec4cf0ecb0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winCondition: {fileID: 0}
   player: {fileID: 0}
   gun: {fileID: 0}
   shotgun: {fileID: 0}

@@ -914,6 +914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 0}
   aiMovement: {fileID: 114559642499549858}
+  sight: {fileID: 114624351095612422}
   inMenu: 0
   healthBar: {fileID: 114982210430800584}
   spawnPoint: {fileID: 0}
