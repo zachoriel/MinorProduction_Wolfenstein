@@ -58,25 +58,14 @@ public class EnemyStats : MonoBehaviour
             playerStats.Lives++;
         }
 
-        if (inMenu == true)
-        {
-            gameObject.transform.position = spawnPoint.transform.position;
-            gameObject.transform.rotation = spawnPoint.transform.rotation;
+        aiMovement.isAlive = false;
+        agent.enabled = false;
+        sight.enabled = false;
+        sight.CanSeeTarget = false;         // Disabling just the script doesn't switch off the bool, and just disabling the bool for some reason doesn't work. 
+        winCondition.enemiesAlive--;
+        enemiesAliveText.text = "Enemies Alive: " + winCondition.enemiesAlive.ToString();
 
-            health = startHealth;
-            healthBar.fillAmount = health / startHealth;
-        }
-        else
-        {
-            aiMovement.isAlive = false;
-            agent.enabled = false;
-            sight.enabled = false;
-            sight.CanSeeTarget = false;         // Disabling just the script doesn't switch off the bool, and just disabling the bool for some reason doesn't work. 
-            winCondition.enemiesAlive--;
-            enemiesAliveText.text = "Enemies Alive: " + winCondition.enemiesAlive.ToString();
-
-            StartCoroutine("DeathTimer");
-        }
+        StartCoroutine("DeathTimer");
     }
 
     IEnumerator DeathTimer()
