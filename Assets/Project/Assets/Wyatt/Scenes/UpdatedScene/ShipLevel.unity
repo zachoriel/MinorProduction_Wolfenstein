@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44574732, g: 0.4954601, b: 0.5742734, a: 1}
+  m_IndirectSpecularColor: {r: 0.44574797, g: 0.49546087, b: 0.5742742, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -373,63 +373,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1001 &160219426
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4085706882991218, guid: 90259cbc77dae0047ae4971df3a7657b, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4085706882991218, guid: 90259cbc77dae0047ae4971df3a7657b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 3.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4085706882991218, guid: 90259cbc77dae0047ae4971df3a7657b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -239.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4085706882991218, guid: 90259cbc77dae0047ae4971df3a7657b, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4085706882991218, guid: 90259cbc77dae0047ae4971df3a7657b, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.9994069
-      objectReference: {fileID: 0}
-    - target: {fileID: 4085706882991218, guid: 90259cbc77dae0047ae4971df3a7657b, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4085706882991218, guid: 90259cbc77dae0047ae4971df3a7657b, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.03443786
-      objectReference: {fileID: 0}
-    - target: {fileID: 4085706882991218, guid: 90259cbc77dae0047ae4971df3a7657b, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114597465130962636, guid: 90259cbc77dae0047ae4971df3a7657b,
-        type: 2}
-      propertyPath: TimeWait
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114495141819415476, guid: 90259cbc77dae0047ae4971df3a7657b,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54874706263956516, guid: 90259cbc77dae0047ae4971df3a7657b,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 90259cbc77dae0047ae4971df3a7657b, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &173711341
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +454,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &194629137
 GameObject:
@@ -899,6 +842,9 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   character: {fileID: 0}
+  DronePrefab: {fileID: 1967355056271748, guid: 90259cbc77dae0047ae4971df3a7657b,
+    type: 2}
+  instantiated: {fileID: 0}
   state: 0
   isAlive: 0
   waypoints:
@@ -907,6 +853,7 @@ MonoBehaviour:
   patrolSpeed: 10
   chaseSpeed: 20
   target: {fileID: 0}
+  me: {fileID: 0}
 --- !u!195 &262158796
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1045,7 +992,7 @@ Transform:
   - {fileID: 1448718738}
   - {fileID: 315351952}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &292173665 stripped
 MonoBehaviour:
@@ -1501,7 +1448,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &408321689
 AudioSource:
@@ -1721,6 +1668,9 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   character: {fileID: 0}
+  DronePrefab: {fileID: 1967355056271748, guid: 90259cbc77dae0047ae4971df3a7657b,
+    type: 2}
+  instantiated: {fileID: 0}
   state: 0
   isAlive: 0
   waypoints:
@@ -1730,6 +1680,7 @@ MonoBehaviour:
   patrolSpeed: 10
   chaseSpeed: 20
   target: {fileID: 0}
+  me: {fileID: 0}
 --- !u!114 &424442683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,6 +1977,9 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   character: {fileID: 0}
+  DronePrefab: {fileID: 1967355056271748, guid: 90259cbc77dae0047ae4971df3a7657b,
+    type: 2}
+  instantiated: {fileID: 0}
   state: 0
   isAlive: 0
   waypoints:
@@ -2035,6 +1989,7 @@ MonoBehaviour:
   patrolSpeed: 10
   chaseSpeed: 20
   target: {fileID: 0}
+  me: {fileID: 0}
 --- !u!114 &478495655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2315,6 +2270,9 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   character: {fileID: 0}
+  DronePrefab: {fileID: 1967355056271748, guid: 90259cbc77dae0047ae4971df3a7657b,
+    type: 2}
+  instantiated: {fileID: 0}
   state: 0
   isAlive: 0
   waypoints:
@@ -2326,6 +2284,7 @@ MonoBehaviour:
   patrolSpeed: 10
   chaseSpeed: 20
   target: {fileID: 0}
+  me: {fileID: 0}
 --- !u!114 &543338227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3067,6 +3026,9 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   character: {fileID: 0}
+  DronePrefab: {fileID: 1967355056271748, guid: 90259cbc77dae0047ae4971df3a7657b,
+    type: 2}
+  instantiated: {fileID: 0}
   state: 0
   isAlive: 0
   waypoints:
@@ -3078,6 +3040,7 @@ MonoBehaviour:
   patrolSpeed: 10
   chaseSpeed: 20
   target: {fileID: 0}
+  me: {fileID: 0}
 --- !u!114 &652001061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3922,7 +3885,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &930058220
 GameObject:
@@ -3957,7 +3920,7 @@ Transform:
   - {fileID: 1196122731}
   - {fileID: 835168542}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &936875858
 GameObject:
@@ -4396,6 +4359,9 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   character: {fileID: 0}
+  DronePrefab: {fileID: 1967355056271748, guid: 90259cbc77dae0047ae4971df3a7657b,
+    type: 2}
+  instantiated: {fileID: 0}
   state: 0
   isAlive: 0
   waypoints:
@@ -4405,6 +4371,7 @@ MonoBehaviour:
   patrolSpeed: 10
   chaseSpeed: 20
   target: {fileID: 0}
+  me: {fileID: 0}
 --- !u!114 &1004804650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5281,23 +5248,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1200019589 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1967355056271748, guid: 90259cbc77dae0047ae4971df3a7657b,
-    type: 2}
-  m_PrefabInternal: {fileID: 160219426}
---- !u!65 &1200019599
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1200019589}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.942472, y: 2.1006582, z: 1.4039277}
-  m_Center: {x: -0.057435274, y: 0.956571, z: -0.7334608}
 --- !u!1 &1207236178
 GameObject:
   m_ObjectHideFlags: 0
@@ -5695,6 +5645,9 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   character: {fileID: 0}
+  DronePrefab: {fileID: 1967355056271748, guid: 90259cbc77dae0047ae4971df3a7657b,
+    type: 2}
+  instantiated: {fileID: 0}
   state: 0
   isAlive: 0
   waypoints:
@@ -5706,6 +5659,7 @@ MonoBehaviour:
   patrolSpeed: 10
   chaseSpeed: 20
   target: {fileID: 0}
+  me: {fileID: 0}
 --- !u!114 &1237777539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6881,7 +6835,7 @@ Transform:
   - {fileID: 262158793}
   - {fileID: 424442678}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1497056809
 Transform:
@@ -18300,7 +18254,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4057079340937816, guid: beea5a3068c8d4d4aaf97f9a3549c1da, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: beea5a3068c8d4d4aaf97f9a3549c1da, type: 2}
@@ -18471,7 +18425,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -232.345, y: -30, z: -0.000015258789}
 --- !u!114 &1839970689 stripped
 MonoBehaviour:
@@ -19134,7 +19088,7 @@ Transform:
   - {fileID: 1212445118}
   - {fileID: 1281494246}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1980767118
 AudioSource:
@@ -19264,7 +19218,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4124193333059096, guid: 196fe22fb2011f74992da1b438d7c824, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114471410935669660, guid: 196fe22fb2011f74992da1b438d7c824,
         type: 2}

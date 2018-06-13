@@ -13,11 +13,7 @@ public class DroneAI : MonoBehaviour
     Rigidbody rb;
 
 
-    public float rad;
-    float timer;
-    float angle;
-    float speed;
-    float width;
+    public float speed;
 
     void Start()
     {
@@ -27,16 +23,14 @@ public class DroneAI : MonoBehaviour
     }
     void Update()
     {
+
         if (sight.CanSeeTarget)
         {
-            /*target = player.gameObject;
-            timer += Time.deltaTime;
-            float x = Mathf.Cos(timer - (new Vector3( player.transform.position)));
-            float y = Mathf.Sin(timer);
-            float z = 0;
+            target = player;
 
-            transform.position = new Vector3(x, y, z);*/
-            //transform.LookAt(target.transform.position);
+            transform.LookAt(target.transform.position);
+
+            transform.RotateAround(player.transform.position, Vector3.up, speed * Time.deltaTime);
         }
     }
 }
