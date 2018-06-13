@@ -37,6 +37,7 @@ public class Gun : MonoBehaviour
     private int amountNeeded;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
+    public GameObject breakEffect;
 
     [Header("Audio")]
     public AudioSource reloadGun;
@@ -164,6 +165,11 @@ public class Gun : MonoBehaviour
             if (wallTarget != null)
             {
                 wallTarget.TakeDamage(damage);
+                if (wallTarget.health <= 0)
+                {
+                    GameObject explosion = Instantiate(breakEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(explosion, 6f);
+                }
             }
 
             if (buttonsTarget != null)

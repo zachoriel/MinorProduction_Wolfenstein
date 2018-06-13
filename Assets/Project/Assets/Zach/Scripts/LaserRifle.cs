@@ -28,6 +28,7 @@ public class LaserRifle : MonoBehaviour
     public float energy;
     public float maxEnergy = 100f;
     private int wholeEnergy;
+    public GameObject breakEffect;
 
     [Header("Audio")]
     public AudioSource laserBeam;
@@ -148,6 +149,11 @@ public class LaserRifle : MonoBehaviour
             if (wallTarget != null)
             {
                 wallTarget.TakeDamage(damageOverTime * Time.deltaTime);
+                if (wallTarget.health <= 0)
+                {
+                    GameObject explosion = Instantiate(breakEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(explosion, 6f);
+                }
             }
 
             if (!lineRenderer.enabled)

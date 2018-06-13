@@ -2315,6 +2315,8 @@ MonoBehaviour:
   muzzleFlash: {fileID: 198165368167347960}
   impactEffect: {fileID: 1685545750784954, guid: 98e92d158c0f25646af934fbd31b020f,
     type: 2}
+  breakEffect: {fileID: 1116380291541882, guid: 30adc18feed41c247989b7f214b55600,
+    type: 2}
   reloadGun: {fileID: 82239759947149498}
   gunFire: {fileID: 82654375196107340}
   emptyClip: {fileID: 82693876360441422}
@@ -2347,6 +2349,8 @@ MonoBehaviour:
   totalAmmoSG: 27
   muzzleFlash: {fileID: 198419285507664206}
   impactEffect: {fileID: 1685545750784954, guid: 4d5b98d71e899bc47bc767cf560412ed,
+    type: 2}
+  breakEffect: {fileID: 1116380291541882, guid: 30adc18feed41c247989b7f214b55600,
     type: 2}
   reloadGun: {fileID: 82505323522354422}
   gunFire: {fileID: 82239084933441234}
@@ -2433,6 +2437,8 @@ MonoBehaviour:
   damageOverTime: 60
   energy: 0
   maxEnergy: 100
+  breakEffect: {fileID: 1116380291541882, guid: 30adc18feed41c247989b7f214b55600,
+    type: 2}
   laserBeam: {fileID: 82667246094226156}
   rechargeGun: {fileID: 82126578584747712}
 --- !u!120 &120030720775895474
