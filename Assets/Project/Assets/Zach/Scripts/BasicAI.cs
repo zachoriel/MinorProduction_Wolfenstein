@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-    public class BasicAI : MonoBehaviour 
-    {
-        public LineOfSight sight;
-        public GameObject player;
-        public NavMeshAgent agent;
-        public EnemyMovement character;
+    public class BasicAI : MonoBehaviour
+{
+    public LineOfSight sight;
+    public GameObject player;
+    public NavMeshAgent agent;
+    public EnemyMovement character;
 
+    public GameObject DronePrefab;
+    public GameObject instantiated;
         public enum State
         {
             PATROL,
@@ -27,6 +29,8 @@ using UnityEngine.AI;
         // Chasing variables
         public float chaseSpeed = 1f;
         public GameObject target;
+        public Transform me;
+        
 
         void Start()
         {
@@ -34,7 +38,7 @@ using UnityEngine.AI;
             agent = GetComponent<NavMeshAgent>();
             character = GetComponent<EnemyMovement>();
             player = GameObject.FindGameObjectWithTag("Player");
-
+            me = gameObject.transform;
             agent.updatePosition = true;
             agent.updateRotation = false;
 
@@ -90,27 +94,30 @@ using UnityEngine.AI;
 
         void Chase()
         {
+            instantiated = Instantiate(DronePrefab, new Vector3(gameObject.transform.position.x + 5, gameObject.transform.position.y, transform.position.z),
+                Quaternion.identity, gameObject.transform);
             agent.speed = chaseSpeed;
             agent.destination = target.gameObject.transform.position;
-        
+            
             character.Move(agent.desiredVelocity, false, false);
         }
 
         void Update()
         {
 
-            if (sight.CanSeeTarget)
+            if (sight.CanSeeTarget)  
             {
                 state = State.CHASE;
-
                 target = player.gameObject;
                 Chase();
             }
 
             else
             {
+                
                 state = State.PATROL;
                 target = null;
+                
             }
         }
     }
