@@ -97,7 +97,9 @@ public class DroneShootScript : MonoBehaviour
 
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, hit.point);
+            //lineRenderer.enabled = false;
             timer = startTime;
+
         }
         
 

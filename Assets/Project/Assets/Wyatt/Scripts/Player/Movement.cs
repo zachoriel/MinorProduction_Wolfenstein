@@ -77,7 +77,7 @@ public class Movement : MonoBehaviour
                 gameObject.GetComponent<CapsuleCollider>().enabled = true;
             }*/
             
-            
+            /*
             //Toggle Code
             if (Input.GetKeyDown(KeyCode.LeftControl))
             {
@@ -98,7 +98,7 @@ public class Movement : MonoBehaviour
             {
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 gameObject.GetComponent<CapsuleCollider>().enabled = true;
-            }
+            }*/
 
         }
     }
