@@ -159,7 +159,7 @@ public class Gun : MonoBehaviour
             SceneLoader buttonsTarget = hit.transform.GetComponent<SceneLoader>();
 
             if (enemyTarget != null)
-            {            
+            {
                 enemyTarget.TakeDamage(damage);
             }
             if (wallTarget != null)
