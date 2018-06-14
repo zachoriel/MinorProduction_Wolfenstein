@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
 
 
     Rigidbody rb;
+    public Animator animator;
     public float speed;
 
     public bool toggle;
@@ -62,7 +63,12 @@ public class Movement : MonoBehaviour
 
             if(Input.GetAxisRaw("Horizontal").Equals(0)&&Input.GetAxisRaw("Vertical").Equals(0))
             {
+                animator.SetBool("isRunning", false);
                 rb.velocity = new Vector3(0,0,0);
+            }
+            else
+            {
+                animator.SetBool("isRunning", true);
             }
 
             //Press and hold code

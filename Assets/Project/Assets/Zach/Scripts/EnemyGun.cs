@@ -14,6 +14,7 @@ public class EnemyGun : MonoBehaviour
     public GameObject enemyObject;
     public LineRenderer lineRenderer;
     public AudioSource laserBeam;
+    public Animator animator;
 
     [Header("Type Of Enemy")]
     public bool useLaser = true;
@@ -31,6 +32,8 @@ public class EnemyGun : MonoBehaviour
     {
         if (lineofSight.CanSeeTarget == false)
         {
+            animator.SetBool("isFiringLaser", false);
+
             if (useLaser)
             {
                 if (lineRenderer.enabled)
@@ -43,9 +46,7 @@ public class EnemyGun : MonoBehaviour
         }
         else if (lineofSight.CanSeeTarget == true)
         {
-            //enemyObject.transform.rotation = new Quaternion(0,0,0,0);
-            //enemyObject.transform.LookAt(player);                             // NO LONGER NEEDED CAUSE NAVMESH DOES IT
-            
+            animator.SetBool("isFiringLaser", true);
 
             if (useLaser)
             {
