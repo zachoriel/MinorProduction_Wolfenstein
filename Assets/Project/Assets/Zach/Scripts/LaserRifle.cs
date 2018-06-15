@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class LaserRifle : MonoBehaviour
-{
+{ 
     [Header("Setup")]
     public CameraScript mainCamera; // For controls
     public ChangeVolume volumeSetting;
