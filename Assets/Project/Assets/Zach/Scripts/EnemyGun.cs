@@ -7,6 +7,7 @@ public class EnemyGun : MonoBehaviour
     [Header("Script Setup")]
     public LineOfSight lineofSight;
     public PlayerStats playerStats;
+    public PreMergeBasicAI ai;
 
     [Header("Component Setup")]
     public Transform player;
@@ -44,7 +45,7 @@ public class EnemyGun : MonoBehaviour
             }
             //return;
         }
-        else if (lineofSight.CanSeeTarget == true)
+        else if (lineofSight.CanSeeTarget == true && ai.state != PreMergeBasicAI.State.FLEE)
         {
             animator.SetBool("isFiringLaser", true);
 

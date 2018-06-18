@@ -10,6 +10,7 @@ using UnityEngine.AI;
         public NavMeshAgent agent;
         public EnemyMovement character;
         public EnemyStats stats;
+        public LineRenderer laser;
 
         public enum State
         {
@@ -34,7 +35,8 @@ using UnityEngine.AI;
         public float fleeSpeed = 1.5f;
         GameObject[] enemies;
         private float shortestDistance;
-        GameObject nearestEnemy;
+        public float fleeThreshold = 20;
+        public GameObject nearestEnemy;
         private float distanceToEnemy;
 
         void Start()
@@ -44,7 +46,7 @@ using UnityEngine.AI;
             character = GetComponent<EnemyMovement>();
             player = GameObject.FindGameObjectWithTag("Player");
             stats = GetComponent<EnemyStats>();
-
+            
             agent.updatePosition = true;
             agent.updateRotation = false;
 
@@ -109,21 +111,17 @@ using UnityEngine.AI;
             character.Move(agent.desiredVelocity, false, false);
         }
 
-        void Flee()
+    void Flee()
         {
             List<GameObject> enemies = new List<GameObject>();
             shortestDistance = Mathf.Infinity;
             nearestEnemy = null;
 
-            foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
-            {
-                if (enemies.Equals(this.gameObject))
-                {
-                    //enemies.Add(enemy);
-                    continue;
-                }
+            foreach (GameObject enemy in BigListOfEnemies.instance.enemyList)
+            {               
 
                 distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+                if(distanceToEnemy <= fleeThreshold) { continue; }
                 if (distanceToEnemy < shortestDistance)
                 {
                     shortestDistance = distanceToEnemy;
@@ -135,7 +133,7 @@ using UnityEngine.AI;
             {
                 agent.speed = fleeSpeed;
                 agent.destination = nearestEnemy.transform.position;
-
+                laser.enabled = false;
                 character.Move(agent.desiredVelocity, false, false);
             }
             else
@@ -144,32 +142,24 @@ using UnityEngine.AI;
                 target = null;
             }
 
-            //if (distanceToEnemy <= 2 && sight.CanSeeTarget)     // WON'T WORK WHILE IT THINKS IT'S ITS OWN NEAREST ENEMY
-            //{
-            //    state = State.CHASE;
-            //    target = player.gameObject;
-            //    Chase();
-            //}
+        if (distanceToEnemy <= 2 && sight.CanSeeTarget)
+        {
+            laser.enabled = true;
+            state = State.CHASE;
+            target = player.gameObject;
+            Chase();
         }
+    }
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                Time.timeScale = 0;
-            }
-            if (Input.GetKeyDown(KeyCode.U))
-            {
-                Time.timeScale = 1;
-            }
+            if (sight.CanSeeTarget && state != State.FLEE)
+                {
+                    state = State.CHASE;
 
-        if (sight.CanSeeTarget)
-            {
-                state = State.CHASE;
-
-                target = player.gameObject;
-                Chase();
-            }
+                    target = player.gameObject;
+                    Chase();
+                }
 
             else
             {

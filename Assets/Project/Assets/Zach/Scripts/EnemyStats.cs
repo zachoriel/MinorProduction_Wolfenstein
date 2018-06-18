@@ -31,6 +31,7 @@ public class EnemyStats : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        BigListOfEnemies.instance.enemyList.Add(this.gameObject);
         health = startHealth;
     }
 
