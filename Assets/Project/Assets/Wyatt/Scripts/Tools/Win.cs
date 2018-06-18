@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class Win : MonoBehaviour
 {
+    public ControlPanel panel;
+    public PlayerStats player;
+
     [Header("Number Of Enemies Array")]
     public GameObject[] enemies;
     public int enemiesAlive;
@@ -26,18 +29,41 @@ public class Win : MonoBehaviour
     void Update()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        if (enemies.Length == 0)
-        {
-            Debug.Log(":P");            
-        }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && gameObject.tag == "WinItem" && enemiesAlive == 0)
+        if (other.tag == "Player")
         {
-            WinLevel();
+            if (panel.enteredKeyCode)
+            {
+                if (enemiesAlive <= 15 && enemiesAlive > 10)
+                {
+                    player.Score += player.Score * 0; // No score multiplier
+                }
+
+                if (enemiesAlive <= 10 && enemiesAlive > 5)
+                {
+                    player.Score += player.Score * 1; // x2 score multiplier
+                }
+
+                if (enemiesAlive <= 5 && enemiesAlive > 0)
+                {
+                    player.Score += player.Score * 1.5f; // x2.5 score multiplier
+                }
+
+                if (enemiesAlive == 0)
+                {
+                    player.Score += player.Score * 2; // x3 score multiplier
+                }
+
+                WinLevel();
+            }
+            else
+            {
+                Debug.LogError("Warning: Cheater alert. Self-destruct sequence started. Application closing in 3...2...1...");
+                Application.Quit();
+            }
         }
     }
 

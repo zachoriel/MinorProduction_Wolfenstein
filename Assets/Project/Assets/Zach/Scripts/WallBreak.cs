@@ -6,12 +6,11 @@ public class WallBreak : MonoBehaviour
 {
     [Header("Stats")]
     public float health;
-    private float startHealth = 100f;
 
     // Use this for initialization
     void Start()
     {
-        health = startHealth;
+        
     }
 
     public void TakeDamage(float amount)
