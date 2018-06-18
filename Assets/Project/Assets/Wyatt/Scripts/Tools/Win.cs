@@ -12,6 +12,7 @@ public class Win : MonoBehaviour
 
     [Header("UI")]
     public Text enemiesAliveText;
+    public Text objectiveText;
 
     //typical win condition
     void Start()
@@ -19,6 +20,7 @@ public class Win : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         enemiesAlive = enemies.Length;
         enemiesAliveText.text = "Enemies Alive: " + enemies.Length.ToString();
+        objectiveText.text = "Objective: Reach the escape pods!";
     }
      
     void Update()

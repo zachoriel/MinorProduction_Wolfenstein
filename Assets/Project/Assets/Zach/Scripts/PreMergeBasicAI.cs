@@ -120,8 +120,8 @@ using UnityEngine.AI;
                 if (enemies.Equals(this.gameObject))
                 {
                     continue;
+                    //enemies.Add(enemy); 
                 }
-                enemies.Add(enemy); 
 
                 distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
                 if (distanceToEnemy < shortestDistance)
