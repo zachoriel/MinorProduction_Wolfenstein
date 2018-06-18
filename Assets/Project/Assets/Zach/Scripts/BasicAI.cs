@@ -21,15 +21,18 @@ using UnityEngine.AI;
         public State state;
         public bool isAlive;
 
-        // Patrolling variables
+        [Header ("Patrolling variables")]
         public GameObject[] waypoints;
         public int waypointIndex = 0;
         public float patrolSpeed = 0.5f;
 
-        // Chasing variables
+        [Header ("Chasing variables")]
         public float chaseSpeed = 1f;
         public GameObject target;
         public Transform me;
+
+        public int instantiateValue;
+        public bool canInstantiate;
         
 
         void Start()
@@ -94,8 +97,13 @@ using UnityEngine.AI;
 
         void Chase()
         {
+
+        if (instantiateValue < 3)
+        {
             instantiated = Instantiate(DronePrefab, new Vector3(gameObject.transform.position.x + 5, gameObject.transform.position.y, transform.position.z),
                 Quaternion.identity, gameObject.transform);
+            instantiateValue++;
+        }
             agent.speed = chaseSpeed;
             agent.destination = target.gameObject.transform.position;
             
