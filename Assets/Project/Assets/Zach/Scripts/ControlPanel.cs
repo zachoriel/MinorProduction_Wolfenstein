@@ -8,6 +8,7 @@ public class ControlPanel : MonoBehaviour
     [Header("Component Setup")]
     public Animator animator;
     public TextMesh codeText;
+    public WeaponSwitch weapons;
 
     [Header("UI")]
     public GameObject pinPadUI;
@@ -57,6 +58,7 @@ public class ControlPanel : MonoBehaviour
                     inputField.DeactivateInputField();
                     pinPadUI.SetActive(false);
                     panelIsActive = false;
+                    weapons.enabled = true;
                     Destroy(pinPadWall);
                     Destroy(gameObject);
 
@@ -95,6 +97,7 @@ public class ControlPanel : MonoBehaviour
             else if (foundControlPanel == true)
             {
                 pinPadUI.SetActive(true);
+                weapons.enabled = false;
                 panelIsActive = true;
                 inputField.text = null;
                 inputField.ActivateInputField();
@@ -114,6 +117,7 @@ public class ControlPanel : MonoBehaviour
             if (foundControlPanel == true)
             {
                 pinPadUI.SetActive(false);
+                weapons.enabled = true;
                 panelIsActive = false;
                 inputField.text = null;
                 inputField.DeactivateInputField();

@@ -54,7 +54,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -70,7 +69,6 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -187,7 +185,7 @@ Animator:
   m_GameObject: {fileID: 1220360776686474}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4d2c7a72c5d24a74c8ff5d9570acd833, type: 3}
-  m_Controller: {fileID: 9100000, guid: 700cf5f4edf32fe4da18c833ccb0534d, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -208,6 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   codeText: {fileID: 0}
+  weapons: {fileID: 0}
   pinPadUI: {fileID: 0}
   objectiveText: {fileID: 0}
   inputField: {fileID: 0}
