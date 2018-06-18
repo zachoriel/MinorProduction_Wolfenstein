@@ -20,6 +20,7 @@ TagManager:
   - DownVolume
   - AimToggle
   - InvertedToggle
+  - SettingsManager
   layers:
   - Default
   - TransparentFX

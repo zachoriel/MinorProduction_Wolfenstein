@@ -30,7 +30,7 @@ public class CameraScript : MonoBehaviour
 
     void Start()
     {
-        //ServiceLocator.instance.toggleOptions = gameObject;
+        //invertedControls = GetComponent<AimAndControlsSetting>();
         speedH = 5f;
     }
 

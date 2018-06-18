@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
-    [Header("Menu Stuff")]
+    [Header("Menu Stuff")] 
     public CameraScript mainCamera;
     public ChangeVolume volumeSetting;
     public AimAndControlsSetting aim;
