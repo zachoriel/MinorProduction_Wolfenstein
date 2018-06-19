@@ -33,6 +33,7 @@ public class EnemyStats : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         BigListOfEnemies.instance.enemyList.Add(this.gameObject);
         health = startHealth;
+        playerStats = FindObjectOfType<PlayerStats>();
     }
 
     public void TakeDamage(float amount)

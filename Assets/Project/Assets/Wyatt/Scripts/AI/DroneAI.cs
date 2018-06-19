@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class DroneAI : MonoBehaviour
@@ -12,6 +13,7 @@ public class DroneAI : MonoBehaviour
 
     Rigidbody rb;
 
+    public NavMeshAgent navAgent;
 
     public float speed;
 
@@ -20,17 +22,16 @@ public class DroneAI : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         sight = GetComponent<LineOfSight>();
         player = GameObject.FindGameObjectWithTag("Player");
+        navAgent = gameObject.GetComponent<NavMeshAgent>();
     }
     void Update()
     {
-
         if (sight.CanSeeTarget)
         {
             target = player;
 
             transform.LookAt(target.transform.position);
-
-            transform.RotateAround(player.transform.position, Vector3.up, speed * Time.deltaTime);
+            navAgent.destination = player.transform.position;
         }
     }
 }

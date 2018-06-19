@@ -28,12 +28,17 @@ public class DroneShootScript : MonoBehaviour
 
     [Header("Stats")]
     public float range = 15f;
-    public int Damage = 30;
+    public float Damage = 30f;
 
     void Awake()
     {
         player = GameObject.FindWithTag("Player").transform;
         timer = startTime;
+    }
+
+    void Start()
+    {
+        playerStats = FindObjectOfType<PlayerStats>();
     }
 
     void Update()
@@ -83,7 +88,12 @@ public class DroneShootScript : MonoBehaviour
             {
                 if(hit.collider.tag == "Player")
                 {
-                    playerStats.TakeDamage(Damage);
+                    PlayerStats temp = hit.collider.GetComponent<PlayerStats>();
+                    if(temp != null)
+                    {
+                        temp.TakeDamage(Damage);
+                    }
+                    //playerStats.TakeDamage(Damage);
                 }
                 Debug.DrawLine(transform.position, hit.point);
             }

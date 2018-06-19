@@ -47,8 +47,6 @@ public class BasicAI : MonoBehaviour
     [Header ("Drone Spawning")]
     public GameObject DronePrefab;
     public GameObject instantiated;
-    public Transform me;
-    public bool canInstantiate;
     public int instantiateValue;
         
 
@@ -59,7 +57,6 @@ public class BasicAI : MonoBehaviour
         character = GetComponent<EnemyMovement>();
         player = GameObject.FindGameObjectWithTag("Player");
         stats = GetComponent<EnemyStats>();
-        me = gameObject.transform;
 
         agent.updatePosition = true;
         agent.updateRotation = false;
@@ -119,12 +116,12 @@ public class BasicAI : MonoBehaviour
 
     void Chase()
     {
-        //if (instantiateValue < 3)
-        //{
-        //    instantiated = Instantiate(DronePrefab, new Vector3(gameObject.transform.position.x + 5, gameObject.transform.position.y, transform.position.z),
-        //        Quaternion.identity, gameObject.transform);
-        //    instantiateValue++;
-        //}
+        if (instantiateValue < 3)
+        {
+            instantiated = Instantiate(DronePrefab, new Vector3(gameObject.transform.position.x + 5, gameObject.transform.position.y + 3, transform.position.z),
+                Quaternion.identity);
+            instantiateValue++;
+        }
 
         agent.speed = chaseSpeed;
         agent.destination = target.gameObject.transform.position;

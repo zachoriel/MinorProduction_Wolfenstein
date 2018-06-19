@@ -27,6 +27,7 @@ public class EnemyGun : MonoBehaviour
     void Awake()
     {
         player = GameObject.FindWithTag("Player").transform;
+        ai = FindObjectOfType<BasicAI>();
     }
 
     void Update()

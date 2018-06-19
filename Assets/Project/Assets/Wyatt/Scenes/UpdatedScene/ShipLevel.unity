@@ -554,6 +554,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1345462681517754, guid: 4bf0358633ad1124cb5f890394a43927,
     type: 2}
   m_PrefabInternal: {fileID: 966896428}
+--- !u!114 &166998648 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114910819536836978, guid: 4bf0358633ad1124cb5f890394a43927,
+    type: 2}
+  m_PrefabInternal: {fileID: 966896428}
+  m_Script: {fileID: 11500000, guid: 6b542058452ae2644b061d1dd5c1f853, type: 3}
 --- !u!114 &166998655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4259,7 +4265,7 @@ Transform:
   - {fileID: 2007341631}
   - {fileID: 1164779279}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &954856025
 GameObject:
@@ -4421,7 +4427,12 @@ Prefab:
         type: 2}
       propertyPath: ai
       value: 
-      objectReference: {fileID: 166998655}
+      objectReference: {fileID: 0}
+    - target: {fileID: 114395223234437848, guid: 4bf0358633ad1124cb5f890394a43927,
+        type: 2}
+      propertyPath: lineofSight
+      value: 
+      objectReference: {fileID: 166998648}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4bf0358633ad1124cb5f890394a43927, type: 2}
   m_IsPrefabParent: 0
@@ -4531,6 +4542,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114753347735855054, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: ai
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753347735855054, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: lineofSight
+      value: 
+      objectReference: {fileID: 1836452943}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -7534,6 +7555,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -232.345, y: -30, z: -0.000015258789}
+--- !u!114 &1836452943 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114624351095612422, guid: fe9427e82b51f04478c4e3a7de03f890,
+    type: 2}
+  m_PrefabInternal: {fileID: 1031754157}
+  m_Script: {fileID: 11500000, guid: 6b542058452ae2644b061d1dd5c1f853, type: 3}
 --- !u!114 &1839970689 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114569186065532400, guid: beea5a3068c8d4d4aaf97f9a3549c1da,
@@ -8086,7 +8113,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4057079340937816, guid: beea5a3068c8d4d4aaf97f9a3549c1da, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1605754406369346, guid: beea5a3068c8d4d4aaf97f9a3549c1da, type: 2}
       propertyPath: m_Name
