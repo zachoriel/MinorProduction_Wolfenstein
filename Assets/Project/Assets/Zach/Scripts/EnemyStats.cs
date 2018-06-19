@@ -18,6 +18,7 @@ public class EnemyStats : MonoBehaviour
     public Image healthBar;
     public GameObject spawnPoint;
     public Animator animator;
+    public Animator droneAnimator;
     public NavMeshAgent agent;
     public Text enemiesAliveText;
     Rigidbody rb;
@@ -43,7 +44,14 @@ public class EnemyStats : MonoBehaviour
 
         if (health <= 0f && !isDead)
         {
-            animator.SetBool("isKilled", true);
+            if (gameObject.tag == "Enemy")
+            {
+                animator.SetBool("isKilled", true);
+            }
+            else if (gameObject.tag == "Drone")
+            {
+                droneAnimator.SetBool("isKilled", true);
+            }
             Die(); 
         }
     }

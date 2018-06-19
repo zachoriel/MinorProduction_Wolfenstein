@@ -15,6 +15,8 @@ public class DroneAI : MonoBehaviour
 
     public NavMeshAgent navAgent;
 
+    public Animator animator;
+
     public float speed;
 
     void Start()
@@ -28,10 +30,15 @@ public class DroneAI : MonoBehaviour
     {
         if (sight.CanSeeTarget)
         {
+            animator.SetBool("firing", true);
             target = player;
 
             transform.LookAt(target.transform.position);
             navAgent.destination = player.transform.position;
+        }
+        else
+        {
+            animator.SetBool("firing", false);
         }
     }
 }
