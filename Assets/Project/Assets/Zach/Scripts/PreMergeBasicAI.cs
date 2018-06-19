@@ -72,7 +72,7 @@ using UnityEngine.AI;
                     case State.FLEE:
                         Flee();
                         break;
-            }
+                }
                 yield return null;
             }
         }

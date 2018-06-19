@@ -47,8 +47,6 @@ public class Gun : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        //ServiceLocator.instance.toggleOptions = gameObject;
-
         if (inMenu == true)
         {
             totalAmmoMG = 1000000;
@@ -91,6 +89,7 @@ public class Gun : MonoBehaviour
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentGunAmmoMG > 0)
         {
+            animator.SetBool("isFiring", true);
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
@@ -106,6 +105,11 @@ public class Gun : MonoBehaviour
         else
         {
             mainCamera.speedH = 5;
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            animator.SetBool("isFiring", false);
         }
 
         ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
