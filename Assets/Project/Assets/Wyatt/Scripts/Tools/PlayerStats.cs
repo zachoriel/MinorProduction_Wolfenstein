@@ -25,6 +25,8 @@ public class PlayerStats : MonoBehaviour
     public int Lives;
     public float Score;
 
+    public bool TakingDamage;
+
     void Start()
     {
         scoreText.text = Score.ToString();
@@ -45,7 +47,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-
+        TakingDamage = true;
         if(Armor >= 0)
         {
             Armor -= amount / 2;
@@ -64,6 +66,7 @@ public class PlayerStats : MonoBehaviour
 
 
         healthText.text = Mathf.RoundToInt(Health).ToString();
+        TakingDamage = false;
         if (Health <= 0f)
         {
             Die();
