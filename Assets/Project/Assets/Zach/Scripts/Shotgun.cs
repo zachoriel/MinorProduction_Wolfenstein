@@ -74,6 +74,7 @@ public class Shotgun : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && currentGunAmmoSG > 0)
         {
+            animator.SetBool("isFiring", true);
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
@@ -89,6 +90,11 @@ public class Shotgun : MonoBehaviour
         else
         {
             mainCamera.speedH = 5;
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            animator.SetBool("isFiring", false);
         }
 
         ammoText.text = currentGunAmmoSG.ToString() + " / " + totalAmmoSG;
