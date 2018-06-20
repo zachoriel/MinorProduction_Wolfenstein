@@ -47,6 +47,9 @@ public class Gun : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+        volumeSetting = FindObjectOfType<ChangeVolume>();
+        aim = FindObjectOfType<AimAndControlsSetting>();
+
         if (inMenu == true)
         {
             totalAmmoMG = 1000000;
