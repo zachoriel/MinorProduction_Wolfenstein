@@ -124,11 +124,12 @@ public class Gun : MonoBehaviour
 
         Debug.Log("Reloading...");
 
-        animator.SetBool("Reloading", true);
+        animator.SetBool("isReloading", true);
 
         yield return new WaitForSeconds(reloadTime - 0.25f);
 
-        animator.SetBool("Reloading", false);
+        animator.SetBool("isReloading", false);
+        animator.SetBool("isFiring", false);
         yield return new WaitForSeconds(0.25f);
 
         if (amountNeeded <= totalAmmoMG)
@@ -145,7 +146,10 @@ public class Gun : MonoBehaviour
         //ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
 
         isReloading = false;
+        Debug.Log("Is this synced?");
     }
+
+  
 
     void Shoot()
     {

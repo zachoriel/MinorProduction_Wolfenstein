@@ -21,6 +21,7 @@ TagManager:
   - AimToggle
   - InvertedToggle
   - SettingsManager
+  - Drone
   layers:
   - Default
   - TransparentFX
