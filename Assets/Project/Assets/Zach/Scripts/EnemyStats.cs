@@ -48,7 +48,7 @@ public class EnemyStats : MonoBehaviour
             {
                 animator.SetBool("isKilled", true);
             }
-            else if (gameObject.tag == "Drone")
+            if (gameObject.tag == "Drone")
             {
                 droneAnimator.SetBool("isKilled", true);
             }

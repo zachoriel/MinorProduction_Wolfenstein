@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 114279889749506090}
   - component: {fileID: 114461297929904632}
   - component: {fileID: 114131123059334494}
+  - component: {fileID: 114672777281707698}
   m_Layer: 0
   m_Name: Drone_Blank
   m_TagString: Drone
@@ -1713,7 +1714,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1479713207198594}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85fdc28dde1f1e942a68a4858789a253, type: 3}
   m_Name: 
@@ -1729,6 +1730,24 @@ MonoBehaviour:
   droneAnimator: {fileID: 0}
   agent: {fileID: 0}
   enemiesAliveText: {fileID: 0}
+  health: 0
+  startHealth: 100
+--- !u!114 &114672777281707698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1479713207198594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8236372d465c764292c08f2f046094b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 0}
+  aiMovement: {fileID: 0}
+  sight: {fileID: 0}
+  winCondition: {fileID: 0}
+  inMenu: 0
   health: 0
   startHealth: 100
 --- !u!114 &114828528101015110
