@@ -66,7 +66,7 @@ public class PlayerStats : MonoBehaviour
 
 
         healthText.text = Mathf.RoundToInt(Health).ToString();
-        TakingDamage = false;
+        //TakingDamage = false;
         if (Health <= 0f)
         {
             Die();

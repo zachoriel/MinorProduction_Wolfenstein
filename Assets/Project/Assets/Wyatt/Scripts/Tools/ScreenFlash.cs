@@ -10,18 +10,18 @@ public class ScreenFlash : MonoBehaviour
 
     void Start()
     {
-        playerstats = Object.FindObjectOfType<PlayerStats>();
+        //playerstats = Object.FindObjectOfType<PlayerStats>();
     }
     void Update ()
     {
         
         if(playerstats.TakingDamage)
         {
-            gameObject.SetActive(true);
+            GameObject.Find("ScreenFlash").SetActive(true);
         }
         else
         {
-            gameObject.SetActive(false);
+            GameObject.Find("ScreenFlash").SetActive(false);
         }
-	}
+    }
 }

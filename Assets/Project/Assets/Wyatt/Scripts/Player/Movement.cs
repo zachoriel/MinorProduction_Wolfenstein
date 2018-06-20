@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
     public WeaponSwitch weapons;
     Rigidbody rb;
     public Animator MGanimator;
@@ -62,7 +61,7 @@ public class Movement : MonoBehaviour
             Vector3 desiredVel = dir * speed;
             rb.AddForce(desiredVel - rb.velocity);
 
-            if(Input.GetAxisRaw("Horizontal").Equals(0)&&Input.GetAxisRaw("Vertical").Equals(0))
+            if (Input.GetAxisRaw("Horizontal").Equals(0) && Input.GetAxisRaw("Vertical").Equals(0))
             {
                 if (weapons.selectedWeapon == 0 && weapons.hasPickedUpGun == true)
                 {
@@ -72,7 +71,7 @@ public class Movement : MonoBehaviour
                 {
                     SGanimator.SetBool("isRunning", false);
                 }
-                rb.velocity = new Vector3(0,0,0);
+                rb.velocity = new Vector3(0, 0, 0);
             }
             else
             {
@@ -97,7 +96,7 @@ public class Movement : MonoBehaviour
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 gameObject.GetComponent<CapsuleCollider>().enabled = true;
             }*/
-            
+
             /*
             //Toggle Code
             if (Input.GetKeyDown(KeyCode.LeftControl))
