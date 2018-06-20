@@ -30,7 +30,7 @@ public class CameraScript : MonoBehaviour
 
     void Start()
     {
-        //invertedControls = GetComponent<AimAndControlsSetting>();
+        invertedControls = FindObjectOfType<AimAndControlsSetting>();
         speedH = 5f;
     }
 
