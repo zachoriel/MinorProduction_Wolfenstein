@@ -249,6 +249,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 572550099}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -904,6 +910,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 357584845}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -1737,6 +1749,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 1954441635}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -2090,6 +2108,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 1765276054}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -2715,6 +2739,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 1114174598}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -3850,6 +3880,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 2067366192}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -4139,6 +4175,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 571479092}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -4397,7 +4439,7 @@ Prefab:
         type: 2}
       propertyPath: DronePrefab
       value: 
-      objectReference: {fileID: 1967355056271748, guid: 90259cbc77dae0047ae4971df3a7657b,
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
         type: 2}
     - target: {fileID: 114395223234437848, guid: 4bf0358633ad1124cb5f890394a43927,
         type: 2}
@@ -4564,6 +4606,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 781565535}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -5065,6 +5113,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 228188518}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -5665,6 +5719,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 972831398}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -6430,6 +6490,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 1953365457}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -8699,6 +8765,23 @@ Prefab:
       propertyPath: weapons
       value: 
       objectReference: {fileID: 1370057662}
+    - target: {fileID: 1713224541053304, guid: 196fe22fb2011f74992da1b438d7c824, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772285287433704, guid: 196fe22fb2011f74992da1b438d7c824, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -56.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772285287433704, guid: 196fe22fb2011f74992da1b438d7c824, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -13.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114321249232766248, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: reloadTime
+      value: 1.56
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 196fe22fb2011f74992da1b438d7c824, type: 2}
   m_IsPrefabParent: 0
@@ -9325,6 +9408,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 2129211903}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -9525,6 +9614,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 646871887}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0
@@ -9790,6 +9885,12 @@ Prefab:
       propertyPath: ai
       value: 
       objectReference: {fileID: 1904366961}
+    - target: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
+        type: 2}
+      propertyPath: DronePrefab
+      value: 
+      objectReference: {fileID: 1479713207198594, guid: d7fea45088418a649bfa14c09d6927dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9427e82b51f04478c4e3a7de03f890, type: 2}
   m_IsPrefabParent: 0

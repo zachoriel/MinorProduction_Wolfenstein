@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 114131123059334494}
   m_Layer: 0
   m_Name: Drone_Blank
-  m_TagString: Untagged
+  m_TagString: Drone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1704,7 +1704,11 @@ MonoBehaviour:
   sight: {fileID: 114131123059334494}
   player: {fileID: 0}
   target: {fileID: 0}
+<<<<<<< HEAD
   navAgent: {fileID: 195324834401548234}
+=======
+  navAgent: {fileID: 0}
+>>>>>>> zach
   animator: {fileID: 95788218846905928}
   speed: 0
 --- !u!114 &114553367496347244
