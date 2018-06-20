@@ -165,6 +165,11 @@ public class Gun : MonoBehaviour
             EnemyStats enemyTarget = hit.transform.GetComponent<EnemyStats>();
             WallBreak wallTarget = hit.transform.GetComponent<WallBreak>();
             SceneLoader buttonsTarget = hit.transform.GetComponent<SceneLoader>();
+            DroneStats drone = hit.transform.GetComponent<DroneStats>();
+            if (drone != null)
+            {
+                drone.TakeDamage(damage);
+            }
 
             if (enemyTarget != null)
             {
