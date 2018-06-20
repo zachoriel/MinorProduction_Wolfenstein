@@ -10,8 +10,8 @@ public class ChangeVolume : MonoBehaviour
     // Use this for initialization
     void Start()
     {        
-        AudioListener.volume = 0.50f;
-        volumeText.text = AudioListener.volume.ToString();
+        //AudioListener.volume = 0.50f;
+        //volumeText.text = AudioListener.volume.ToString();
     }
 
     public void UpVol()
