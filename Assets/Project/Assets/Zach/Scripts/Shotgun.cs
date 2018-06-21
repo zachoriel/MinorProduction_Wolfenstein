@@ -107,8 +107,6 @@ public class Shotgun : MonoBehaviour
 
         reloadGun.Play();
 
-        Debug.Log("Reloading...");
-
         animator.SetBool("Reloading", true);
 
         yield return new WaitForSeconds(reloadTime - 0.25f);
@@ -146,6 +144,12 @@ public class Shotgun : MonoBehaviour
 
             EnemyStats enemyTarget = hit.transform.GetComponent<EnemyStats>();
             WallBreak wallTarget = hit.transform.GetComponent<WallBreak>();
+            DroneStats drone = hit.transform.GetComponent<DroneStats>();
+            if (drone != null)
+            {
+                drone.TakeDamage(damage);
+            }
+
             if (enemyTarget != null)
             {
                 enemyTarget.TakeDamage(damage);
@@ -160,7 +164,6 @@ public class Shotgun : MonoBehaviour
                 }
             }
 
-            // Knockback (not currently used in any meaningful way)
             if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(hit.normal * -impactForce);

@@ -19,26 +19,36 @@ public class DroneAI : MonoBehaviour
 
     public float speed;
 
+    public bool isAlive;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         sight = GetComponent<LineOfSight>();
         player = GameObject.FindGameObjectWithTag("Player");
         navAgent = gameObject.GetComponent<NavMeshAgent>();
+        isAlive = true;
     }
     void Update()
     {
-        if (sight.CanSeeTarget)
+        if (isAlive)
         {
-            animator.SetBool("firing", true);
-            target = player;
+            if (sight.CanSeeTarget)
+            {
+                animator.SetBool("firing", true);
+                target = player;
 
-            transform.LookAt(target.transform.position);
-            navAgent.destination = player.transform.position;
+                transform.LookAt(target.transform.position);
+                navAgent.destination = player.transform.position;
+            }
+            else
+            {
+                animator.SetBool("firing", false);
+            }
         }
         else
         {
-            animator.SetBool("firing", false);
+            target = null;
         }
     }
 }

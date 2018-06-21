@@ -49,7 +49,7 @@ public class DroneShootScript : MonoBehaviour
             {
                 if (lineRenderer.enabled)
                 {
-                    //laserBeam.Stop();
+                    laserBeam.Stop();
                     lineRenderer.enabled = false;
                 }
             }
@@ -101,7 +101,7 @@ public class DroneShootScript : MonoBehaviour
 
             if (!lineRenderer.enabled)
             {
-                //laserBeam.Play();
+                laserBeam.Play();
                 lineRenderer.enabled = true;
             }
 

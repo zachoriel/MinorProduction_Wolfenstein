@@ -109,8 +109,6 @@ public class LaserRifle : MonoBehaviour
 
         rechargeGun.Play();
 
-        Debug.Log("Reloading...");
-
         animator.SetBool("Reloading", true);
 
         yield return new WaitForSeconds(reloadTime - 0.25f);
@@ -141,6 +139,11 @@ public class LaserRifle : MonoBehaviour
             EnemyStats enemyTarget = hit.transform.GetComponent<EnemyStats>();
             WallBreak wallTarget = hit.transform.GetComponent<WallBreak>();
             Transform target = hit.transform;
+            DroneStats drone = hit.transform.GetComponent<DroneStats>();
+            if (drone != null)
+            {
+                drone.TakeDamage(damageOverTime * Time.deltaTime);
+            }
 
             if (enemyTarget != null)
             {

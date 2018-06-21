@@ -32,7 +32,16 @@ public class EnemyStats : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        BigListOfEnemies.instance.enemyList.Add(this.gameObject);
+
+        if (inMenu)
+        {
+            return;
+        }
+        else
+        {
+            BigListOfEnemies.instance.enemyList.Add(this.gameObject);
+        }
+
         health = startHealth;
         playerStats = FindObjectOfType<PlayerStats>();
     }
@@ -59,7 +68,6 @@ public class EnemyStats : MonoBehaviour
     void Die()
     {
         rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ; // Prevents dead enemies from falling through the floor
-        //rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ; // Prevents dead enemies from spinning when colliding with player
         isDead = true;
         playerStats.Score += 10;
         playerStats.scoreText.text = playerStats.Score.ToString();
@@ -73,7 +81,16 @@ public class EnemyStats : MonoBehaviour
         agent.enabled = false;
         sight.enabled = false;
         sight.CanSeeTarget = false;         // Disabling just the script doesn't switch off the bool, and just disabling the bool for some reason doesn't work. 
-        winCondition.enemiesAlive--;
+
+        if (inMenu)
+        {
+            return;
+        }
+        else
+        {
+            winCondition.enemiesAlive--;
+        }
+
         enemiesAliveText.text = "Enemies Alive: " + winCondition.enemiesAlive.ToString();
         gameObject.GetComponent<BoxCollider>().enabled = false;
 

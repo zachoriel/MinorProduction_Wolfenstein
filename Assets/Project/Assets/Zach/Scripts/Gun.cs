@@ -125,8 +125,6 @@ public class Gun : MonoBehaviour
 
         reloadGun.Play();
 
-        Debug.Log("Reloading...");
-
         animator.SetBool("isReloading", true);
 
         yield return new WaitForSeconds(reloadTime - 0.25f);
@@ -149,7 +147,6 @@ public class Gun : MonoBehaviour
         //ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
 
         isReloading = false;
-        Debug.Log("Is this synced?");
     }
 
   
