@@ -1,0 +1,205 @@
+fileFormatVersion: 2
+guid: 724f3523be05a404f8f524393e565b59
+timeCreated: 1529608186
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: camera1
+    100002: Cell
+    100004: Cell_End
+    100006: GUN
+    100008: Gun_End
+    100010: Gun_Laser
+    100012: Gun_Root
+    100014: Hands1
+    100016: J_L__Thumb_02
+    100018: J_L_Elbow
+    100020: J_L_Middle_01
+    100022: J_L_Middle_02
+    100024: J_L_Middle_02 1
+    100026: J_L_Middle_03
+    100028: J_L_Middle_03 1
+    100030: J_L_Pinky_01
+    100032: J_L_Pinky_02
+    100034: J_L_Pinky_03
+    100036: J_L_Pointer_01
+    100038: J_L_Ring_01
+    100040: J_L_Ring_02
+    100042: J_L_Ring_03
+    100044: J_L_Thumb_01
+    100046: J_L_Wrist
+    100048: J_R__Thumb_02
+    100050: J_R_Elbow
+    100052: J_R_Middle_01
+    100054: J_R_Middle_02
+    100056: J_R_Middle_02 1
+    100058: J_R_Middle_03
+    100060: J_R_Middle_03 1
+    100062: J_R_Pinky_01
+    100064: J_R_Pinky_02
+    100066: J_R_Pinky_03
+    100068: J_R_Pointer_01
+    100070: J_R_Ring_01
+    100072: J_R_Ring_02
+    100074: J_R_Ring_03
+    100076: J_R_Thumb_01
+    100078: J_R_Wrist
+    100080: J_ROOT
+    100082: //RootNode
+    100084: PowerCell1
+    400000: camera1
+    400002: Cell
+    400004: Cell_End
+    400006: GUN
+    400008: Gun_End
+    400010: Gun_Laser
+    400012: Gun_Root
+    400014: Hands1
+    400016: J_L__Thumb_02
+    400018: J_L_Elbow
+    400020: J_L_Middle_01
+    400022: J_L_Middle_02
+    400024: J_L_Middle_02 1
+    400026: J_L_Middle_03
+    400028: J_L_Middle_03 1
+    400030: J_L_Pinky_01
+    400032: J_L_Pinky_02
+    400034: J_L_Pinky_03
+    400036: J_L_Pointer_01
+    400038: J_L_Ring_01
+    400040: J_L_Ring_02
+    400042: J_L_Ring_03
+    400044: J_L_Thumb_01
+    400046: J_L_Wrist
+    400048: J_R__Thumb_02
+    400050: J_R_Elbow
+    400052: J_R_Middle_01
+    400054: J_R_Middle_02
+    400056: J_R_Middle_02 1
+    400058: J_R_Middle_03
+    400060: J_R_Middle_03 1
+    400062: J_R_Pinky_01
+    400064: J_R_Pinky_02
+    400066: J_R_Pinky_03
+    400068: J_R_Pointer_01
+    400070: J_R_Ring_01
+    400072: J_R_Ring_02
+    400074: J_R_Ring_03
+    400076: J_R_Thumb_01
+    400078: J_R_Wrist
+    400080: J_ROOT
+    400082: //RootNode
+    400084: PowerCell1
+    2000000: camera1
+    4300000: Hands1
+    4300002: PowerCell1
+    4300004: Gun_Laser
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Gun_Laser
+    13700002: Hands1
+    13700004: PowerCell1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

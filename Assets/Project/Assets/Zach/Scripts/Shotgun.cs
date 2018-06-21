@@ -40,7 +40,8 @@ public class Shotgun : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //ServiceLocator.instance.toggleOptions = gameObject;
+        volumeSetting = FindObjectOfType<ChangeVolume>();
+        aim = FindObjectOfType<AimAndControlsSetting>();
 
         currentGunAmmoSG = maxGunAmmoSG;
         ammoText.text = currentGunAmmoSG.ToString() + " / " + totalAmmoSG;
@@ -72,13 +73,13 @@ public class Shotgun : MonoBehaviour
             return;
         }
 
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && currentGunAmmoSG > 0)
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentGunAmmoSG > 0)
         {
             animator.SetBool("isFiring", true);
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
-        else if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && currentGunAmmoSG == 0 && totalAmmoSG == 0)
+        else if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentGunAmmoSG == 0 && totalAmmoSG == 0)
         {
             emptyClip.Play();
         }
@@ -145,6 +146,13 @@ public class Shotgun : MonoBehaviour
             EnemyStats enemyTarget = hit.transform.GetComponent<EnemyStats>();
             WallBreak wallTarget = hit.transform.GetComponent<WallBreak>();
             DroneStats drone = hit.transform.GetComponent<DroneStats>();
+            DamagedEnemy firstEnemy = hit.transform.GetComponent<DamagedEnemy>();
+
+            if (firstEnemy != null)
+            {
+                firstEnemy.TakeDamage(damage);
+            }
+
             if (drone != null)
             {
                 drone.TakeDamage(damage);
@@ -154,6 +162,7 @@ public class Shotgun : MonoBehaviour
             {
                 enemyTarget.TakeDamage(damage);
             }
+
             if (wallTarget != null)
             {
                 wallTarget.TakeDamage(damage);

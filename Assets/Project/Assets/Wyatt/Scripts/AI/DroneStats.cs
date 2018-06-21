@@ -20,6 +20,7 @@ public class DroneStats : MonoBehaviour
     public Animator animator;
     //public Animator droneAnimator;
     public NavMeshAgent agent;
+    public AudioSource laser;
     //public Text enemiesAliveText;
     Rigidbody rb;
 
@@ -56,6 +57,7 @@ public class DroneStats : MonoBehaviour
 
     void Die()
     {
+        laser.Stop();
         rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ; // Prevents dead enemies from falling through the floor
         //rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ; // Prevents dead enemies from spinning when colliding with player
         isDead = true;

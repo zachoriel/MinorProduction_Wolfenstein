@@ -40,6 +40,8 @@ public class LaserRifle : MonoBehaviour
         //ServiceLocator.instance.toggleOptions = gameObject;
 
         lineRenderer = GetComponent<LineRenderer>();
+        volumeSetting = FindObjectOfType<ChangeVolume>();
+        aim = FindObjectOfType<AimAndControlsSetting>();
         energy = maxEnergy;
         ammoText.text = energy.ToString() + "%";
         lineRenderer.enabled = false;
@@ -73,6 +75,7 @@ public class LaserRifle : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
+            animator.SetBool("isFiring", true);
             Laser();
         }
         else
@@ -85,6 +88,11 @@ public class LaserRifle : MonoBehaviour
                 //laserImpactLight.enabled = false;
                 
             }
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            animator.SetBool("isFiring", false);
         }
 
         if (Input.GetButton("Fire2") && aim.aimAssist == true)
@@ -140,6 +148,13 @@ public class LaserRifle : MonoBehaviour
             WallBreak wallTarget = hit.transform.GetComponent<WallBreak>();
             Transform target = hit.transform;
             DroneStats drone = hit.transform.GetComponent<DroneStats>();
+            DamagedEnemy firstEnemy = hit.transform.GetComponent<DamagedEnemy>();
+
+            if (firstEnemy != null)
+            {
+                firstEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+            }
+
             if (drone != null)
             {
                 drone.TakeDamage(damageOverTime * Time.deltaTime);
@@ -149,6 +164,7 @@ public class LaserRifle : MonoBehaviour
             {
                 enemyTarget.TakeDamage(damageOverTime * Time.deltaTime);
             }
+
             if (wallTarget != null)
             {
                 wallTarget.TakeDamage(damageOverTime * Time.deltaTime);

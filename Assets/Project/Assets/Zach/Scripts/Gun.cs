@@ -66,7 +66,7 @@ public class Gun : MonoBehaviour
     void OnEnable()
     {
         isReloading = false;
-        animator.SetBool("Reloading", false);
+        animator.SetBool("isReloading", false);
     }
 
     // Update is called once per frame
@@ -166,6 +166,13 @@ public class Gun : MonoBehaviour
             WallBreak wallTarget = hit.transform.GetComponent<WallBreak>();
             SceneLoader buttonsTarget = hit.transform.GetComponent<SceneLoader>();
             DroneStats drone = hit.transform.GetComponent<DroneStats>();
+            DamagedEnemy firstEnemy = hit.transform.GetComponent<DamagedEnemy>();
+
+            if (firstEnemy != null)
+            {
+                firstEnemy.TakeDamage(damage);
+            }
+
             if (drone != null)
             {
                 drone.TakeDamage(damage);
@@ -175,6 +182,7 @@ public class Gun : MonoBehaviour
             {
                 enemyTarget.TakeDamage(damage);
             }
+
             if (wallTarget != null)
             {
                 wallTarget.TakeDamage(damage);

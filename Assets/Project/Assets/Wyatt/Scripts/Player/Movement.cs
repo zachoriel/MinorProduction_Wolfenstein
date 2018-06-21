@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
     public Animator MGanimator;
     public Animator SGanimator;
+    public Animator LRanimator;
     public float speed;
 
     public bool toggle;
@@ -71,6 +72,11 @@ public class Movement : MonoBehaviour
                 {
                     SGanimator.SetBool("isRunning", false);
                 }
+                else if (weapons.selectedWeapon == 2 && weapons.hasPickedUpGun == true)
+                {
+                    LRanimator.SetBool("isRunning", false);
+                }
+
                 rb.velocity = new Vector3(0, 0, 0);
             }
             else
@@ -83,6 +89,11 @@ public class Movement : MonoBehaviour
                 {
                     SGanimator.SetBool("isRunning", true);
                 }
+                else if (weapons.selectedWeapon == 2 && weapons.hasPickedUpGun == true)
+                {
+                    LRanimator.SetBool("isRunning", true);
+                }
+
             }
 
             //Press and hold code

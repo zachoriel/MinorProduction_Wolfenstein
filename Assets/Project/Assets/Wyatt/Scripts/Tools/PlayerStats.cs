@@ -84,13 +84,10 @@ public class PlayerStats : MonoBehaviour
         livesText.text = Lives.ToString();
         gameObject.transform.position = spawnPoint.transform.position;
         gameObject.transform.rotation = spawnPoint.transform.rotation;
-    }
 
-    void GameOver()
-    {
-        if(Lives <= 0)
+        if (Lives <= 0)
         {
-            SceneManager.LoadScene("NewTestScene");  // Replace when adding game over screen
+            SceneManager.LoadScene("ShipLevel");  // Replace when adding game over screen
         }
     }
 }
