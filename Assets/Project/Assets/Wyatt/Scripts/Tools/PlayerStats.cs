@@ -63,9 +63,8 @@ public class PlayerStats : MonoBehaviour
         }
 
         armorText.text = Mathf.RoundToInt(Armor).ToString();
-
-
         healthText.text = Mathf.RoundToInt(Health).ToString();
+
         //TakingDamage = false;
         if (Health <= 0f)
         {
@@ -75,6 +74,7 @@ public class PlayerStats : MonoBehaviour
 
     void Die()
     {
+        
         weapons.selectedWeapon = 1;
         Health = startHealth;
         healthText.text = Mathf.RoundToInt(Health).ToString();
