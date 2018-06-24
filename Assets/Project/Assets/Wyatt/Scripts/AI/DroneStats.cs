@@ -20,7 +20,7 @@ public class DroneStats : MonoBehaviour
     public Animator animator;
     //public Animator droneAnimator;
     public NavMeshAgent agent;
-    public AudioSource laser;
+    //public AudioSource laserBolt;
     //public Text enemiesAliveText;
     Rigidbody rb;
 
@@ -28,7 +28,9 @@ public class DroneStats : MonoBehaviour
     public float health;
     public float startHealth = 100f;
     private float timeDead;
-    private bool isDead = false;
+
+    [HideInInspector]
+    public bool isDead = false;
 
     void Awake()
     {
@@ -57,7 +59,7 @@ public class DroneStats : MonoBehaviour
 
     void Die()
     {
-        laser.Stop();
+        //laserBolt.Stop();
         rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ; // Prevents dead enemies from falling through the floor
         //rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ; // Prevents dead enemies from spinning when colliding with player
         isDead = true;
@@ -71,8 +73,8 @@ public class DroneStats : MonoBehaviour
 
         aiMovement.isAlive = false;
         agent.enabled = false;
-        sight.enabled = false;
         sight.CanSeeTarget = false;         // Disabling just the script doesn't switch off the bool, and just disabling the bool for some reason doesn't work. 
+        sight.enabled = false;
         droneShoot.useLaser = false;
         droneShoot.lineRenderer.enabled = false;
         //winCondition.enemiesAlive--;

@@ -22,6 +22,7 @@ TagManager:
   - InvertedToggle
   - SettingsManager
   - Drone
+  - Rifle
   layers:
   - Default
   - TransparentFX

@@ -17,6 +17,11 @@ public class PowerUp : MonoBehaviour
     public AudioSource healthPickup;
     public AudioSource lifePickup;
 
+    void Start()
+    {
+        
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -63,7 +68,7 @@ public class PowerUp : MonoBehaviour
 
     void AddLife()
     {
-        lifePickup.Play();
+        lifePickup.Play(); 
         player.Lives += 1;
         player.livesText.text = Mathf.RoundToInt(player.Lives).ToString();
     }
@@ -74,9 +79,6 @@ public class PowerUp : MonoBehaviour
         gun.currentGunAmmoMG = gun.maxGunAmmoMG;
         shotgun.currentGunAmmoSG = shotgun.maxGunAmmoSG;
         laser.energy = laser.maxEnergy;
-        //gun.ammoText.text = Mathf.RoundToInt(gun.currentGunAmmoMG).ToString() + " / " + gun.totalAmmoMG;
-        //shotgun.ammoText.text = Mathf.RoundToInt(shotgun.currentGunAmmoSG).ToString() + " / " + shotgun.totalAmmoSG;            // NO LONGER NEEDED CAUSE THE TEXT IS CHECKED IN UPDATE
-        //laser.ammoText.text = Mathf.RoundToInt(laser.energy).ToString() + "%";
     }
 
     void RestoreAmmo()
@@ -87,8 +89,5 @@ public class PowerUp : MonoBehaviour
         shotgun.currentGunAmmoSG = shotgun.maxGunAmmoSG;
         shotgun.totalAmmoSG = 30;
         laser.energy = laser.maxEnergy;
-        //gun.ammoText.text = Mathf.RoundToInt(gun.currentGunAmmoMG).ToString() + " / " + gun.totalAmmoMG;
-        //shotgun.ammoText.text = Mathf.RoundToInt(shotgun.currentGunAmmoSG).ToString() + " / " + shotgun.totalAmmoSG;            // NO LONGER NEEDED CAUSE THE TEXT IS CHECKED IN UPDATE
-        //laser.ammoText.text = Mathf.RoundToInt(laser.energy).ToString() + "%";
     }
 }

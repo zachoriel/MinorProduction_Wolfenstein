@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGun : MonoBehaviour
+public class DroneGun : MonoBehaviour
 {
     [Header("Script Setup")]
-    public LineOfSight lineofSight;
+    public LineOfSight lineofSight; 
     public PlayerStats playerStats;
     public Movement playerMovement;
-    public BasicAI ai;
+    public DroneStats drone;
 
     [Header("Component Setup")]
     public Transform player;
@@ -31,7 +31,7 @@ public class EnemyGun : MonoBehaviour
         playerStats = FindObjectOfType<PlayerStats>();
         player = GameObject.FindWithTag("Player").transform;
         playerMovement = FindObjectOfType<Movement>();
-        ai = FindObjectOfType<BasicAI>();
+        drone = FindObjectOfType<DroneStats>();
     }
 
     void Update()
@@ -50,7 +50,7 @@ public class EnemyGun : MonoBehaviour
             }
             //return;
         }
-        else if (lineofSight.CanSeeTarget == true && ai.state != BasicAI.State.FLEE)
+        else if (lineofSight.CanSeeTarget == true)
         {
             animator.SetBool("isFiringLaser", true);
 
@@ -63,19 +63,10 @@ public class EnemyGun : MonoBehaviour
                 Shoot();
             } 
         }  
-        else if (lineofSight.CanSeeTarget == true && ai.state == BasicAI.State.FLEE)
+
+        if (drone.isDead)
         {
-            animator.SetBool("isFiringLaser", false);
-
-            if (useLaser)
-            {
-
-                if (lineRenderer.enabled)
-                {
-                    laserBeam.Stop();
-                    lineRenderer.enabled = false;
-                }
-            }
+            laserBeam.Stop();
         }
     }
 

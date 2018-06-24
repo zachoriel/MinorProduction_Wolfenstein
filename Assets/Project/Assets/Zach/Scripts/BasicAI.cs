@@ -116,7 +116,7 @@ public class BasicAI : MonoBehaviour
 
     void Chase()
     {
-        if (instantiateValue < 3)
+        if (instantiateValue < 2)
         {
             instantiated = Instantiate(DronePrefab, new Vector3(gameObject.transform.position.x + 5, gameObject.transform.position.y + 3, transform.position.z),
                 Quaternion.identity);

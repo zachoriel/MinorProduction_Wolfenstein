@@ -13,7 +13,7 @@ public class DroneShootScript : MonoBehaviour
     public Transform firePoint;
     public GameObject enemyObject;
     public LineRenderer lineRenderer;
-    public AudioSource laserBeam;
+    public AudioSource laserBolt;
 
     [Header("ConeVariables")]    
     public float scaleLimit;
@@ -49,7 +49,7 @@ public class DroneShootScript : MonoBehaviour
             {
                 if (lineRenderer.enabled)
                 {
-                    laserBeam.Stop();
+                    laserBolt.Stop();
                     lineRenderer.enabled = false;
                 }
             }
@@ -78,6 +78,7 @@ public class DroneShootScript : MonoBehaviour
 
         if(timer <= 0)
         {
+            laserBolt.Play();
             Vector3 direction = Random.insideUnitCircle * scaleLimit;
             direction.z = z; // circle is at Z units 
             direction = transform.TransformDirection(direction.normalized);
@@ -101,7 +102,7 @@ public class DroneShootScript : MonoBehaviour
 
             if (!lineRenderer.enabled)
             {
-                laserBeam.Play();
+                laserBolt.Play();
                 lineRenderer.enabled = true;
             }
 

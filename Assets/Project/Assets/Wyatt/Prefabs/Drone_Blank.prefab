@@ -815,7 +815,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4511947330664252}
   - component: {fileID: 114828528101015110}
+  - component: {fileID: 114409819476542848}
   - component: {fileID: 82048351297357310}
+  - component: {fileID: 82883034431300222}
   m_Layer: 0
   m_Name: firePoint
   m_TagString: Untagged
@@ -952,7 +954,7 @@ Transform:
   m_Children:
   - {fileID: 4502562056208914}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4056033538336824
 Transform:
@@ -1007,7 +1009,7 @@ Transform:
   m_Children:
   - {fileID: 4591864098055892}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4102160006791704
 Transform:
@@ -1034,7 +1036,7 @@ Transform:
   m_Children:
   - {fileID: 4292843480693168}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4107220310756806
 Transform:
@@ -1048,7 +1050,7 @@ Transform:
   m_Children:
   - {fileID: 4464419196645150}
   m_Father: {fileID: 4741972310161264}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4111980707324886
 Transform:
@@ -1089,7 +1091,7 @@ Transform:
   m_Children:
   - {fileID: 4019386931168512}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4199270801548638
 Transform:
@@ -1170,7 +1172,7 @@ Transform:
   m_Children:
   - {fileID: 4012699507442274}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4313097253805004
 Transform:
@@ -1224,7 +1226,7 @@ Transform:
   m_Children:
   - {fileID: 4808326443478174}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4348148617686100
 Transform:
@@ -1251,7 +1253,7 @@ Transform:
   m_Children:
   - {fileID: 4199270801548638}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4414742913977678
 Transform:
@@ -1305,7 +1307,7 @@ Transform:
   m_Children:
   - {fileID: 4714628633801114}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4487634098495868
 Transform:
@@ -1340,11 +1342,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865683690245882}
-  m_LocalRotation: {x: 0.40640172, y: -0.5778991, z: 0.4071097, w: 0.57890594}
-  m_LocalPosition: {x: 10.045746, y: -116.72276, z: 1.6461945}
+  m_LocalRotation: {x: 0.46118864, y: 0.5368196, z: -0.4603867, w: 0.53588617}
+  m_LocalPosition: {x: -222.63745, y: -256.59995, z: -2.0997925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4741972310161264}
+  m_Father: {fileID: 4800021332431106}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4514280110471738
@@ -1385,7 +1387,7 @@ Transform:
   m_Children:
   - {fileID: 4348148617686100}
   m_Father: {fileID: 4741972310161264}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4589208331701430
 Transform:
@@ -1399,7 +1401,7 @@ Transform:
   m_Children:
   - {fileID: 4113457640191988}
   m_Father: {fileID: 4741972310161264}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4591864098055892
 Transform:
@@ -1440,7 +1442,7 @@ Transform:
   m_Children:
   - {fileID: 4713241794802260}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4670752749834864
 Transform:
@@ -1454,7 +1456,7 @@ Transform:
   m_Children:
   - {fileID: 4323793527855912}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4671969533416094
 Transform:
@@ -1468,7 +1470,7 @@ Transform:
   m_Children:
   - {fileID: 4553234449704874}
   m_Father: {fileID: 4741972310161264}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4680499857718810
 Transform:
@@ -1482,7 +1484,7 @@ Transform:
   m_Children:
   - {fileID: 4759295671068220}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4713241794802260
 Transform:
@@ -1520,7 +1522,6 @@ Transform:
   m_LocalPosition: {x: -30.1848, y: -8.526513e-14, z: -1.4210855e-14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4511947330664252}
   - {fileID: 4107220310756806}
   - {fileID: 4589208331701430}
   - {fileID: 4574461623908230}
@@ -1554,7 +1555,7 @@ Transform:
   m_Children:
   - {fileID: 4414742913977678}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4800021332431106
 Transform:
@@ -1566,6 +1567,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4511947330664252}
   - {fileID: 4327521839128766}
   - {fileID: 4162895598703596}
   - {fileID: 4310960017488110}
@@ -1610,7 +1612,7 @@ Transform:
   m_Children:
   - {fileID: 4230322727084476}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4907313271823360
 Transform:
@@ -1619,7 +1621,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1479713207198594}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -45.824463, y: 0.5, z: -238.1647}
+  m_LocalPosition: {x: -71.432915, y: 3.53, z: -221.3866}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 224216948445825724}
@@ -1654,7 +1656,7 @@ Transform:
   m_Children:
   - {fileID: 4596747950238118}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4988676039328870
 Transform:
@@ -1668,7 +1670,7 @@ Transform:
   m_Children:
   - {fileID: 4514280110471738}
   m_Father: {fileID: 4800021332431106}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &54067061527481412
 Rigidbody:
@@ -1703,12 +1705,92 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865683690245882}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3b2bfc63a7f8c654689213db6ac5d7f3, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &82883034431300222
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865683690245882}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 872083d2be9d03e41be3aed46d0eceff, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1764,7 +1846,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1851,6 +1933,31 @@ MonoBehaviour:
     type: 2}
   instantiated: {fileID: 0}
   TimeWait: 3
+--- !u!114 &114409819476542848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865683690245882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56234952b924d641b328b8280f4a888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineofSight: {fileID: 114131123059334494}
+  playerStats: {fileID: 0}
+  playerMovement: {fileID: 0}
+  drone: {fileID: 0}
+  player: {fileID: 0}
+  firePoint: {fileID: 4511947330664252}
+  enemyObject: {fileID: 1479713207198594}
+  lineRenderer: {fileID: 120137409447150538}
+  laserBeam: {fileID: 82883034431300222}
+  animator: {fileID: 95788218846905928}
+  useLaser: 1
+  isDrone: 1
+  range: 10
+  damageOverTime: 5
 --- !u!114 &114461297929904632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1905,9 +2012,9 @@ MonoBehaviour:
   healthBar: {fileID: 114778764963422300}
   animator: {fileID: 0}
   agent: {fileID: 0}
-  laser: {fileID: 82048351297357310}
   health: 0
   startHealth: 100
+  isDead: 0
 --- !u!114 &114778764963422300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1941,7 +2048,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865683690245882}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5af0905f3bc093e44a7fc56e01b62f8e, type: 3}
   m_Name: 
@@ -1952,7 +2059,7 @@ MonoBehaviour:
   firePoint: {fileID: 4511947330664252}
   enemyObject: {fileID: 1479713207198594}
   lineRenderer: {fileID: 120137409447150538}
-  laserBeam: {fileID: 82048351297357310}
+  laserBolt: {fileID: 82048351297357310}
   scaleLimit: 1
   z: 5
   startTime: 0.5
@@ -1990,6 +2097,7 @@ LineRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -2005,6 +2113,7 @@ LineRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -2018,13 +2127,13 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 1
+    widthMultiplier: 15
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
-        time: 0.27813148
-        value: 0.32278442
+        time: 0.27295113
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2039,16 +2148,16 @@ LineRenderer:
       m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.31034476, b: 0, a: 0}
-      key1: {r: 1, g: 0.31034476, b: 0, a: 0}
+      key0: {r: 1, g: 0.51724136, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 1}
       key2: {r: 0.77205884, g: 0.034061406, b: 0.034061406, a: 1}
       key3: {r: 1, g: 0.31034476, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 14071
-      ctime1: 42791
+      ctime0: 0
+      ctime1: 65535
       ctime2: 63029
       ctime3: 52043
       ctime4: 0
@@ -2056,7 +2165,7 @@ LineRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 13878
+      atime1: 65535
       atime2: 45682
       atime3: 0
       atime4: 0
@@ -2064,8 +2173,8 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 3
-      m_NumAlphaKeys: 3
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
     numCornerVertices: 10
     numCapVertices: 10
     alignment: 1
@@ -2082,6 +2191,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2097,6 +2207,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

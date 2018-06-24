@@ -28,6 +28,11 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    public void Slow()
+    {
+        rb.velocity *= 0.5f;
+    }
+
     void Update()
     {
         /*if(Input.GetAxis("Horizontal")!= 0)
@@ -49,10 +54,11 @@ public class Movement : MonoBehaviour
             gameObject.transform.rotation = camera.transform.rotation;
         }
     }
+
     void FixedUpdate()
     {
-        //Debug.Log((forwardDir + rightDir) * speed );
-        //rb.AddForce((forwardDir + rightDir) * speed );
+        //Debug.Log((forwardDir + rightDir) * speed);
+        //rb.AddForce((forwardDir + rightDir) * speed);
         //rb.AddForce((forwardDir + rightDir) * speed);
 
         if (camera != null)

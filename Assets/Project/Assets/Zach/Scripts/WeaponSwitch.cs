@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class WeaponSwitch : MonoBehaviour
 {
-    public Text ammoText;
+    public Text ammoText; 
     public Gun mg;
     public Shotgun sg;
     public LaserRifle lr;
@@ -108,7 +108,7 @@ public class WeaponSwitch : MonoBehaviour
             {
                 ammoText.text = lr.energy.ToString() + "%";
             }
-            else if (i == 4)
+            else
             {
                 ammoText.text = "NA";
             }
