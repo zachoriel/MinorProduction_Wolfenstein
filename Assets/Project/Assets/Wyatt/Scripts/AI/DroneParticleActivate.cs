@@ -19,5 +19,6 @@ public class DroneParticleActivate : MonoBehaviour
         yield return new WaitForSeconds(TimeWait);
         Destroy(instantiated);
         gameObject.GetComponent<LineOfSight>().enabled = true;
+        gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 }

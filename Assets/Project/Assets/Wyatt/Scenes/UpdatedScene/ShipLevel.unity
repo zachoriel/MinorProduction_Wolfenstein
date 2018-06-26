@@ -109,7 +109,7 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-  m_NavMeshData: {fileID: 23800000, guid: 3dadd2270f54c694e803cea3f2a8b41e, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1aaad35ff983f86499544c2a02b8e327, type: 2}
 --- !u!1001 &849601
 Prefab:
   m_ObjectHideFlags: 0
@@ -868,6 +868,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114835274397973102, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: accel.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4124193333059096, guid: 196fe22fb2011f74992da1b438d7c824, type: 2}
       propertyPath: m_LocalPosition.x
       value: -76.88
@@ -978,7 +983,7 @@ Prefab:
         type: 2}
       propertyPath: lr
       value: 
-      objectReference: {fileID: 1112488589}
+      objectReference: {fileID: 0}
     - target: {fileID: 1713224541053304, guid: 196fe22fb2011f74992da1b438d7c824, type: 2}
       propertyPath: m_TagString
       value: Untagged
@@ -993,7 +998,72 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1625858101525648, guid: 196fe22fb2011f74992da1b438d7c824, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114835274397973102, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: accel.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114835274397973102, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: accel.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114835274397973102, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: accel.m_Curve.Array.data[1].time
+      value: 0.51475227
+      objectReference: {fileID: 0}
+    - target: {fileID: 114835274397973102, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: accel.m_Curve.Array.data[1].value
+      value: 0.5015685
+      objectReference: {fileID: 0}
+    - target: {fileID: 114835274397973102, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: accel.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114835274397973102, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: accel.m_Curve.Array.data[1].inSlope
+      value: 0.23984504
+      objectReference: {fileID: 0}
+    - target: {fileID: 114835274397973102, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: accel.m_Curve.Array.data[1].outSlope
+      value: 0.23984504
+      objectReference: {fileID: 0}
+    - target: {fileID: 114835274397973102, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: accel.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114835274397973102, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: accel.m_Curve.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114835274397973102, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: accelEval
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114835274397973102, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: accel.m_Curve.Array.data[0].value
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114835274397973102, guid: 196fe22fb2011f74992da1b438d7c824,
+        type: 2}
+      propertyPath: accel.m_Curve.Array.data[0].time
+      value: 0.0083351135
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114191518171146878, guid: 196fe22fb2011f74992da1b438d7c824, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 196fe22fb2011f74992da1b438d7c824, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &22657860 stripped
@@ -1014,29 +1084,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 22657861}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 2e19e87354ee917409bb22b6723f1795, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
---- !u!114 &22657863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 22657861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   volumeTrigger: {fileID: 22657860}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   stopNaNPropagation: 1
   antialiasingMode: 0
   temporalAntialiasing:
@@ -4211,12 +4265,12 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114075159755149692, guid: 429166952b4e1154b8ee2534f54af833,
         type: 2}
       propertyPath: laser
       value: 
-      objectReference: {fileID: 1112488589}
+      objectReference: {fileID: 0}
     - target: {fileID: 114075159755149692, guid: 429166952b4e1154b8ee2534f54af833,
         type: 2}
       propertyPath: ammoPickup
@@ -55512,7 +55566,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedEditorRenderState: 2
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -55968,7 +56022,7 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114075159755149692, guid: 429166952b4e1154b8ee2534f54af833,
         type: 2}
       propertyPath: laser
@@ -57047,12 +57101,12 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114961135582396432, guid: 2b684a651149cea46ae27b48e20680af,
         type: 2}
       propertyPath: laser
       value: 
-      objectReference: {fileID: 1112488589}
+      objectReference: {fileID: 0}
     - target: {fileID: 114961135582396432, guid: 2b684a651149cea46ae27b48e20680af,
         type: 2}
       propertyPath: ammoPickup
@@ -60451,12 +60505,12 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114350192737174764, guid: d4c304663c6358e47b8312ba786e4bae,
         type: 2}
       propertyPath: laser
       value: 
-      objectReference: {fileID: 1112488589}
+      objectReference: {fileID: 0}
     - target: {fileID: 114350192737174764, guid: d4c304663c6358e47b8312ba786e4bae,
         type: 2}
       propertyPath: pickupSound
@@ -61902,12 +61956,12 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114075159755149692, guid: 429166952b4e1154b8ee2534f54af833,
         type: 2}
       propertyPath: laser
       value: 
-      objectReference: {fileID: 1112488589}
+      objectReference: {fileID: 0}
     - target: {fileID: 114075159755149692, guid: 429166952b4e1154b8ee2534f54af833,
         type: 2}
       propertyPath: pickupSound
@@ -66691,12 +66745,12 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114045721938368404, guid: 362160b0a8171c54cbad7fb07cd3f125,
         type: 2}
       propertyPath: laser
       value: 
-      objectReference: {fileID: 1112488589}
+      objectReference: {fileID: 0}
     - target: {fileID: 114045721938368404, guid: 362160b0a8171c54cbad7fb07cd3f125,
         type: 2}
       propertyPath: ammoPickup
@@ -66920,12 +66974,12 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114961135582396432, guid: 2b684a651149cea46ae27b48e20680af,
         type: 2}
       propertyPath: laser
       value: 
-      objectReference: {fileID: 1112488589}
+      objectReference: {fileID: 0}
     - target: {fileID: 114961135582396432, guid: 2b684a651149cea46ae27b48e20680af,
         type: 2}
       propertyPath: ammoPickup
@@ -66959,7 +67013,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh82808
+  m_Name: pb_Mesh54560
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -67710,12 +67764,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4126371975048374, guid: a17a1845e4b89c34185e2d9a7fb6e0d4,
     type: 2}
   m_PrefabInternal: {fileID: 1110677366}
---- !u!114 &1112488589 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114032390086516972, guid: 196fe22fb2011f74992da1b438d7c824,
-    type: 2}
-  m_PrefabInternal: {fileID: 22657859}
-  m_Script: {fileID: 11500000, guid: c5de1c57404c9954b9c21425023d63fa, type: 3}
 --- !u!114 &1114174598 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114559642499549858, guid: fe9427e82b51f04478c4e3a7de03f890,
@@ -69481,7 +69529,7 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114047006786730474, guid: 08b4d733ba9dda34ab0397e7f294f6f8,
         type: 2}
       propertyPath: laser
@@ -69648,7 +69696,7 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114045721938368404, guid: 362160b0a8171c54cbad7fb07cd3f125,
         type: 2}
       propertyPath: laser
@@ -70931,12 +70979,12 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114047006786730474, guid: 08b4d733ba9dda34ab0397e7f294f6f8,
         type: 2}
       propertyPath: laser
       value: 
-      objectReference: {fileID: 1112488589}
+      objectReference: {fileID: 0}
     - target: {fileID: 114047006786730474, guid: 08b4d733ba9dda34ab0397e7f294f6f8,
         type: 2}
       propertyPath: pickupSound
@@ -73315,12 +73363,12 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114045721938368404, guid: 362160b0a8171c54cbad7fb07cd3f125,
         type: 2}
       propertyPath: laser
       value: 
-      objectReference: {fileID: 1112488589}
+      objectReference: {fileID: 0}
     - target: {fileID: 114045721938368404, guid: 362160b0a8171c54cbad7fb07cd3f125,
         type: 2}
       propertyPath: ammoPickup
@@ -76788,7 +76836,7 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114350192737174764, guid: d4c304663c6358e47b8312ba786e4bae,
         type: 2}
       propertyPath: laser
@@ -79571,12 +79619,12 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114350192737174764, guid: d4c304663c6358e47b8312ba786e4bae,
         type: 2}
       propertyPath: laser
       value: 
-      objectReference: {fileID: 1112488589}
+      objectReference: {fileID: 0}
     - target: {fileID: 114350192737174764, guid: d4c304663c6358e47b8312ba786e4bae,
         type: 2}
       propertyPath: pickupSound
@@ -80633,12 +80681,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4878863369312908, guid: 153cb912517009f47a98eb3688703fb1,
     type: 2}
   m_PrefabInternal: {fileID: 2100221994}
---- !u!114 &2107569904 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114337494252137800, guid: 196fe22fb2011f74992da1b438d7c824,
-    type: 2}
-  m_PrefabInternal: {fileID: 22657859}
-  m_Script: {fileID: 11500000, guid: 5806539ff19f79c49a5629d44e5ddc15, type: 3}
 --- !u!1001 &2109122889
 Prefab:
   m_ObjectHideFlags: 0
@@ -81588,7 +81630,7 @@ Prefab:
         type: 2}
       propertyPath: shotgun
       value: 
-      objectReference: {fileID: 2107569904}
+      objectReference: {fileID: 0}
     - target: {fileID: 114961135582396432, guid: 2b684a651149cea46ae27b48e20680af,
         type: 2}
       propertyPath: laser

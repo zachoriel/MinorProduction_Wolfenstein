@@ -10,12 +10,12 @@ public class Movement : MonoBehaviour
     public Animator SGanimator;
     public Animator LRanimator;
     public float speed;
-
+    public AnimationCurve accel;
+    public float accelEval;
     public bool toggle;
 
     Vector3 forwardDir;
     Vector3 rightDir;
-
     //Vector3 CameraYrot;
 
     Transform camera;
@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
         if (camera != null)
         {
             forwardDir = camera.transform.forward * vert;
-            rightDir = camera.transform.right * horz;
+            rightDir = camera.transform.right * horz * 0.5f;
             gameObject.transform.rotation = camera.transform.rotation;
         }
     }
@@ -65,7 +65,7 @@ public class Movement : MonoBehaviour
         {
 
             Vector3 dir = (forwardDir + rightDir).normalized;
-            Vector3 desiredVel = dir * speed;
+            Vector3 desiredVel = dir * (speed * accel.Evaluate(accelEval));
             rb.AddForce(desiredVel - rb.velocity);
 
             if (Input.GetAxisRaw("Horizontal").Equals(0) && Input.GetAxisRaw("Vertical").Equals(0))
