@@ -81,7 +81,7 @@ public class EnemyGun : MonoBehaviour
 
     void Laser()
     {
-        if (isDrone)
+        if (isDrone && playerStats.TakingDamage)
         {
             playerStats.TakeDamage(damageOverTime * Time.deltaTime);
         }

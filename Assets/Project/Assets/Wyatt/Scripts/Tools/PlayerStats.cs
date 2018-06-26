@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject spawnPoint;
     public Gun gun; // THIS IS JUST FOR RESETTING TEXT ON DEATH
     public WeaponSwitch weapons;
+    public SceneFader fader;
     public bool inMenu;
 
     [Header("UI Elements")]
@@ -29,6 +30,9 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
+        fader = FindObjectOfType<SceneFader>();
+        TakingDamage = true;
+
         scoreText.text = Score.ToString();
         livesText.text = Lives.ToString();
         if (inMenu == true)
@@ -47,7 +51,6 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        TakingDamage = true;
         if(Armor >= 0)
         {
             Armor -= amount / 2;
@@ -65,16 +68,16 @@ public class PlayerStats : MonoBehaviour
         armorText.text = Mathf.RoundToInt(Armor).ToString();
         healthText.text = Mathf.RoundToInt(Health).ToString();
 
-        //TakingDamage = false;
         if (Health <= 0f)
         {
-            Die();
+            TakingDamage = false;
+            Health = 0f;
+            fader.FadeToDeath();
         }
     }
 
-    void Die()
-    {
-        
+    public void Die()
+    {       
         weapons.selectedWeapon = 1;
         Health = startHealth;
         healthText.text = Mathf.RoundToInt(Health).ToString();
