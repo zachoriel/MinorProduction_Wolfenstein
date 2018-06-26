@@ -1,89 +1,96 @@
 fileFormatVersion: 2
-guid: 22c966604047ac14a8758ffff3bde6ac
-timeCreated: 1529427726
+guid: 992edb090b103e04da8d2234eaf1226f
+timeCreated: 1529973680
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: Barrels1
-    100002: Hands1
-    100004: J_L__Thumb_02
-    100006: J_L_Elbow
-    100008: J_L_Middle_01
-    100010: J_L_Middle_02
-    100012: J_L_Middle_02 1
-    100014: J_L_Middle_03
-    100016: J_L_Middle_03 1
-    100018: J_L_Pinky_01
-    100020: J_L_Pinky_02
-    100022: J_L_Pinky_03
-    100024: J_L_Pointer_01
-    100026: J_L_Ring_01
-    100028: J_L_Ring_02
-    100030: J_L_Ring_03
-    100032: J_L_Thumb_01
-    100034: J_L_Wrist
-    100036: J_R__Thumb_02
-    100038: J_R_Elbow
-    100040: J_R_Middle_01
-    100042: J_R_Middle_02
-    100044: J_R_Middle_02 1
-    100046: J_R_Middle_03
-    100048: J_R_Middle_03 1
-    100050: J_R_Pinky_01
-    100052: J_R_Pinky_02
-    100054: J_R_Pinky_03
-    100056: J_R_Pointer_01
-    100058: J_R_Ring_01
-    100060: J_R_Ring_02
-    100062: J_R_Ring_03
-    100064: J_R_Thumb_01
-    100066: J_R_Wrist
-    100068: J_ROOT
-    100070: //RootNode
-    400000: Barrels1
-    400002: Hands1
-    400004: J_L__Thumb_02
-    400006: J_L_Elbow
-    400008: J_L_Middle_01
-    400010: J_L_Middle_02
-    400012: J_L_Middle_02 1
-    400014: J_L_Middle_03
-    400016: J_L_Middle_03 1
-    400018: J_L_Pinky_01
-    400020: J_L_Pinky_02
-    400022: J_L_Pinky_03
-    400024: J_L_Pointer_01
-    400026: J_L_Ring_01
-    400028: J_L_Ring_02
-    400030: J_L_Ring_03
-    400032: J_L_Thumb_01
-    400034: J_L_Wrist
-    400036: J_R__Thumb_02
-    400038: J_R_Elbow
-    400040: J_R_Middle_01
-    400042: J_R_Middle_02
-    400044: J_R_Middle_02 1
-    400046: J_R_Middle_03
-    400048: J_R_Middle_03 1
-    400050: J_R_Pinky_01
-    400052: J_R_Pinky_02
-    400054: J_R_Pinky_03
-    400056: J_R_Pointer_01
-    400058: J_R_Ring_01
-    400060: J_R_Ring_02
-    400062: J_R_Ring_03
-    400064: J_R_Thumb_01
-    400066: J_R_Wrist
-    400068: J_ROOT
-    400070: //RootNode
-    2300000: Barrels1
-    3300000: Barrels1
+    100000: Hands1
+    100002: J_L__Thumb_02
+    100004: J_L_Elbow
+    100006: J_L_Middle_01
+    100008: J_L_Middle_02
+    100010: J_L_Middle_02 1
+    100012: J_L_Middle_03
+    100014: J_L_Middle_03 1
+    100016: J_L_Pinky_01
+    100018: J_L_Pinky_02
+    100020: J_L_Pinky_03
+    100022: J_L_Pointer_01
+    100024: J_L_Ring_01
+    100026: J_L_Ring_02
+    100028: J_L_Ring_03
+    100030: J_L_Thumb_01
+    100032: J_L_Wrist
+    100034: J_R__Thumb_02
+    100036: J_R_Elbow
+    100038: J_R_Middle_01
+    100040: J_R_Middle_02
+    100042: J_R_Middle_02 1
+    100044: J_R_Middle_03
+    100046: J_R_Middle_03 1
+    100048: J_R_Pinky_01
+    100050: J_R_Pinky_02
+    100052: J_R_Pinky_03
+    100054: J_R_Pointer_01
+    100056: J_R_Ring_01
+    100058: J_R_Ring_02
+    100060: J_R_Ring_03
+    100062: J_R_Thumb_01
+    100064: J_R_Wrist
+    100066: J_ROOT
+    100068: joint1
+    100070: joint2
+    100072: joint3
+    100074: joint4
+    100076: //RootNode
+    100078: shotgunref:Barrels2
+    400000: Hands1
+    400002: J_L__Thumb_02
+    400004: J_L_Elbow
+    400006: J_L_Middle_01
+    400008: J_L_Middle_02
+    400010: J_L_Middle_02 1
+    400012: J_L_Middle_03
+    400014: J_L_Middle_03 1
+    400016: J_L_Pinky_01
+    400018: J_L_Pinky_02
+    400020: J_L_Pinky_03
+    400022: J_L_Pointer_01
+    400024: J_L_Ring_01
+    400026: J_L_Ring_02
+    400028: J_L_Ring_03
+    400030: J_L_Thumb_01
+    400032: J_L_Wrist
+    400034: J_R__Thumb_02
+    400036: J_R_Elbow
+    400038: J_R_Middle_01
+    400040: J_R_Middle_02
+    400042: J_R_Middle_02 1
+    400044: J_R_Middle_03
+    400046: J_R_Middle_03 1
+    400048: J_R_Pinky_01
+    400050: J_R_Pinky_02
+    400052: J_R_Pinky_03
+    400054: J_R_Pointer_01
+    400056: J_R_Ring_01
+    400058: J_R_Ring_02
+    400060: J_R_Ring_03
+    400062: J_R_Thumb_01
+    400064: J_R_Wrist
+    400066: J_ROOT
+    400068: joint1
+    400070: joint2
+    400072: joint3
+    400074: joint4
+    400076: //RootNode
+    400078: shotgunref:Barrels2
     4300000: Hands1
-    4300002: Barrels1
-    7400000: Take 001
+    4300002: shotgunref:Barrels2
+    7400000: Fire
     9500000: //RootNode
     13700000: Hands1
+    13700002: shotgunref:Barrels2
   materials:
     importMaterials: 1
     materialName: 0
@@ -109,17 +116,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Fire
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 21
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
