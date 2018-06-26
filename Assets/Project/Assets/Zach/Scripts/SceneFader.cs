@@ -79,9 +79,10 @@ public class SceneFader : MonoBehaviour
         // Waits 1 second after fading to call the player death function
         yield return new WaitForSeconds(1f);
 
-        player.Die();
-
         // Fades back in after player dies
         StartCoroutine(FadeIn());
+
+        player.Die();
+        player.TakingDamage = true;
     }
 }

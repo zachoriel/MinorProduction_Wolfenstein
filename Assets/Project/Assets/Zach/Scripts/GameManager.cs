@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public CameraScript camera;
     public WeaponSwitch weapons;
-    public GameObject pauseScreen;
+    public GameObject pauseScreen, sceneFaderCanvas, reticle;
     public AudioSource pauseMusic;
 
     void Update()
@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
             camera.enabled = false;
             weapons.enabled = false;
             pauseScreen.SetActive(true);
+            sceneFaderCanvas.SetActive(false);
+            reticle.SetActive(false);
             pauseMusic.Play();
             Time.timeScale = 0;
         }

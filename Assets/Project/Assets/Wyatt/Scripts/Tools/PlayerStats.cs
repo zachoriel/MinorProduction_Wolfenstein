@@ -31,6 +31,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         fader = FindObjectOfType<SceneFader>();
+        TakingDamage = true;
 
         scoreText.text = Score.ToString();
         livesText.text = Lives.ToString();
@@ -50,7 +51,6 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        TakingDamage = true;
         if(Armor >= 0)
         {
             Armor -= amount / 2;
@@ -68,17 +68,16 @@ public class PlayerStats : MonoBehaviour
         armorText.text = Mathf.RoundToInt(Armor).ToString();
         healthText.text = Mathf.RoundToInt(Health).ToString();
 
-        //TakingDamage = false;
         if (Health <= 0f)
         {
+            TakingDamage = false;
             Health = 0f;
             fader.FadeToDeath();
         }
     }
 
     public void Die()
-    {
-        
+    {       
         weapons.selectedWeapon = 1;
         Health = startHealth;
         healthText.text = Mathf.RoundToInt(Health).ToString();

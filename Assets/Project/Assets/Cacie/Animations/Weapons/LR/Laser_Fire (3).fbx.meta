@@ -1,105 +1,96 @@
 fileFormatVersion: 2
-guid: 724f3523be05a404f8f524393e565b59
-timeCreated: 1529608186
+guid: fe448b6ff87902147b7cb1ca32447b03
+timeCreated: 1529967170
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: camera1
-    100002: Cell
-    100004: Cell_End
-    100006: GUN
-    100008: Gun_End
-    100010: Gun_Laser
-    100012: Gun_Root
-    100014: Hands1
-    100016: J_L__Thumb_02
-    100018: J_L_Elbow
-    100020: J_L_Middle_01
-    100022: J_L_Middle_02
-    100024: J_L_Middle_02 1
-    100026: J_L_Middle_03
-    100028: J_L_Middle_03 1
-    100030: J_L_Pinky_01
-    100032: J_L_Pinky_02
-    100034: J_L_Pinky_03
-    100036: J_L_Pointer_01
-    100038: J_L_Ring_01
-    100040: J_L_Ring_02
-    100042: J_L_Ring_03
-    100044: J_L_Thumb_01
-    100046: J_L_Wrist
-    100048: J_R__Thumb_02
-    100050: J_R_Elbow
-    100052: J_R_Middle_01
-    100054: J_R_Middle_02
-    100056: J_R_Middle_02 1
-    100058: J_R_Middle_03
-    100060: J_R_Middle_03 1
-    100062: J_R_Pinky_01
-    100064: J_R_Pinky_02
-    100066: J_R_Pinky_03
-    100068: J_R_Pointer_01
-    100070: J_R_Ring_01
-    100072: J_R_Ring_02
-    100074: J_R_Ring_03
-    100076: J_R_Thumb_01
-    100078: J_R_Wrist
-    100080: J_ROOT
-    100082: //RootNode
-    100084: PowerCell1
-    400000: camera1
-    400002: Cell
-    400004: Cell_End
-    400006: GUN
-    400008: Gun_End
-    400010: Gun_Laser
-    400012: Gun_Root
-    400014: Hands1
-    400016: J_L__Thumb_02
-    400018: J_L_Elbow
-    400020: J_L_Middle_01
-    400022: J_L_Middle_02
-    400024: J_L_Middle_02 1
-    400026: J_L_Middle_03
-    400028: J_L_Middle_03 1
-    400030: J_L_Pinky_01
-    400032: J_L_Pinky_02
-    400034: J_L_Pinky_03
-    400036: J_L_Pointer_01
-    400038: J_L_Ring_01
-    400040: J_L_Ring_02
-    400042: J_L_Ring_03
-    400044: J_L_Thumb_01
-    400046: J_L_Wrist
-    400048: J_R__Thumb_02
-    400050: J_R_Elbow
-    400052: J_R_Middle_01
-    400054: J_R_Middle_02
-    400056: J_R_Middle_02 1
-    400058: J_R_Middle_03
-    400060: J_R_Middle_03 1
-    400062: J_R_Pinky_01
-    400064: J_R_Pinky_02
-    400066: J_R_Pinky_03
-    400068: J_R_Pointer_01
-    400070: J_R_Ring_01
-    400072: J_R_Ring_02
-    400074: J_R_Ring_03
-    400076: J_R_Thumb_01
-    400078: J_R_Wrist
-    400080: J_ROOT
-    400082: //RootNode
-    400084: PowerCell1
-    2000000: camera1
+    100000: Hands1
+    100002: J_L__Thumb_02
+    100004: J_L_Elbow
+    100006: J_L_Middle_01
+    100008: J_L_Middle_02
+    100010: J_L_Middle_02 1
+    100012: J_L_Middle_03
+    100014: J_L_Middle_03 1
+    100016: J_L_Pinky_01
+    100018: J_L_Pinky_02
+    100020: J_L_Pinky_03
+    100022: J_L_Pointer_01
+    100024: J_L_Ring_01
+    100026: J_L_Ring_02
+    100028: J_L_Ring_03
+    100030: J_L_Thumb_01
+    100032: J_L_Wrist
+    100034: J_R__Thumb_02
+    100036: J_R_Elbow
+    100038: J_R_Middle_01
+    100040: J_R_Middle_02
+    100042: J_R_Middle_02 1
+    100044: J_R_Middle_03
+    100046: J_R_Middle_03 1
+    100048: J_R_Pinky_01
+    100050: J_R_Pinky_02
+    100052: J_R_Pinky_03
+    100054: J_R_Pointer_01
+    100056: J_R_Ring_01
+    100058: J_R_Ring_02
+    100060: J_R_Ring_03
+    100062: J_R_Thumb_01
+    100064: J_R_Wrist
+    100066: J_ROOT
+    100068: joint1
+    100070: joint2
+    100072: joint3
+    100074: joint4
+    100076: //RootNode
+    100078: LaserGun
+    400000: Hands1
+    400002: J_L__Thumb_02
+    400004: J_L_Elbow
+    400006: J_L_Middle_01
+    400008: J_L_Middle_02
+    400010: J_L_Middle_02 1
+    400012: J_L_Middle_03
+    400014: J_L_Middle_03 1
+    400016: J_L_Pinky_01
+    400018: J_L_Pinky_02
+    400020: J_L_Pinky_03
+    400022: J_L_Pointer_01
+    400024: J_L_Ring_01
+    400026: J_L_Ring_02
+    400028: J_L_Ring_03
+    400030: J_L_Thumb_01
+    400032: J_L_Wrist
+    400034: J_R__Thumb_02
+    400036: J_R_Elbow
+    400038: J_R_Middle_01
+    400040: J_R_Middle_02
+    400042: J_R_Middle_02 1
+    400044: J_R_Middle_03
+    400046: J_R_Middle_03 1
+    400048: J_R_Pinky_01
+    400050: J_R_Pinky_02
+    400052: J_R_Pinky_03
+    400054: J_R_Pointer_01
+    400056: J_R_Ring_01
+    400058: J_R_Ring_02
+    400060: J_R_Ring_03
+    400062: J_R_Thumb_01
+    400064: J_R_Wrist
+    400066: J_ROOT
+    400068: joint1
+    400070: joint2
+    400072: joint3
+    400074: joint4
+    400076: //RootNode
+    400078: LaserGun
     4300000: Hands1
-    4300002: PowerCell1
-    4300004: Gun_Laser
-    7400000: Take 001
+    4300002: LaserGun
+    7400000: Fire
     9500000: //RootNode
-    13700000: Gun_Laser
-    13700002: Hands1
-    13700004: PowerCell1
+    13700000: Hands1
+    13700002: LaserGun
   materials:
     importMaterials: 1
     materialName: 0
@@ -125,10 +116,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Fire
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 23
+      lastFrame: 36
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

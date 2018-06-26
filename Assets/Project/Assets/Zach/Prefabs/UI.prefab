@@ -1066,6 +1066,8 @@ MonoBehaviour:
   camera: {fileID: 0}
   weapons: {fileID: 0}
   pauseScreen: {fileID: 1312548128176614}
+  sceneFaderCanvas: {fileID: 0}
+  reticle: {fileID: 1284824545794530}
   pauseMusic: {fileID: 0}
   animator: {fileID: 95173370592511624}
 --- !u!114 &114316344028282402
@@ -1129,6 +1131,8 @@ MonoBehaviour:
   camera: {fileID: 0}
   weapons: {fileID: 0}
   pauseScreen: {fileID: 1312548128176614}
+  sceneFaderCanvas: {fileID: 0}
+  reticle: {fileID: 1284824545794530}
   pauseMusic: {fileID: 0}
   animator: {fileID: 95734345975358854}
 --- !u!114 &114333543706800536
@@ -1181,7 +1185,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1195,7 +1199,7 @@ MonoBehaviour:
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
+    m_HighlightedTrigger: isHovering
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
@@ -1228,7 +1232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.41239122, g: 0.24978374, b: 0.5147059, a: 0.641}
+  m_Color: {r: 0.24978377, g: 0.41604528, b: 0.5147059, a: 0.641}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1420,6 +1424,8 @@ MonoBehaviour:
   camera: {fileID: 0}
   weapons: {fileID: 0}
   pauseScreen: {fileID: 1312548128176614}
+  sceneFaderCanvas: {fileID: 0}
+  reticle: {fileID: 1284824545794530}
   pauseMusic: {fileID: 0}
   animator: {fileID: 95544389448922390}
 --- !u!114 &114486015750647440
@@ -1695,7 +1701,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1709,7 +1715,7 @@ MonoBehaviour:
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
+    m_HighlightedTrigger: isHovering
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
@@ -1834,7 +1840,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1848,7 +1854,7 @@ MonoBehaviour:
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
+    m_HighlightedTrigger: isHovering
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1

@@ -7,7 +7,7 @@ public class ButtonManager : MonoBehaviour
 {
     public CameraScript camera;
     public WeaponSwitch weapons;
-    public GameObject pauseScreen;
+    public GameObject pauseScreen, sceneFaderCanvas, reticle;
     public AudioSource pauseMusic;
     public Animator animator;
 
@@ -17,6 +17,8 @@ public class ButtonManager : MonoBehaviour
         camera.SetCursorLock(true);
         weapons.enabled = true;
         pauseScreen.SetActive(false);
+        sceneFaderCanvas.SetActive(true);
+        reticle.SetActive(true);
         pauseMusic.Stop();
         Time.timeScale = 1;
     }
@@ -25,6 +27,8 @@ public class ButtonManager : MonoBehaviour
     {
         camera.enabled = true;
         camera.SetCursorLock(true);
+        sceneFaderCanvas.SetActive(true);
+        reticle.SetActive(true);
         Time.timeScale = 1;
         SceneManager.LoadScene("ShipLevel");
         pauseMusic.Stop();
