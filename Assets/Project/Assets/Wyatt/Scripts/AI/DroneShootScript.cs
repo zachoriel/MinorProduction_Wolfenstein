@@ -90,7 +90,7 @@ public class DroneShootScript : MonoBehaviour
                 if(hit.collider.tag == "Player")
                 {
                     PlayerStats temp = hit.collider.GetComponent<PlayerStats>();
-                    if(temp != null && temp.TakingDamage)
+                    if(temp != null && temp.TakingDamage && temp.godModeHiCacie == false)
                     {
                         temp.TakeDamage(Damage);
                     }

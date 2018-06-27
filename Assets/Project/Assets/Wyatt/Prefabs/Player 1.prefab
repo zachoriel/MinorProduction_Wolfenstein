@@ -1639,7 +1639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1906698590676936
 GameObject:
   m_ObjectHideFlags: 1
@@ -4886,7 +4886,8 @@ MonoBehaviour:
   muzzleFlash: {fileID: 198165368167347960}
   impactEffect: {fileID: 1685545750784954, guid: 98e92d158c0f25646af934fbd31b020f,
     type: 2}
-  wallBreakEffect: {fileID: 0}
+  wallBreakEffect: {fileID: 1116380291541882, guid: 30adc18feed41c247989b7f214b55600,
+    type: 2}
   reloadGun: {fileID: 82239759947149498}
   gunFire: {fileID: 82654375196107340}
   emptyClip: {fileID: 82693876360441422}
@@ -4936,7 +4937,7 @@ MonoBehaviour:
   animator: {fileID: 95382294322539276}
   ammoText: {fileID: 0}
   range: 500
-  reloadTime: 3
+  reloadTime: 1.16
   damage: 75
   fireRate: 1
   impactForce: 3000
@@ -4983,6 +4984,25 @@ MonoBehaviour:
   SGanimator: {fileID: 95382294322539276}
   LRanimator: {fileID: 95256149755456502}
   speed: 120
+  accel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  accelEval: 1
   toggle: 0
 --- !u!120 &120030720775895474
 LineRenderer:

@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour 
 {
     [Header("Setup")]
+    public bool inMenu;
     public GameObject spawnPoint;
     public Gun gun; // THIS IS JUST FOR RESETTING TEXT ON DEATH
     public WeaponSwitch weapons;
     public SceneFader fader;
-    public bool inMenu;
 
     [Header("UI Elements")]
     public Text scoreText;
@@ -19,6 +19,8 @@ public class PlayerStats : MonoBehaviour
     public Text ammoText;
 
     [Header("Stats")]
+    public bool godModeHiCacie = false;
+    public bool TakingDamage;
     public float Armor;
     private float startArmor = 50f;
     public float Health;
@@ -26,7 +28,6 @@ public class PlayerStats : MonoBehaviour
     public int Lives;
     public float Score;
 
-    public bool TakingDamage;
 
     void Start()
     {
@@ -68,11 +69,17 @@ public class PlayerStats : MonoBehaviour
         armorText.text = Mathf.RoundToInt(Armor).ToString();
         healthText.text = Mathf.RoundToInt(Health).ToString();
 
-        if (Health <= 0f)
+        if (Health <= 0f && Lives > 1)
         {
             TakingDamage = false;
             Health = 0f;
             fader.FadeToDeath();
+        }
+        else if (Health <= 0f && Lives <= 1)
+        {
+            TakingDamage = false;
+            Health = 0f;
+            fader.FadeTo("GameOver");
         }
     }
 
@@ -90,7 +97,8 @@ public class PlayerStats : MonoBehaviour
 
         if (Lives <= 0)
         {
-            SceneManager.LoadScene("ShipLevel");  // Replace when adding game over screen
+            fader.FadeTo("GameOver");
+            //SceneManager.LoadScene("GameOver");  // Replace when adding game over screen
         }
     }
 }

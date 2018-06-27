@@ -8,6 +8,7 @@ public class Win : MonoBehaviour
 {
     public ControlPanel panel;
     public PlayerStats player;
+    public SceneFader fader;
 
     [Header("Number Of Enemies Array")]
     public GameObject[] enemies;
@@ -69,6 +70,7 @@ public class Win : MonoBehaviour
 
     public void WinLevel()
     {
-        SceneManager.LoadScene("ShipLevel"); // replace when implementing win
+        fader.FadeTo("WinScene");
+        //SceneManager.LoadScene("WinScene");
     }
 }

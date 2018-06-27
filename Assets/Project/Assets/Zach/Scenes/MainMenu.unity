@@ -9549,6 +9549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6977c04426985f49a868eb6d278ec3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   img: {fileID: 429396547}
   curve:
     serializedVersion: 2
@@ -15685,6 +15686,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 882599911}
   gun: {fileID: 0}
   weapons: {fileID: 127728335}
+  fader: {fileID: 0}
   inMenu: 1
   scoreText: {fileID: 994513289}
   livesText: {fileID: 885222225}
@@ -15713,6 +15715,25 @@ MonoBehaviour:
   SGanimator: {fileID: 0}
   LRanimator: {fileID: 0}
   speed: 30
+  accel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  accelEval: 1
   toggle: 0
 --- !u!54 &1619822010
 Rigidbody:

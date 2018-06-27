@@ -83,11 +83,25 @@ public class EnemyGun : MonoBehaviour
     {
         if (isDrone && playerStats.TakingDamage)
         {
-            playerStats.TakeDamage(damageOverTime * Time.deltaTime);
+            if (playerStats.godModeHiCacie == false)
+            {
+                playerStats.TakeDamage(damageOverTime * Time.deltaTime);
+            }
+            else
+            {
+                return;
+            }
         }
         else
         {
-            playerMovement.Slow();
+            if (playerStats.godModeHiCacie == false)
+            {
+                playerMovement.Slow();
+            }
+            else
+            {
+                return;
+            }
         }
         
         if (!lineRenderer.enabled)
