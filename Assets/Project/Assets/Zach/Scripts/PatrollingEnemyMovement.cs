@@ -5,14 +5,18 @@ using UnityEngine;
 public class PatrollingEnemyMovement : MonoBehaviour
 {
     private Transform target;
+
+    [Header("Wavepoint Info")]
     public int wavepointIndex;
-    public int speed;
-    public int startSpeed = 10;
     public int startWaypoint;
     public int endPathPoint;
 
+    [Header("Stats")]
+    public int speed;
+    public int startSpeed = 10;
+
 	// Use this for initialization
-	void Start ()
+	void Start () 
     {
         wavepointIndex = startWaypoint;
         target = Waypoints.waypoints[startWaypoint];
@@ -34,14 +38,16 @@ public class PatrollingEnemyMovement : MonoBehaviour
 
     void GetNextWaypoint()
     {
-        if (wavepointIndex >= Waypoints.waypoints.Length - endPathPoint)                // This is a shitty solution to an awkward problem. If you're confused and need to use this script, please ask for a vocal explanation. 
+        if (wavepointIndex >= Waypoints.waypoints.Length - endPathPoint)                // This is a shitty solution to an awkward problem. If you're confused and need to use this script, I'll explain it in person.
         {
             EndPath();
+            Rotate();
             return;
         }
 
         wavepointIndex++;
         target = Waypoints.waypoints[wavepointIndex];
+        Rotate();
     }
 
     void EndPath()
@@ -49,5 +55,10 @@ public class PatrollingEnemyMovement : MonoBehaviour
         wavepointIndex = startWaypoint;
         target = Waypoints.waypoints[startWaypoint];
 
+    }
+
+    void Rotate()
+    {
+        transform.Rotate(Vector3.up, 180);
     }
 }

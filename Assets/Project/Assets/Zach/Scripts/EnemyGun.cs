@@ -4,41 +4,55 @@ using UnityEngine;
 
 public class EnemyGun : MonoBehaviour
 {
+    [Header("Script Setup")]
     public LineOfSight lineofSight;
     public PlayerStats playerStats;
+    public Movement playerMovement;
+    public BasicAI ai;
 
-    public Transform player, firePoint;
+    [Header("Component Setup")]
+    public Transform player;
+    public Transform firePoint;
     public GameObject enemyObject;
     public LineRenderer lineRenderer;
-    public AudioSource laserSound;
+    public AudioSource laserBeam;
+    public Animator animator;
 
+    [Header("Type Of Enemy")]
     public bool useLaser = true;
+    public bool isDrone;
 
+    [Header("Stats")]
     public float range = 15f;
     public int damageOverTime = 30;
 
     void Awake()
     {
+        playerStats = FindObjectOfType<PlayerStats>();
         player = GameObject.FindWithTag("Player").transform;
+        playerMovement = FindObjectOfType<Movement>();
+        ai = FindObjectOfType<BasicAI>();
     }
 
     void Update()
     {
         if (lineofSight.CanSeeTarget == false)
         {
+            animator.SetBool("isFiringLaser", false);
+
             if (useLaser)
             {
                 if (lineRenderer.enabled)
                 {
-                    laserSound.Stop();
+                    laserBeam.Stop();
                     lineRenderer.enabled = false;
                 }
             }
             //return;
         }
-        else if (lineofSight.CanSeeTarget == true)
+        else if (lineofSight.CanSeeTarget == true && ai.state != BasicAI.State.FLEE)
         {
-            enemyObject.transform.LookAt(player);
+            animator.SetBool("isFiringLaser", true);
 
             if (useLaser)
             {
@@ -48,23 +62,58 @@ public class EnemyGun : MonoBehaviour
             {
                 Shoot();
             } 
-        }        
+        }  
+        else if (lineofSight.CanSeeTarget == true && ai.state == BasicAI.State.FLEE)
+        {
+            animator.SetBool("isFiringLaser", false);
+
+            if (useLaser)
+            {
+
+                if (lineRenderer.enabled)
+                {
+                    laserBeam.Stop();
+                    lineRenderer.enabled = false;
+                }
+            }
+        }
     }
 
     void Laser()
     {
-        playerStats.TakeDamage(damageOverTime * Time.deltaTime);
+        if (isDrone && playerStats.TakingDamage)
+        {
+            if (playerStats.godModeHiCacie == false)
+            {
+                playerStats.TakeDamage(damageOverTime * Time.deltaTime);
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {
+            if (playerStats.godModeHiCacie == false)
+            {
+                playerMovement.Slow();
+            }
+            else
+            {
+                return;
+            }
+        }
         
         if (!lineRenderer.enabled)
         {
-            laserSound.Play();
+            laserBeam.Play();
             lineRenderer.enabled = true;
         }
 
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, player.position);
 
-        Vector3 dir = firePoint.position - player.position;  // For impact effects if used
+        //Vector3 dir = firePoint.position - player.position;  // For impact effects if used
     }
 
     void Shoot()

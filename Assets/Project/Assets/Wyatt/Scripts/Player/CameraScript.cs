@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
+    public AimAndControlsSetting invertedControls;
+
     public float speedH;
     public float speedV;
 
@@ -26,9 +28,22 @@ public class CameraScript : MonoBehaviour
         return angle;
     }
 
+    void Start()
+    {
+        invertedControls = FindObjectOfType<AimAndControlsSetting>();
+        speedH = 5f;
+    }
+
     void Update()
     {
-        yaw += Input.GetAxis("Mouse X") * speedH;
+        if (invertedControls.invertedMouse == false)
+        {
+            yaw += Input.GetAxis("Mouse X") * speedH;
+        }
+        else
+        {
+            yaw -= Input.GetAxis("Mouse X") * speedH;
+        }
         //pitch -= Input.GetAxis("Mouse Y") * speedV;
 
         //pitch = Mathf.Clamp(pitch, minPitch, maxPitch);

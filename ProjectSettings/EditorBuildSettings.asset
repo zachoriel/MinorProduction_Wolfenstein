@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Project/Assets/Zach/Scenes/MainMenu.unity
+    guid: cd06693ac0e79294ea66eab5f75df506
+  - enabled: 1
+    path: Assets/Project/Assets/Zach/Scenes/ShipLevel.unity
+    guid: 9922648c0dcff684b902f145bdffadc2
+  - enabled: 1
+    path: Assets/Project/Assets/Zach/Scenes/GameOver.unity
+    guid: 38ae9fc8eafe8374dacdad7ae198e22d
+  - enabled: 1
+    path: Assets/Project/Assets/Zach/Scenes/WinScene.unity
+    guid: 637019a63008c7d43852682552594bf3

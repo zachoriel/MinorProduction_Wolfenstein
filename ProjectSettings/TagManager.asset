@@ -5,6 +5,24 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - Enemy
+  - Armor
+  - Health
+  - Life
+  - Ammo
+  - BigAmmo
+  - WinItem
+  - UI
+  - PlayButton
+  - SettingsButton
+  - QuitButton
+  - UpVolume
+  - DownVolume
+  - AimToggle
+  - InvertedToggle
+  - SettingsManager
+  - Drone
+  - Rifle
   layers:
   - Default
   - TransparentFX

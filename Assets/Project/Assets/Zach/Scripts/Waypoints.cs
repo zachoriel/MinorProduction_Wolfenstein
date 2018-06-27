@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
 public class Waypoints : MonoBehaviour
-{
-    
+{   
     public static Transform[] waypoints;
 
 	// Use this for initialization
