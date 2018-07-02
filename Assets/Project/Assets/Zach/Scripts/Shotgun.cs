@@ -142,7 +142,6 @@ public class Shotgun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-
             EnemyStats enemyTarget = hit.transform.GetComponent<EnemyStats>();
             WallBreak wallTarget = hit.transform.GetComponent<WallBreak>();
             DroneStats drone = hit.transform.GetComponent<DroneStats>();
