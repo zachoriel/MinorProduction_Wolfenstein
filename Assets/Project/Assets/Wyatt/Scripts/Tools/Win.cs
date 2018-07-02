@@ -34,7 +34,7 @@ public class Win : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "MainCamera")
         {
             if (panel.enteredKeyCode)
             {

@@ -7,7 +7,7 @@ public class EnemyGun : MonoBehaviour
     [Header("Script Setup")]
     public LineOfSight lineofSight;
     public PlayerStats playerStats;
-    public Movement playerMovement;
+    public PlayerMotor playerMovement;
     public BasicAI ai;
 
     [Header("Component Setup")]
@@ -30,7 +30,7 @@ public class EnemyGun : MonoBehaviour
     {
         playerStats = FindObjectOfType<PlayerStats>();
         player = GameObject.FindWithTag("Player").transform;
-        playerMovement = FindObjectOfType<Movement>();
+        playerMovement = FindObjectOfType<PlayerMotor>();
         ai = FindObjectOfType<BasicAI>();
     }
 

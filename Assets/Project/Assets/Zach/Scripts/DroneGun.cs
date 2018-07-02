@@ -7,7 +7,7 @@ public class DroneGun : MonoBehaviour
     [Header("Script Setup")]
     public LineOfSight lineofSight; 
     public PlayerStats playerStats;
-    public Movement playerMovement;
+    public PlayerMotor playerMovement;
     public DroneStats drone;
 
     [Header("Component Setup")]
@@ -30,7 +30,7 @@ public class DroneGun : MonoBehaviour
     {
         playerStats = FindObjectOfType<PlayerStats>();
         player = GameObject.FindWithTag("Player").transform;
-        playerMovement = FindObjectOfType<Movement>();
+        playerMovement = FindObjectOfType<PlayerMotor>();
         drone = FindObjectOfType<DroneStats>();
     }
 

@@ -25,27 +25,27 @@ public class PowerUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && gameObject.tag == "Armor")
+        if (other.tag == "MainCamera" && gameObject.tag == "Armor")
         {
             AddArmor();
             Destroy(gameObject);
         }
-        else if (other.tag == "Player" && gameObject.tag == "Health")
+        else if (other.tag == "MainCamera" && gameObject.tag == "Health")
         {
             AddHealth();
             Destroy(gameObject);
         }
-        else if (other.tag == "Player" && gameObject.tag == "Life")
+        else if (other.tag == "MainCamera" && gameObject.tag == "Life")
         {
             AddLife();
             Destroy(gameObject);
         }
-        else if (other.tag == "Player" && gameObject.tag == "Ammo")
+        else if (other.tag == "MainCamera" && gameObject.tag == "Ammo")
         {
             AddAmmo();
             Destroy(gameObject);
         }
-        else if (other.tag == "Player" && gameObject.tag == "BigAmmo")
+        else if (other.tag == "MainCamera" && gameObject.tag == "BigAmmo")
         {
             RestoreAmmo();
             Destroy(gameObject);

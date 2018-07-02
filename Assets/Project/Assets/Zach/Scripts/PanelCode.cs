@@ -18,7 +18,7 @@ public class PanelCode : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "MainCamera")
         {
             panel.foundKeyCode = true;
             panel.objectiveText.text = "Objective: Enter the keycode!";
@@ -30,7 +30,7 @@ public class PanelCode : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "MainCamera")
         {
             colors.a = 0;
             codeText.color = colors;

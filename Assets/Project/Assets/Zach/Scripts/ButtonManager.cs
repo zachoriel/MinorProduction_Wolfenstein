@@ -10,6 +10,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject pauseScreen, sceneFaderCanvas, reticle;
     public AudioSource pauseMusic;
     public Animator animator;
+    public SceneFader fader;
 
     public void Resume()
     {
@@ -30,7 +31,8 @@ public class ButtonManager : MonoBehaviour
         sceneFaderCanvas.SetActive(true);
         reticle.SetActive(true);
         Time.timeScale = 1;
-        SceneManager.LoadScene("ShipLevel");
+        fader.FadeTo("ShipLevel");
+        //SceneManager.LoadScene("ShipLevel");
         pauseMusic.Stop();
     }
 
@@ -41,7 +43,8 @@ public class ButtonManager : MonoBehaviour
 
     public void Return()
     {
-        SceneManager.LoadScene("MainMenu");
+        fader.FadeTo("MainMenu");
+        //SceneManager.LoadScene("MainMenu");
     }
 
 }
