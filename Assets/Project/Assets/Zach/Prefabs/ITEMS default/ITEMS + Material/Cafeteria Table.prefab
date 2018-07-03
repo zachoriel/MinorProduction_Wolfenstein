@@ -22,13 +22,13 @@ GameObject:
   - component: {fileID: 33875459711271776}
   - component: {fileID: 23791657372743922}
   - component: {fileID: 95775748608026508}
-  - component: {fileID: 65227333887606220}
+  - component: {fileID: 65067542407291456}
   m_Layer: 0
   m_Name: Cafeteria Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4417766210185178
 Transform:
@@ -36,9 +36,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1750596207204470}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -329.56958, y: 2.27, z: -9.704632}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -436.09122, y: 86.17796, z: 254.70424}
+  m_LocalScale: {x: 3.3183267, y: 3.3183267, z: 3.3183267}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,8 +81,8 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1750596207204470}
-  m_Mesh: {fileID: 4300000, guid: a0f66935a1362574b90c97a3d3819543, type: 3}
---- !u!65 &65227333887606220
+  m_Mesh: {fileID: 4300000, guid: 685c04d87d1ea4342be30e40409860c0, type: 3}
+--- !u!65 &65067542407291456
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -92,8 +92,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.3513994, y: 1.0241928, z: 1.7148372}
-  m_Center: {x: 0, y: -0.000000029802322, z: 0}
+  m_Size: {x: 3.3513994, y: 0.8017258, z: 1.7148372}
+  m_Center: {x: -0.000007688999, y: 0.40301368, z: 0}
 --- !u!95 &95775748608026508
 Animator:
   serializedVersion: 3
@@ -102,7 +102,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1750596207204470}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: a0f66935a1362574b90c97a3d3819543, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 685c04d87d1ea4342be30e40409860c0, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
