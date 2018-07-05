@@ -573,6 +573,7 @@ MonoBehaviour:
   weapons: {fileID: 127728335}
   animator: {fileID: 20129319}
   ammoText: {fileID: 344061085}
+  flashlight: {fileID: 0}
   range: 1000000
   reloadTime: 1.56
   damage: 30
@@ -15056,6 +15057,7 @@ MonoBehaviour:
   SGanimator: {fileID: 0}
   LRanimator: {fileID: 0}
   speed: 15
+  slowedSpeed: 0
 --- !u!114 &1516609138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15067,6 +15069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef4a95bd13c9974c97ef1713b94a3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beingAttacked: 0
 --- !u!54 &1516609139
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16460,7 +16463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222acd67f37ac8b4c9955049a7a07f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: CacieSceneCLONE
+  levelToLoad: ShipLevel
   sceneFader: {fileID: 693757210}
   settingsMenu: {fileID: 1859382121}
   menuButtons: {fileID: 838750409}

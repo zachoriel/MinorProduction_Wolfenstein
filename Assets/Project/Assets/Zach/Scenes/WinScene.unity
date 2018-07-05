@@ -4285,7 +4285,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 9999
+  m_SortingOrder: -18
   m_TargetDisplay: 0
 --- !u!1 &814645900
 GameObject:
@@ -11398,6 +11398,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   pauseMusic: {fileID: 0}
   animator: {fileID: 0}
+  fader: {fileID: 1688981023}
 --- !u!1 &1635313101
 GameObject:
   m_ObjectHideFlags: 0
