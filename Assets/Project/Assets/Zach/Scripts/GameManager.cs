@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public WeaponSwitch weapons;
     public GameObject pauseScreen, sceneFaderCanvas, reticle;
     public AudioSource pauseMusic;
+    private bool slowMotion = false;
 
     void Update()
     {
@@ -21,6 +22,20 @@ public class GameManager : MonoBehaviour
             reticle.SetActive(false);
             pauseMusic.Play();
             Time.timeScale = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (slowMotion == false)
+            {
+                slowMotion = true;
+                Time.timeScale = 0.35f;
+            }
+            else
+            {
+                slowMotion = false;
+                Time.timeScale = 1f;
+            }
         }
     }
 }

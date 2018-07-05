@@ -13,6 +13,7 @@ public class LaserRifle : MonoBehaviour
     public WeaponSwitch weapons;
     public Animator animator;
     public Text ammoText;
+    public Light flashlight;
 
     [Header("General")]
     public float range = 15f;
@@ -95,13 +96,25 @@ public class LaserRifle : MonoBehaviour
             animator.SetBool("isFiring", false);
         }
 
-        if (Input.GetButton("Fire2") && aim.aimAssist == true)
+        if (Input.GetKey(KeyCode.LeftShift) && aim.aimAssist == true)
         {
             mainCamera.speedH = 1;
         }
         else
         {
             mainCamera.speedH = 5;
+        }
+        
+        if (Input.GetButtonDown("Fire2"))
+        {
+            if (flashlight.enabled == true)
+            {
+                flashlight.enabled = false;
+            }
+            else
+            {
+                flashlight.enabled = true;
+            }
         }
 
         wholeEnergy = Mathf.RoundToInt(energy);

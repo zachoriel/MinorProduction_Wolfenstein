@@ -15051,6 +15051,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b28375894969924f875a7758e9268e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapons: {fileID: 127728335}
+  MGanimator: {fileID: 20129319}
+  SGanimator: {fileID: 0}
+  LRanimator: {fileID: 0}
   speed: 15
 --- !u!114 &1516609138
 MonoBehaviour:
@@ -16456,10 +16460,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222acd67f37ac8b4c9955049a7a07f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: ShipLevel
+  levelToLoad: CacieSceneCLONE
   sceneFader: {fileID: 693757210}
   settingsMenu: {fileID: 1859382121}
-  menuButtons: {fileID: 0}
+  menuButtons: {fileID: 838750409}
 --- !u!1001 &1706571826
 Prefab:
   m_ObjectHideFlags: 0

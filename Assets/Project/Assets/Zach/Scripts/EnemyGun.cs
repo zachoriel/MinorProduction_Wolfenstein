@@ -39,6 +39,7 @@ public class EnemyGun : MonoBehaviour
         if (lineofSight.CanSeeTarget == false)
         {
             animator.SetBool("isFiringLaser", false);
+            playerMovement.beingAttacked = false;
 
             if (useLaser)
             {
@@ -53,6 +54,7 @@ public class EnemyGun : MonoBehaviour
         else if (lineofSight.CanSeeTarget == true && ai.state != BasicAI.State.FLEE)
         {
             animator.SetBool("isFiringLaser", true);
+            playerMovement.beingAttacked = true;
 
             if (useLaser)
             {
@@ -66,6 +68,7 @@ public class EnemyGun : MonoBehaviour
         else if (lineofSight.CanSeeTarget == true && ai.state == BasicAI.State.FLEE)
         {
             animator.SetBool("isFiringLaser", false);
+            playerMovement.beingAttacked = false;
 
             if (useLaser)
             {
@@ -81,29 +84,29 @@ public class EnemyGun : MonoBehaviour
 
     void Laser()
     {
-        if (isDrone && playerStats.TakingDamage)
-        {
-            if (playerStats.godModeHiCacie == false)
-            {
-                playerStats.TakeDamage(damageOverTime * Time.deltaTime);
-            }
-            else
-            {
-                return;
-            }
-        }
-        else
-        {
-            if (playerStats.godModeHiCacie == false)
-            {
-                playerMovement.Slow();
-            }
-            else
-            {
-                return;
-            }
-        }
-        
+        //if (isDrone && playerStats.TakingDamage)
+        //{
+        //    if (playerStats.godModeHiCacie == false)
+        //    {
+        //        playerStats.TakeDamage(damageOverTime * Time.deltaTime);
+        //    }
+        //    else
+        //    {
+        //        return;
+        //    }
+        //}
+        //else if (isDrone == false && playerStats.TakingDamage)
+        //{
+        //    if (playerStats.godModeHiCacie == false)
+        //    {
+        //        playerMovement.
+        //    }
+        //    else
+        //    {
+        //        return;
+        //    }
+        //}
+
         if (!lineRenderer.enabled)
         {
             laserBeam.Play();

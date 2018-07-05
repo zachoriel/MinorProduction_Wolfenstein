@@ -7,7 +7,7 @@ public class DroneGun : MonoBehaviour
     [Header("Script Setup")]
     public LineOfSight lineofSight; 
     public PlayerStats playerStats;
-    public PlayerMotor playerMovement;
+    public PlayerController playerMovement;
     public DroneStats drone;
 
     [Header("Component Setup")]
@@ -30,7 +30,7 @@ public class DroneGun : MonoBehaviour
     {
         playerStats = FindObjectOfType<PlayerStats>();
         player = GameObject.FindWithTag("Player").transform;
-        playerMovement = FindObjectOfType<PlayerMotor>();
+        playerMovement = FindObjectOfType<PlayerController>();
         drone = FindObjectOfType<DroneStats>();
     }
 
@@ -39,6 +39,7 @@ public class DroneGun : MonoBehaviour
         if (lineofSight.CanSeeTarget == false)
         {
             animator.SetBool("isFiringLaser", false);
+            //playerMovement.beingSlowed = false;
 
             if (useLaser)
             {
@@ -83,17 +84,17 @@ public class DroneGun : MonoBehaviour
                 return;
             }
         }
-        else
-        {
-            if (playerStats.godModeHiCacie == false)
-            {
-                playerMovement.Slow();
-            }
-            else
-            {
-                return;
-            }
-        }
+        //else if (isDrone == false && playerStats.TakingDamage)
+        //{
+        //    if (playerStats.godModeHiCacie == false)
+        //    {
+        //        playerMovement.beingSlowed = true;
+        //    }
+        //    else
+        //    {
+        //        return;
+        //    }
+        //}
         
         if (!lineRenderer.enabled)
         {

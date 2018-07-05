@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     public Animator SGanimator;
     public Animator LRanimator;
 
-    [SerializeField]
-    private float speed = 5f;
+    public float speed;
+    public float slowedSpeed;
 
     private PlayerMotor motor;
 
@@ -32,9 +32,10 @@ public class PlayerController : MonoBehaviour
 
         // Final movement vector
         Vector3 _velocity = (_moveHorizontal + _moveVertical).normalized * speed;
+        Vector3 _sVelocity = (_moveHorizontal + _moveVertical).normalized * slowedSpeed;
 
         // Apply movement
-        motor.Move(_velocity);
+        motor.Move(_velocity, _sVelocity);
     }
 
     void FixedUpdate()

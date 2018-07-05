@@ -81,6 +81,7 @@ public class EnemyStats : MonoBehaviour
         agent.enabled = false;
         sight.enabled = false;
         sight.CanSeeTarget = false;         // Disabling just the script doesn't switch off the bool, and just disabling the bool for some reason doesn't work. 
+        sight.enemyGun = null;
 
         if (inMenu)
         {

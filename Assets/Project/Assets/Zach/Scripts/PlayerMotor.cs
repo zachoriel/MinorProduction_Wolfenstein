@@ -10,15 +10,24 @@ public class PlayerMotor : MonoBehaviour
 
     private Rigidbody rb;
 
+    public bool beingAttacked;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
     // Gets a movement vector
-    public void Move(Vector3 _velocity)
+    public void Move(Vector3 _velocity, Vector3 _sVelocity)
     {
-        velocity = _velocity;
+        if (beingAttacked)
+        {
+            velocity = _sVelocity;
+        }
+        else
+        {
+            velocity = _velocity;
+        }
     }
 
     // Run every physics iteration
@@ -34,10 +43,5 @@ public class PlayerMotor : MonoBehaviour
         {
             rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
         }
-    }
-
-    public void Slow()
-    {
-        rb.velocity *= 0.5f;
     }
 }
