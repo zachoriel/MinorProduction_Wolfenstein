@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Project/Assets/Zach/Scenes/MainMenu.unity
     guid: cd06693ac0e79294ea66eab5f75df506
   - enabled: 1
-    path: Assets/Project/Assets/Zach/Scenes/CacieSceneCLONE.unity
+    path: Assets/Project/Assets/Zach/Scenes/ShipLevel.unity
     guid: 7167142bc4d9dce448df79d1216fdd36
   - enabled: 1
     path: Assets/Project/Assets/Zach/Scenes/GameOver.unity

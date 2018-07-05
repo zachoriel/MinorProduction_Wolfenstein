@@ -60,8 +60,9 @@ public class DroneStats : MonoBehaviour
     void Die()
     {
         //laserBolt.Stop();
-        rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ; // Prevents dead enemies from falling through the floor
-        //rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ; // Prevents dead enemies from spinning when colliding with player
+        rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+        rb.useGravity = true;
+        rb.isKinematic = true;
         isDead = true;
         playerStats.Score += 10;
         playerStats.scoreText.text = playerStats.Score.ToString();
@@ -79,7 +80,7 @@ public class DroneStats : MonoBehaviour
         droneShoot.lineRenderer.enabled = false;
         //winCondition.enemiesAlive--;
         //enemiesAliveText.text = "Enemies Alive: " + winCondition.enemiesAlive.ToString();
-        gameObject.GetComponent<BoxCollider>().enabled = false;
+        //gameObject.GetComponent<BoxCollider>().enabled = false;
 
         StartCoroutine("DeathTimer");
     }
