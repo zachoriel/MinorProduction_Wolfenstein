@@ -7,6 +7,7 @@ public class LineOfSight : MonoBehaviour
     [Header("Component Setup")]
     public GameObject thePlayer;
     public EnemyGun enemyGun;
+    public bool isDrone;
 
     [Header("Detection")]
     public float HoodRadius;
@@ -20,7 +21,15 @@ public class LineOfSight : MonoBehaviour
     void Awake()
     {
         thePlayer = GameObject.FindGameObjectWithTag("MainCamera");
-        enemyGun = GetComponentInChildren<EnemyGun>();
+
+        if (isDrone)
+        {
+            enemyGun = FindObjectOfType<EnemyGun>();
+        }
+        else
+        {
+            enemyGun = GetComponentInChildren<EnemyGun>();
+        }
     }
     void Update()
     {

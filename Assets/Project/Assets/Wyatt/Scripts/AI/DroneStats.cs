@@ -23,6 +23,7 @@ public class DroneStats : MonoBehaviour
     //public AudioSource laserBolt;
     //public Text enemiesAliveText;
     Rigidbody rb;
+    Collider collider;
 
     [Header("Stats")]
     public float health;
@@ -43,6 +44,7 @@ public class DroneStats : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         aiMovement = GetComponent<DroneAI>();
         droneShoot = FindObjectOfType<DroneShootScript>();
+        collider = GetComponent<Collider>();
     }
 
     public void TakeDamage(float amount)
@@ -78,6 +80,7 @@ public class DroneStats : MonoBehaviour
         sight.enabled = false;
         droneShoot.useLaser = false;
         droneShoot.lineRenderer.enabled = false;
+        collider.enabled = false;
         //winCondition.enemiesAlive--;
         //enemiesAliveText.text = "Enemies Alive: " + winCondition.enemiesAlive.ToString();
         //gameObject.GetComponent<BoxCollider>().enabled = false;

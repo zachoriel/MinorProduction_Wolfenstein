@@ -13,6 +13,7 @@ public class LaserRifle : MonoBehaviour
     public WeaponSwitch weapons;
     public Animator animator;
     public Text ammoText;
+    public Text batteryText;
     public Light flashlight;
 
     [Header("General")]
@@ -29,6 +30,8 @@ public class LaserRifle : MonoBehaviour
     public float energy;
     public float maxEnergy = 100f;
     private int wholeEnergy;
+    public float batteryLife = 100f;
+    private int wholeBatteryLife;
     public GameObject breakEffect;
 
     [Header("Audio")]
@@ -45,6 +48,7 @@ public class LaserRifle : MonoBehaviour
         aim = FindObjectOfType<AimAndControlsSetting>();
         energy = maxEnergy;
         ammoText.text = energy.ToString() + "%";
+        batteryText.text = batteryLife.ToString() + "%";
         lineRenderer.enabled = false;
 	}
 
@@ -105,7 +109,7 @@ public class LaserRifle : MonoBehaviour
             mainCamera.speedH = 5;
         }
         
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && batteryLife > 0)
         {
             if (flashlight.enabled == true)
             {
@@ -117,8 +121,16 @@ public class LaserRifle : MonoBehaviour
             }
         }
 
+        if (flashlight.enabled)
+        {
+            batteryLife -= 0.5f * Time.deltaTime;
+        }
+
         wholeEnergy = Mathf.RoundToInt(energy);
         ammoText.text = wholeEnergy.ToString() + "%";
+
+        wholeBatteryLife = Mathf.RoundToInt(batteryLife);
+        batteryText.text = "Light Battery: " + wholeBatteryLife.ToString() + "%";
     }
 
     IEnumerator Reload()

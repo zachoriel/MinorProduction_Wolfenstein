@@ -4355,14 +4355,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<b>CREDITS</b>\n\n<i>ART</i>\n3D Models - <color=brown>Ren\xE9e Teachout</color>\nEnvironment
-    Art - <color=teal>Brooke Collins</color>\nAnimations - <color=purple>Cacie Desautel</color>\nTextures
-    - <color=teal>Brooke Collins</color>\nLighting - <color=purple>Cacie Desautel</color>\nWeapon
-    Models -  <color=brown>Ren\xE9e Teachout</color>\n\n<i>PROGRAMMING</i>\nPlayer
-    Controller - <color=orange>Wyatt Gallagher</color>\nPlayer Weapons - <color=green>Zach
-    Oriel</color>\nDrone AI - <color=orange>Wyatt Gallagher</color>\nRobot AI - <color=green>Zach
-    Oriel</color>\nLine of Sight - <color=orange>Wyatt Gallagher</color>\nUI - <color=green>Zach
-    Oriel</color>\n\n\n\n\n\nThanks for playing!\n"
+  m_Text: "<b>CREDITS</b>\n\n\n<i>ARTISTS</i>\n<color=teal>Brooke Collins</color>\n<color=purple>Cacie
+    Desautel</color>\n<color=maroon>Ren\xE9e Teachout</color>\n\n<i>PROGRAMMERS</i>\n<color=orange>Wyatt
+    Gallagher</color>\n<color=green>Zach Oriel</color>\n\n<i>SPECIAL THANKS</i>\n<color=lightblue>Terry
+    Nguyen, Kobey Myhre, Jon Collins, Misty Loreen,</color> <color=yellow>and all
+    of our playtesters!</color>\n\n\n\n\n\n\n\nThanks for playing!\n"
 --- !u!222 &814645903
 CanvasRenderer:
   m_ObjectHideFlags: 0

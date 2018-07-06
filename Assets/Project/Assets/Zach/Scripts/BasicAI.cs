@@ -92,12 +92,12 @@ public class BasicAI : MonoBehaviour
     {
         agent.speed = patrolSpeed;
         
-        if (Vector3.Distance(transform.position, waypoints[waypointIndex].transform.position) >= 2)
+        if (Vector3.Distance(transform.position, waypoints[waypointIndex].transform.position) >= 10)
         {
             agent.destination = waypoints[waypointIndex].transform.position;
             character.Move(agent.desiredVelocity, false, false);
         }
-        else if (Vector3.Distance(transform.position, waypoints[waypointIndex].transform.position) <= 2)
+        else if (Vector3.Distance(transform.position, waypoints[waypointIndex].transform.position) <= 10)
         {
             if (waypointIndex < waypoints.Length - 1)
             {

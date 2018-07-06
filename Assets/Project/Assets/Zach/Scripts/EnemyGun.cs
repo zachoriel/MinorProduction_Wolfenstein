@@ -51,7 +51,7 @@ public class EnemyGun : MonoBehaviour
             }
             //return;
         }
-        else if (lineofSight.CanSeeTarget == true && ai.state != BasicAI.State.FLEE)
+        else if (lineofSight.CanSeeTarget == true /*&& ai.state != BasicAI.State.FLEE*/)
         {
             animator.SetBool("isFiringLaser", true);
             playerMovement.beingAttacked = true;
@@ -65,21 +65,21 @@ public class EnemyGun : MonoBehaviour
                 Shoot();
             } 
         }  
-        else if (lineofSight.CanSeeTarget == true && ai.state == BasicAI.State.FLEE)
-        {
-            animator.SetBool("isFiringLaser", false);
-            playerMovement.beingAttacked = false;
+        //else if (lineofSight.CanSeeTarget == true && ai.state == BasicAI.State.FLEE)
+        //{
+        //    animator.SetBool("isFiringLaser", false);
+        //    playerMovement.beingAttacked = false;
 
-            if (useLaser)
-            {
+        //    if (useLaser)
+        //    {
 
-                if (lineRenderer.enabled)
-                {
-                    laserBeam.Stop();
-                    lineRenderer.enabled = false;
-                }
-            }
-        }
+        //        if (lineRenderer.enabled)
+        //        {
+        //            laserBeam.Stop();
+        //            lineRenderer.enabled = false;
+        //        }
+        //    }
+        //}
     }
 
     void Laser()

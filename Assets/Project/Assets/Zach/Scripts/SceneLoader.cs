@@ -8,11 +8,17 @@ public class SceneLoader : MonoBehaviour
 
     public SceneFader sceneFader;
     public GameObject settingsMenu;
+    public GameObject instructionsMenu;
     public GameObject menuButtons;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Backspace) && settingsMenu.activeInHierarchy)
+        {
+            Back();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Backspace) && instructionsMenu.activeInHierarchy)
         {
             Back();
         }
@@ -29,10 +35,25 @@ public class SceneLoader : MonoBehaviour
         settingsMenu.SetActive(true);
     }
 
+    public void Instructions()
+    {
+        menuButtons.SetActive(false);
+        instructionsMenu.SetActive(true);
+    }
+
     public void Back()
     {
         menuButtons.SetActive(true);
-        settingsMenu.SetActive(false);
+        
+        if (settingsMenu.activeInHierarchy)
+        {
+            settingsMenu.SetActive(false);
+        }
+
+        if (instructionsMenu.activeInHierarchy)
+        {
+            instructionsMenu.SetActive(false);
+        }
     }
 
     public void Quit()

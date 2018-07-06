@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour
     public Gun gun; // THIS IS JUST FOR RESETTING TEXT ON DEATH
     public WeaponSwitch weapons;
     public SceneFader fader;
+    public Camera mainCamera;
 
     [Header("UI Elements")]
     public Text scoreText;
@@ -92,8 +93,8 @@ public class PlayerStats : MonoBehaviour
         ammoText.text = gun.currentGunAmmoMG.ToString() + " / " + gun.totalAmmoMG;
         Lives--;
         livesText.text = Lives.ToString();
-        gameObject.transform.position = spawnPoint.transform.position;
-        gameObject.transform.rotation = spawnPoint.transform.rotation;
+        mainCamera.transform.position = spawnPoint.transform.position;
+        mainCamera.transform.rotation = spawnPoint.transform.rotation;
 
         if (Lives <= 0)
         {

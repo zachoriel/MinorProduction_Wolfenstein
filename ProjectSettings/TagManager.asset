@@ -25,6 +25,8 @@ TagManager:
   - Rifle
   - Fire
   - AchievementWall
+  - GodLight
+  - InstructionsButton
   layers:
   - Default
   - TransparentFX

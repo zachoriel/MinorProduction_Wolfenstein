@@ -246,6 +246,10 @@ public class Gun : MonoBehaviour
                         invertedToggle.isOn = false;
                     }
                 }
+                else if (buttonsTarget.tag == "InstructionsButton")
+                {
+                    buttonsTarget.Instructions();
+                }
             }
 
             // Knockback (not currently used in any meaningful way)

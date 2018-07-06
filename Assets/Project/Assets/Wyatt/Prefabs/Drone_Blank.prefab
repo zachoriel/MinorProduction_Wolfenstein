@@ -1621,7 +1621,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1479713207198594}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -80.12, y: 3.53, z: -237.33556}
+  m_LocalPosition: {x: -76.18, y: 5.43, z: -228.57}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 224216948445825724}
@@ -1915,6 +1915,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
+  enemyGun: {fileID: 0}
+  isDrone: 1
   HoodRadius: 120
   range: 120
   CanSeeTarget: 0
@@ -2094,7 +2096,7 @@ LineRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1479713207198594}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_MotionVectors: 0
