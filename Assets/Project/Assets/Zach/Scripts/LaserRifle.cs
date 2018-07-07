@@ -121,15 +121,21 @@ public class LaserRifle : MonoBehaviour
             }
         }
 
+        if (flashlight.enabled == true && batteryLife <= 0)
+        {
+            flashlight.enabled = false;
+        }
+
         if (flashlight.enabled)
         {
-            batteryLife -= 0.5f * Time.deltaTime;
+            batteryLife -= 0.85f * Time.deltaTime;
         }
 
         wholeEnergy = Mathf.RoundToInt(energy);
         ammoText.text = wholeEnergy.ToString() + "%";
 
         wholeBatteryLife = Mathf.RoundToInt(batteryLife);
+        Mathf.Clamp(wholeBatteryLife, 0, 100);
         batteryText.text = "Light Battery: " + wholeBatteryLife.ToString() + "%";
     }
 

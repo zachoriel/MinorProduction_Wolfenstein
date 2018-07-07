@@ -13,6 +13,7 @@ public class Shotgun : MonoBehaviour
     public WeaponSwitch weapons;
     public Animator animator;
     public Text ammoText;
+    public Text batteryText;
     public Light flashlight;
 
     [Header("General")]
@@ -28,6 +29,8 @@ public class Shotgun : MonoBehaviour
     public int maxGunAmmoSG = 3;
     public int currentGunAmmoSG;
     public int totalAmmoSG = 27;
+    public float batteryLife = 100f;
+    private int wholeBatteryLife;
     private int amountNeeded;
     public int AmountOfProjectiles;
     public Vector3 spread;
@@ -48,6 +51,7 @@ public class Shotgun : MonoBehaviour
 
         currentGunAmmoSG = maxGunAmmoSG;
         ammoText.text = currentGunAmmoSG.ToString() + " / " + totalAmmoSG;
+        batteryText.text = batteryLife.ToString() + "%";
     }
 
     //void OnEnable()
@@ -104,7 +108,7 @@ public class Shotgun : MonoBehaviour
             animator.SetBool("isFiring", false);
         }
 
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && batteryLife > 0)
         {
             if (flashlight.enabled == true)
             {
@@ -116,8 +120,22 @@ public class Shotgun : MonoBehaviour
             }
         }
 
+        if (flashlight.enabled == true && batteryLife <= 0)
+        {
+            flashlight.enabled = false;
+        }
+
+        if (flashlight.enabled)
+        {
+            batteryLife -= 0.85f * Time.deltaTime;
+        }
+
         ammoText.text = currentGunAmmoSG.ToString() + " / " + totalAmmoSG;
         amountNeeded = maxGunAmmoSG - currentGunAmmoSG;
+
+        wholeBatteryLife = Mathf.RoundToInt(batteryLife);
+        Mathf.Clamp(wholeBatteryLife, 0, 100);
+        batteryText.text = "Light Battery: " + wholeBatteryLife.ToString() + "%";
     }
 
     IEnumerator Reload()

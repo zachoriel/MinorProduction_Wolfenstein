@@ -41,21 +41,25 @@ public class Win : MonoBehaviour
                 if (enemiesAlive <= 15 && enemiesAlive > 10)
                 {
                     player.Score += player.Score * 0; // No score multiplier
+                    player.scoreText.text = player.Score.ToString();
                 }
 
                 if (enemiesAlive <= 10 && enemiesAlive > 5)
                 {
                     player.Score += player.Score * 1; // x2 score multiplier
+                    player.scoreText.text = player.Score.ToString();
                 }
 
                 if (enemiesAlive <= 5 && enemiesAlive > 0)
                 {
                     player.Score += player.Score * 1.5f; // x2.5 score multiplier
+                    player.scoreText.text = player.Score.ToString();
                 }
 
                 if (enemiesAlive == 0)
                 {
                     player.Score += player.Score * 2; // x3 score multiplier
+                    player.scoreText.text = player.Score.ToString();
                 }
 
                 WinLevel();
