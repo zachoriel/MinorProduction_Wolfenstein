@@ -26,8 +26,8 @@ GameObject:
   m_Name: Wall Light ON
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1581676021427470
 GameObject:
@@ -42,8 +42,8 @@ GameObject:
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4177844929738540
 Transform:
@@ -64,9 +64,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1088252938345038}
-  m_LocalRotation: {x: -0, y: -0.0000011324881, z: -0, w: -1}
-  m_LocalPosition: {x: -161.02121, y: 89.839966, z: 65.75424}
-  m_LocalScale: {x: 5.0020547, y: 5.002056, z: 5.002056}
+  m_LocalRotation: {x: -0, y: -0.7071065, z: -0, w: 0.7071072}
+  m_LocalPosition: {x: -524.63025, y: 89.687965, z: 98.11424}
+  m_LocalScale: {x: 5.0020566, y: 5.002056, z: 5.002058}
   m_Children:
   - {fileID: 4177844929738540}
   m_Father: {fileID: 0}
@@ -143,7 +143,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

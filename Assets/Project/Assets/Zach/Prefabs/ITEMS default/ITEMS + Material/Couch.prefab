@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 4359203507472292}
   - component: {fileID: 33911397501549146}
   - component: {fileID: 23904183535480962}
+  - component: {fileID: 65764691753712066}
   m_Layer: 0
   m_Name: pCube19
   m_TagString: Untagged
@@ -210,8 +211,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1333215534509682}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -237.72012, y: 0.6219521, z: -82.70994}
+  m_LocalRotation: {x: -0, y: -0.2588186, z: -0, w: 0.965926}
+  m_LocalPosition: {x: -572.24, y: 0.5, z: -75.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4839188892792780}
@@ -221,7 +222,7 @@ Transform:
   - {fileID: 4418580344637778}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -30.000002, z: 0}
 --- !u!4 &4755563066426626
 Transform:
   m_ObjectHideFlags: 1
@@ -342,6 +343,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1826169446964550}
   m_Mesh: {fileID: 4300000, guid: a5a91b208f8f9a941ac260917bf5af95, type: 3}
+--- !u!65 &65764691753712066
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1826169446964550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1086.8374, y: 399.0289, z: 447.60013}
+  m_Center: {x: -0.0078125, y: 113.50442, z: -0.001953125}
 --- !u!95 &95340488204141196
 Animator:
   serializedVersion: 3
