@@ -96,7 +96,7 @@ public class Shotgun : MonoBehaviour
             emptyClip.Play();
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && aim.aimAssist == true)
+        if (Input.GetButton("Fire2") && aim.aimAssist == true)
         {
             mainCamera.speedH = 1;
         }
@@ -110,7 +110,7 @@ public class Shotgun : MonoBehaviour
             animator.SetBool("isFiring", false);
         }
 
-        if (Input.GetButtonDown("Fire2") && batteryLife > 0)
+        if (Input.GetKeyDown(KeyCode.F) && batteryLife > 0)
         {
             if (flashlight.enabled == true)
             {
@@ -145,6 +145,7 @@ public class Shotgun : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
+        weapons.enabled = false;
 
         animator.SetBool("Reloading", true);
         animator.SetBool("isFiring", false);
@@ -169,6 +170,7 @@ public class Shotgun : MonoBehaviour
         //ammoText.text = currentGunAmmoSG.ToString() + " / " + totalAmmoSG;
 
         isReloading = false;
+        weapons.enabled = true;
     }
 
     void Shoot() 

@@ -65,6 +65,7 @@ public class LineOfSight : MonoBehaviour
 
         if (CanSeeTarget == false)
         {
+            enemyGun.TurnOffEffects();
             enemyGun.enabled = false;
         }
         else

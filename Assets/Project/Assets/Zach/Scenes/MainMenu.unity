@@ -12778,7 +12778,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -27.338902, y: 48.289993}
-  m_SizeDelta: {x: 107.88, y: 17.77}
+  m_SizeDelta: {x: 254.13, y: 17.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1073811344
 MonoBehaviour:
@@ -12812,7 +12812,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'MOVE - WSAD
+  m_Text: 'MOVE - WSAD, L-SHIFT TO SPRINT
 
 '
 --- !u!222 &1073811345
@@ -14881,7 +14881,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FLASHLIGHT - RMB
+  m_Text: FLASHLIGHT - F
 --- !u!222 &1373378608
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18715,7 +18715,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AIM ASSIST - HOLD L-SHIFT
+  m_Text: AIM ASSIST - HOLD RMB
 --- !u!222 &1881306349
 CanvasRenderer:
   m_ObjectHideFlags: 0

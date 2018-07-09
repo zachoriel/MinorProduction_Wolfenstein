@@ -102,7 +102,7 @@ public class LaserRifle : MonoBehaviour
             animator.SetBool("isFiring", false);
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && aim.aimAssist == true)
+        if (Input.GetButton("Fire2") && aim.aimAssist == true)
         {
             mainCamera.speedH = 1;
         }
@@ -111,7 +111,7 @@ public class LaserRifle : MonoBehaviour
             mainCamera.speedH = 5;
         }
         
-        if (Input.GetButtonDown("Fire2") && batteryLife > 0)
+        if (Input.GetKeyDown(KeyCode.F) && batteryLife > 0)
         {
             if (flashlight.enabled == true)
             {
@@ -147,6 +147,7 @@ public class LaserRifle : MonoBehaviour
     {
         laserBeam.Stop();
         lineRenderer.enabled = false;
+        weapons.enabled = false;
 
         isReloading = true;
 
@@ -163,6 +164,7 @@ public class LaserRifle : MonoBehaviour
         //ammoText.text = energy.ToString();
 
         isReloading = false;
+        weapons.enabled = true;
     }
 
     void Laser()

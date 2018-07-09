@@ -35,7 +35,7 @@ public class Gun : MonoBehaviour
     public float impactForce = 20f;
     public int maxGunAmmoMG = 25;
     public int currentGunAmmoMG;
-    public int totalAmmoMG = 100;
+    public int totalAmmoMG = 150;
     public float batteryLife = 100f;
     private int wholeBatteryLife;
     private int amountNeeded;
@@ -62,7 +62,7 @@ public class Gun : MonoBehaviour
         }
         else
         {
-            totalAmmoMG = 100;
+            totalAmmoMG = 150;
         }
 
         currentGunAmmoMG = maxGunAmmoMG;
@@ -108,7 +108,7 @@ public class Gun : MonoBehaviour
             emptyClip.Play();
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && aim.aimAssist == true)
+        if (Input.GetButton("Fire2") && aim.aimAssist == true)
         {
             mainCamera.speedH = 1;
         }
@@ -122,7 +122,7 @@ public class Gun : MonoBehaviour
             animator.SetBool("isFiring", false);
         }
 
-        if (Input.GetButtonDown("Fire2") && batteryLife > 0)
+        if (Input.GetKeyDown(KeyCode.F) && batteryLife > 0)
         {
             if (flashlight.enabled == true)
             {
@@ -157,6 +157,7 @@ public class Gun : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
+        weapons.enabled = false;
 
         reloadGun.Play();
 
@@ -182,6 +183,7 @@ public class Gun : MonoBehaviour
         //ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;
 
         isReloading = false;
+        weapons.enabled = true;
     }
 
   

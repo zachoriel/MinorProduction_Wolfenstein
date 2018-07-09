@@ -33,25 +33,32 @@ public class EnemyGun : MonoBehaviour
         playerMovement = FindObjectOfType<PlayerMotor>();
         ai = FindObjectOfType<BasicAI>();
     }
+    public bool fakeEnabled;
+
+
+    public void TurnOffEffects()
+    {
+        animator.SetBool("isFiringLaser", false);
+        playerMovement.beingAttacked = false;
+
+        if (useLaser)
+        {
+            if (lineRenderer.enabled)
+            {
+                laserBeam.Stop();
+                lineRenderer.enabled = false;
+            }
+        }
+    }
 
     void Update()
     {
-        if (lineofSight.CanSeeTarget == false)
-        {
-            animator.SetBool("isFiringLaser", false);
-            playerMovement.beingAttacked = false;
-
-            if (useLaser)
-            {
-                if (lineRenderer.enabled)
-                {
-                    laserBeam.Stop();
-                    lineRenderer.enabled = false;
-                }
-            }
-            //return;
-        }
-        else if (lineofSight.CanSeeTarget == true /*&& ai.state != BasicAI.State.FLEE*/)
+        //if (lineofSight.CanSeeTarget == false)
+        //{
+           
+        //    //return;
+        //}
+        if (lineofSight.CanSeeTarget == true /*&& ai.state != BasicAI.State.FLEE*/)
         {
             animator.SetBool("isFiringLaser", true);
             playerMovement.beingAttacked = true;
@@ -65,6 +72,10 @@ public class EnemyGun : MonoBehaviour
                 Shoot();
             } 
         }  
+        else
+        {
+           
+        }
         //else if (lineofSight.CanSeeTarget == true && ai.state == BasicAI.State.FLEE)
         //{
         //    animator.SetBool("isFiringLaser", false);

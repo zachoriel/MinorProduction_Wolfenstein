@@ -57,7 +57,7 @@ public class DroneGun : MonoBehaviour
 
             if (useLaser)
             {
-                Laser();
+                StartCoroutine("ShootLaser");
             }
             else
             {
@@ -69,6 +69,14 @@ public class DroneGun : MonoBehaviour
         {
             laserBeam.Stop();
         }
+    }
+
+    // This is so that the laser doesn't start before the transition animation finishes
+    IEnumerator ShootLaser()
+    {
+        yield return new WaitForSeconds(0.75f);
+        Laser();
+        yield return null;
     }
 
     void Laser()

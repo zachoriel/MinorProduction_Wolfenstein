@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
     public float slowedSpeed;
+    public float fastSpeed;
 
     private PlayerMotor motor;
 
@@ -33,11 +34,13 @@ public class PlayerController : MonoBehaviour
         // Final movement vector
         Vector3 _velocity = (_moveHorizontal + _moveVertical).normalized * speed;
         Vector3 _sVelocity = (_moveHorizontal + _moveVertical).normalized * slowedSpeed;
+        Vector3 _fVelocity = (_moveHorizontal + _moveVertical).normalized * fastSpeed;
 
         // Apply movement
-        motor.Move(_velocity, _sVelocity);
+        motor.Move(_velocity, _sVelocity, _fVelocity);
     }
 
+    // Movement animations
     void FixedUpdate()
     {
         if (Input.GetAxisRaw("Horizontal").Equals(0) && Input.GetAxisRaw("Vertical").Equals(0))
