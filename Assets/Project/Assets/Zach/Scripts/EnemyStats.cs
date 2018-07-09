@@ -21,6 +21,7 @@ public class EnemyStats : MonoBehaviour
     public Animator droneAnimator;
     public NavMeshAgent agent;
     public Text enemiesAliveText;
+    public AudioSource deathSound;
     Rigidbody rb;
 
     [Header("Stats")]
@@ -44,6 +45,8 @@ public class EnemyStats : MonoBehaviour
 
         health = startHealth;
         playerStats = FindObjectOfType<PlayerStats>();
+
+        deathSound = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(float amount)
@@ -67,6 +70,8 @@ public class EnemyStats : MonoBehaviour
 
     void Die()
     {
+        deathSound.Play();
+
         rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ; // Prevents dead enemies from falling through the floor
         isDead = true;
         playerStats.Score += 10;

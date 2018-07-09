@@ -73,6 +73,7 @@ public class DroneGun : MonoBehaviour
 
     void Laser()
     {
+
         if (isDrone && playerStats.TakingDamage)
         {
             if (playerStats.godModeHiCacie == false)

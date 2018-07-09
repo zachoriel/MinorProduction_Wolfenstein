@@ -37,9 +37,11 @@ public class LaserRifle : MonoBehaviour
     [Header("Audio")]
     public AudioSource laserBeam;
     public AudioSource rechargeGun;
+    public AudioSource lightOn;
+    public AudioSource lightOff;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         //ServiceLocator.instance.toggleOptions = gameObject;
 
@@ -113,10 +115,12 @@ public class LaserRifle : MonoBehaviour
         {
             if (flashlight.enabled == true)
             {
+                lightOff.Play();
                 flashlight.enabled = false;
             }
             else
             {
+                lightOn.Play();
                 flashlight.enabled = true;
             }
         }

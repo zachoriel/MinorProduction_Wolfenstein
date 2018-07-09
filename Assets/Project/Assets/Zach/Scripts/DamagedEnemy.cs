@@ -8,6 +8,7 @@ public class DamagedEnemy : MonoBehaviour
     [Header("Component Setup")]
     public Animator animator;
     public Image healthBar;
+    public AudioSource death;
     Rigidbody rb;
 
     [Header("Stats")]
@@ -21,6 +22,7 @@ public class DamagedEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         health = startHealth / 5;
         healthBar.fillAmount = health / startHealth;
+        death = GetComponent<AudioSource>();
 	}
 
     public void TakeDamage(float amount)
@@ -37,6 +39,7 @@ public class DamagedEnemy : MonoBehaviour
 
     void Die()
     {
+        death.Play();
         rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
         gameObject.GetComponent<BoxCollider>().enabled = false;
 

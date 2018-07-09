@@ -42,6 +42,8 @@ public class Shotgun : MonoBehaviour
     public AudioSource reloadGun;
     public AudioSource gunFire;
     public AudioSource emptyClip;
+    public AudioSource lightOn;
+    public AudioSource lightOff;
 
     // Use this for initialization
     void Start()
@@ -112,10 +114,12 @@ public class Shotgun : MonoBehaviour
         {
             if (flashlight.enabled == true)
             {
+                lightOff.Play();
                 flashlight.enabled = false;
             }
             else
             {
+                lightOn.Play();
                 flashlight.enabled = true;
             }
         }
@@ -142,12 +146,11 @@ public class Shotgun : MonoBehaviour
     {
         isReloading = true;
 
-        reloadGun.Play();
-
         animator.SetBool("Reloading", true);
         animator.SetBool("isFiring", false);
 
         yield return new WaitForSeconds(reloadTime - 0.25f);
+        reloadGun.Play();
 
         animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(0.25f);

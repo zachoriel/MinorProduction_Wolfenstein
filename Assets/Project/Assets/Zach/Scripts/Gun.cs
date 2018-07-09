@@ -47,6 +47,8 @@ public class Gun : MonoBehaviour
     public AudioSource reloadGun;
     public AudioSource gunFire;
     public AudioSource emptyClip;
+    public AudioSource lightOn;
+    public AudioSource lightOff;
 
 	// Use this for initialization
 	void Start ()
@@ -124,10 +126,12 @@ public class Gun : MonoBehaviour
         {
             if (flashlight.enabled == true)
             {
+                lightOff.Play();
                 flashlight.enabled = false;
             }
             else
             {
+                lightOn.Play();
                 flashlight.enabled = true;
             }
         }
@@ -139,7 +143,7 @@ public class Gun : MonoBehaviour
 
         if (flashlight.enabled)
         {
-            batteryLife -= 0.85f * Time.deltaTime;
+            batteryLife -= 0.5f * Time.deltaTime;
         }
 
         ammoText.text = currentGunAmmoMG.ToString() + " / " + totalAmmoMG;

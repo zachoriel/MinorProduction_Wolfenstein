@@ -20,6 +20,7 @@ public class DroneStats : MonoBehaviour
     public Animator animator;
     //public Animator droneAnimator;
     public NavMeshAgent agent;
+    public AudioSource droneDeath;
     //public AudioSource laserBolt;
     //public Text enemiesAliveText;
     Rigidbody rb;
@@ -61,6 +62,7 @@ public class DroneStats : MonoBehaviour
 
     void Die()
     {
+        droneDeath.Play();
         //laserBolt.Stop();
         rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
         rb.useGravity = true;
