@@ -77,7 +77,7 @@ public class ControlPanel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "MainCamera")
         {
             if (enteredKeyCode == true)
             {
@@ -107,7 +107,7 @@ public class ControlPanel : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "MainCamera")
         {
             if (enteredKeyCode == true)
             {

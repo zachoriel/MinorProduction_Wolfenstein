@@ -13,6 +13,8 @@ public class LaserRifle : MonoBehaviour
     public WeaponSwitch weapons;
     public Animator animator;
     public Text ammoText;
+    public Text batteryText;
+    public Light flashlight;
 
     [Header("General")]
     public float range = 15f;
@@ -28,14 +30,18 @@ public class LaserRifle : MonoBehaviour
     public float energy;
     public float maxEnergy = 100f;
     private int wholeEnergy;
+    public float batteryLife = 100f;
+    private int wholeBatteryLife;
     public GameObject breakEffect;
 
     [Header("Audio")]
     public AudioSource laserBeam;
     public AudioSource rechargeGun;
+    public AudioSource lightOn;
+    public AudioSource lightOff;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         //ServiceLocator.instance.toggleOptions = gameObject;
 
@@ -44,6 +50,7 @@ public class LaserRifle : MonoBehaviour
         aim = FindObjectOfType<AimAndControlsSetting>();
         energy = maxEnergy;
         ammoText.text = energy.ToString() + "%";
+        batteryText.text = batteryLife.ToString() + "%";
         lineRenderer.enabled = false;
 	}
 
@@ -95,7 +102,7 @@ public class LaserRifle : MonoBehaviour
             animator.SetBool("isFiring", false);
         }
 
-        if (Input.GetButton("Fire2") && aim.aimAssist == true)
+        if (Input.GetKey(KeyCode.LeftShift) && aim.aimAssist == true)
         {
             mainCamera.speedH = 1;
         }
@@ -103,9 +110,37 @@ public class LaserRifle : MonoBehaviour
         {
             mainCamera.speedH = 5;
         }
+        
+        if (Input.GetButtonDown("Fire2") && batteryLife > 0)
+        {
+            if (flashlight.enabled == true)
+            {
+                lightOff.Play();
+                flashlight.enabled = false;
+            }
+            else
+            {
+                lightOn.Play();
+                flashlight.enabled = true;
+            }
+        }
+
+        if (flashlight.enabled == true && batteryLife <= 0)
+        {
+            flashlight.enabled = false;
+        }
+
+        if (flashlight.enabled)
+        {
+            batteryLife -= 0.85f * Time.deltaTime;
+        }
 
         wholeEnergy = Mathf.RoundToInt(energy);
         ammoText.text = wholeEnergy.ToString() + "%";
+
+        wholeBatteryLife = Mathf.RoundToInt(batteryLife);
+        Mathf.Clamp(wholeBatteryLife, 0, 100);
+        batteryText.text = "Light Battery: " + wholeBatteryLife.ToString() + "%";
     }
 
     IEnumerator Reload()

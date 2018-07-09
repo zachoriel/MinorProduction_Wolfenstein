@@ -20,9 +20,11 @@ public class DroneStats : MonoBehaviour
     public Animator animator;
     //public Animator droneAnimator;
     public NavMeshAgent agent;
+    public AudioSource droneDeath;
     //public AudioSource laserBolt;
     //public Text enemiesAliveText;
     Rigidbody rb;
+    Collider collider;
 
     [Header("Stats")]
     public float health;
@@ -43,6 +45,7 @@ public class DroneStats : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         aiMovement = GetComponent<DroneAI>();
         droneShoot = FindObjectOfType<DroneShootScript>();
+        collider = GetComponent<Collider>();
     }
 
     public void TakeDamage(float amount)
@@ -59,9 +62,11 @@ public class DroneStats : MonoBehaviour
 
     void Die()
     {
+        droneDeath.Play();
         //laserBolt.Stop();
-        rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ; // Prevents dead enemies from falling through the floor
-        //rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ; // Prevents dead enemies from spinning when colliding with player
+        rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+        rb.useGravity = true;
+        rb.isKinematic = true;
         isDead = true;
         playerStats.Score += 10;
         playerStats.scoreText.text = playerStats.Score.ToString();
@@ -77,9 +82,10 @@ public class DroneStats : MonoBehaviour
         sight.enabled = false;
         droneShoot.useLaser = false;
         droneShoot.lineRenderer.enabled = false;
+        collider.enabled = false;
         //winCondition.enemiesAlive--;
         //enemiesAliveText.text = "Enemies Alive: " + winCondition.enemiesAlive.ToString();
-        gameObject.GetComponent<BoxCollider>().enabled = false;
+        //gameObject.GetComponent<BoxCollider>().enabled = false;
 
         StartCoroutine("DeathTimer");
     }

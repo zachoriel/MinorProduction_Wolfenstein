@@ -23,6 +23,10 @@ TagManager:
   - SettingsManager
   - Drone
   - Rifle
+  - Fire
+  - AchievementWall
+  - GodLight
+  - InstructionsButton
   layers:
   - Default
   - TransparentFX

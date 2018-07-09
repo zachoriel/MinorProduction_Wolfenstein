@@ -10,6 +10,8 @@ public class PlayerStats : MonoBehaviour
     public Gun gun; // THIS IS JUST FOR RESETTING TEXT ON DEATH
     public WeaponSwitch weapons;
     public SceneFader fader;
+    public Camera mainCamera;
+    public AudioSource deathSound;
 
     [Header("UI Elements")]
     public Text scoreText;
@@ -27,7 +29,6 @@ public class PlayerStats : MonoBehaviour
     private float startHealth = 100f;
     public int Lives;
     public float Score;
-
 
     void Start()
     {
@@ -73,12 +74,14 @@ public class PlayerStats : MonoBehaviour
         {
             TakingDamage = false;
             Health = 0f;
+            deathSound.Play();
             fader.FadeToDeath();
         }
         else if (Health <= 0f && Lives <= 1)
         {
             TakingDamage = false;
             Health = 0f;
+            deathSound.Play();
             fader.FadeTo("GameOver");
         }
     }
@@ -92,8 +95,8 @@ public class PlayerStats : MonoBehaviour
         ammoText.text = gun.currentGunAmmoMG.ToString() + " / " + gun.totalAmmoMG;
         Lives--;
         livesText.text = Lives.ToString();
-        gameObject.transform.position = spawnPoint.transform.position;
-        gameObject.transform.rotation = spawnPoint.transform.rotation;
+        mainCamera.transform.position = spawnPoint.transform.position;
+        mainCamera.transform.rotation = spawnPoint.transform.rotation;
 
         if (Lives <= 0)
         {

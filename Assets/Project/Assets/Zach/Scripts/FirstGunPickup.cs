@@ -10,7 +10,7 @@ public class FirstGunPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "MainCamera")
         {
             weapons.hasPickedUpGun = true;
             gunPickup.Play();

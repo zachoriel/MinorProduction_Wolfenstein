@@ -15,7 +15,6 @@ public class EnemyMovement : MonoBehaviour
     float forwardAmount;
     Vector3 groundNormal;
 
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();

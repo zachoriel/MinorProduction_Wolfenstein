@@ -27,8 +27,8 @@ GameObject:
   m_Name: DataPad Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4876689530540234
 Transform:
@@ -36,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1713469054011160}
-  m_LocalRotation: {x: -0, y: -0.9922367, z: -0, w: 0.12436422}
-  m_LocalPosition: {x: -84.889, y: 2.777, z: 112.851}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: 0.12687774, y: -0.9655608, z: -0.0023272915, w: 0.22713235}
+  m_LocalPosition: {x: -40.89422, y: 84.60197, z: 127.84723}
+  m_LocalScale: {x: 0.010000011, y: 0.009999998, z: 0.01000001}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -165.712, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.0460002, y: -153.90701, z: -14.266001}
 --- !u!23 &23451446366189968
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -114,7 +114,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

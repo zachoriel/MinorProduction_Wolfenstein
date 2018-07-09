@@ -6,6 +6,8 @@ public class LineOfSight : MonoBehaviour
 {
     [Header("Component Setup")]
     public GameObject thePlayer;
+    public EnemyGun enemyGun;
+    public bool isDrone;
 
     [Header("Detection")]
     public float HoodRadius;
@@ -18,7 +20,16 @@ public class LineOfSight : MonoBehaviour
 
     void Awake()
     {
-        thePlayer = GameObject.FindGameObjectWithTag("Player");
+        thePlayer = GameObject.FindGameObjectWithTag("MainCamera");
+
+        if (isDrone)
+        {
+            enemyGun = FindObjectOfType<EnemyGun>();
+        }
+        else
+        {
+            enemyGun = GetComponentInChildren<EnemyGun>();
+        }
     }
     void Update()
     {
@@ -35,7 +46,7 @@ public class LineOfSight : MonoBehaviour
                 {
                     //Debug.Log(hit.transform.name);
                     //checks to see if an Abstract script named "Player" exists on the object colliding with this raycast
-                    PlayerStats player = hit.transform.GetComponent<PlayerStats>();
+                    PlayerController player = hit.transform.GetComponent<PlayerController>();
                     if (player != null)
                     {
                         CanSeeTarget = true;
@@ -50,6 +61,15 @@ public class LineOfSight : MonoBehaviour
             //{
             //   // CanSeeTarget = false;
             //}
+        }
+
+        if (CanSeeTarget == false)
+        {
+            enemyGun.enabled = false;
+        }
+        else
+        {
+            enemyGun.enabled = true;
         }
     }
 
