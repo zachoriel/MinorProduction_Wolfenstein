@@ -33,6 +33,7 @@ public class LineOfSight : MonoBehaviour
     }
     void Update()
     {
+        bool DidSeeTarget = CanSeeTarget;
         int hoodSize = 0;
         Collider[] hood = Physics.OverlapSphere(transform.position, HoodRadius);
         CanSeeTarget = false;
@@ -63,12 +64,13 @@ public class LineOfSight : MonoBehaviour
             //}
         }
 
-        if (CanSeeTarget == false)
+        if(DidSeeTarget && !CanSeeTarget)
         {
             enemyGun.TurnOffEffects();
             enemyGun.enabled = false;
         }
-        else
+
+        if(CanSeeTarget)
         {
             enemyGun.enabled = true;
         }
