@@ -11,6 +11,12 @@ public class ButtonManager : MonoBehaviour
     public AudioSource pauseMusic;
     public Animator animator;
     public SceneFader fader;
+    public GameManager manager;
+
+    private void Start()
+    {
+        manager = FindObjectOfType<GameManager>();
+    }
 
     public void Resume()
     {
@@ -21,6 +27,7 @@ public class ButtonManager : MonoBehaviour
         sceneFaderCanvas.SetActive(true);
         reticle.SetActive(true);
         pauseMusic.Stop();
+        manager.isPaused = false;
         Time.timeScale = 1;
     }
 
@@ -30,6 +37,7 @@ public class ButtonManager : MonoBehaviour
         camera.SetCursorLock(true);
         sceneFaderCanvas.SetActive(true);
         reticle.SetActive(true);
+        manager.isPaused = false;
         Time.timeScale = 1;
         fader.FadeTo("ShipLevel");
         //SceneManager.LoadScene("ShipLevel");

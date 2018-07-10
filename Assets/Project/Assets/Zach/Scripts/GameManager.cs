@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public bool inCredits = false;
     private bool slowMotion = false;
+    public bool isPaused;
 
     void Awake()
     {
@@ -36,9 +37,11 @@ public class GameManager : MonoBehaviour
             reticle.SetActive(false);
             pauseMusic.Play();
             Time.timeScale = 0;
+            isPaused = true;
+            slowMotion = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && isPaused == false)
         {
             if (slowMotion == false)
             {

@@ -12,6 +12,7 @@ public class EnemyStats : MonoBehaviour
     public BasicAI aiMovement;
     public LineOfSight sight;
     public Win winCondition;
+    public EnemyGun gun;
     public bool inMenu;
 
     [Header("Component Setup")]
@@ -29,6 +30,7 @@ public class EnemyStats : MonoBehaviour
     public float startHealth = 100f;
     private float timeDead;
     private bool isDead = false;
+    int randomDeath;
 
     void Start()
     {
@@ -47,6 +49,8 @@ public class EnemyStats : MonoBehaviour
         playerStats = FindObjectOfType<PlayerStats>();
 
         deathSound = GetComponent<AudioSource>();
+
+        gun = GetComponentInChildren<EnemyGun>();
     }
 
     public void TakeDamage(float amount)
@@ -58,7 +62,9 @@ public class EnemyStats : MonoBehaviour
         {
             if (gameObject.tag == "Enemy")
             {
+                randomDeath = UnityEngine.Random.Range(1, 3);
                 animator.SetBool("isKilled", true);
+                animator.SetInteger("deathAnim", randomDeath);
             }
             if (gameObject.tag == "Drone")
             {
@@ -71,7 +77,7 @@ public class EnemyStats : MonoBehaviour
     void Die()
     {
         deathSound.Play();
-
+        gun.TurnOffEffects();
         rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ; // Prevents dead enemies from falling through the floor
         isDead = true;
         playerStats.Score += 10;

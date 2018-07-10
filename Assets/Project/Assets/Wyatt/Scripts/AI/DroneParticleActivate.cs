@@ -11,13 +11,13 @@ public class DroneParticleActivate : MonoBehaviour
 
     void Awake()
     {
-        instantiated = (GameObject)Instantiate(ParticlePrefab, transform.position - new Vector3(0, 5, 0), ParticlePrefab.transform.rotation);
+        instantiated = (GameObject)Instantiate(ParticlePrefab, transform.position - new Vector3(-1, 4, 0), ParticlePrefab.transform.rotation);
         StartCoroutine("Timer");
     }
     IEnumerator Timer()
     {
         yield return new WaitForSeconds(TimeWait);
-        Destroy(instantiated);
+        Destroy(instantiated);       
         gameObject.GetComponent<LineOfSight>().enabled = true;
         gameObject.GetComponent<BoxCollider>().enabled = true;
     }

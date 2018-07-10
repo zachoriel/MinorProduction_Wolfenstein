@@ -83,6 +83,8 @@ public class SceneFader : MonoBehaviour
         StartCoroutine(FadeIn());
 
         player.Die();
+
+        yield return new WaitForSeconds(3f);
         player.TakingDamage = true;
     }
 }

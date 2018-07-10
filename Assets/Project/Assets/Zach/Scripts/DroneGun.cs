@@ -57,7 +57,7 @@ public class DroneGun : MonoBehaviour
 
             if (useLaser)
             {
-                Laser();
+                StartCoroutine("ShootLaser");
             }
             else
             {
@@ -69,6 +69,14 @@ public class DroneGun : MonoBehaviour
         {
             laserBeam.Stop();
         }
+    }
+
+    // This is so that the laser doesn't start before the transition animation finishes
+    IEnumerator ShootLaser()
+    {
+        yield return new WaitForSeconds(0.75f);
+        Laser();
+        yield return null;
     }
 
     void Laser()
@@ -105,6 +113,12 @@ public class DroneGun : MonoBehaviour
 
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, player.position);
+
+        if (playerStats.Health <= 0)
+        {
+            laserBeam.Stop();
+            lineRenderer.enabled = false;
+        }
 
         //Vector3 dir = firePoint.position - player.position;  // For impact effects if used
     }

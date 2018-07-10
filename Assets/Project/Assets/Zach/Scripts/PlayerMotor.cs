@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMotor : MonoBehaviour
 {
+    PlayerStats player;
+
     private Vector3 velocity = Vector3.zero;
 
     private Rigidbody rb;
@@ -15,10 +17,11 @@ public class PlayerMotor : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        player = FindObjectOfType<PlayerStats>();
     }
 
     // Gets a movement vector
-    public void Move(Vector3 _velocity, Vector3 _sVelocity)
+    public void Move(Vector3 _velocity, Vector3 _sVelocity, Vector3 _fVelocity)
     {
         if (beingAttacked)
         {
@@ -27,6 +30,11 @@ public class PlayerMotor : MonoBehaviour
         else
         {
             velocity = _velocity;
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift) && !beingAttacked)
+        {
+            velocity = _fVelocity;
         }
     }
 
