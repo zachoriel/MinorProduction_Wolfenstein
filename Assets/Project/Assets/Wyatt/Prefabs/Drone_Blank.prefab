@@ -2012,7 +2012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22be1169c0ce814bb08f38d3ff7067a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParticlePrefab: {fileID: 1269412557433820, guid: 2037a405d8937f04f9850b4df205006d,
+  ParticlePrefab: {fileID: 1251400880743348, guid: a55f6ea45a09e8e41b9e803249190f31,
     type: 2}
   instantiated: {fileID: 0}
   TimeWait: 3
