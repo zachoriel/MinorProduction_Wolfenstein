@@ -114,6 +114,12 @@ public class DroneGun : MonoBehaviour
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, player.position);
 
+        if (playerStats.Health <= 0)
+        {
+            laserBeam.Stop();
+            lineRenderer.enabled = false;
+        }
+
         //Vector3 dir = firePoint.position - player.position;  // For impact effects if used
     }
 

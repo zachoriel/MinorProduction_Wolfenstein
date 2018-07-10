@@ -17,7 +17,7 @@ public class DroneParticleActivate : MonoBehaviour
     IEnumerator Timer()
     {
         yield return new WaitForSeconds(TimeWait);
-        Destroy(instantiated);
+        Destroy(instantiated);       
         gameObject.GetComponent<LineOfSight>().enabled = true;
         gameObject.GetComponent<BoxCollider>().enabled = true;
     }
