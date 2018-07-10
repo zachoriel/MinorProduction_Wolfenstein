@@ -146,15 +146,18 @@ public class Shotgun : MonoBehaviour
     {
         isReloading = true;
         weapons.enabled = false;
-        yield return new WaitForSeconds(1);
 
+        yield return new WaitForSeconds(1);
         animator.SetBool("Reloading", true);
         animator.SetBool("isFiring", false);
 
-        yield return new WaitForSeconds(reloadTime - 0.25f);
+
+        yield return new WaitForSeconds(0.5f);
         reloadGun.Play();
 
+        yield return new WaitForSeconds(reloadTime);
         animator.SetBool("Reloading", false);
+
         yield return new WaitForSeconds(0.25f);
 
         if (amountNeeded <= totalAmmoSG)
