@@ -146,6 +146,7 @@ public class Shotgun : MonoBehaviour
     {
         isReloading = true;
         weapons.enabled = false;
+        yield return new WaitForSeconds(1);
 
         animator.SetBool("Reloading", true);
         animator.SetBool("isFiring", false);
