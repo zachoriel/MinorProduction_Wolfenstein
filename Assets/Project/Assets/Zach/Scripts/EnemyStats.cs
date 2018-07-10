@@ -30,6 +30,7 @@ public class EnemyStats : MonoBehaviour
     public float startHealth = 100f;
     private float timeDead;
     private bool isDead = false;
+    int randomDeath;
 
     void Start()
     {
@@ -61,7 +62,9 @@ public class EnemyStats : MonoBehaviour
         {
             if (gameObject.tag == "Enemy")
             {
+                randomDeath = UnityEngine.Random.Range(1, 3);
                 animator.SetBool("isKilled", true);
+                animator.SetInteger("deathAnim", randomDeath);
             }
             if (gameObject.tag == "Drone")
             {
