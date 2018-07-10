@@ -2015,7 +2015,7 @@ MonoBehaviour:
   ParticlePrefab: {fileID: 1269412557433820, guid: 2037a405d8937f04f9850b4df205006d,
     type: 2}
   instantiated: {fileID: 0}
-  TimeWait: 3
+  TimeWait: 5
 --- !u!114 &114409819476542848
 MonoBehaviour:
   m_ObjectHideFlags: 1
