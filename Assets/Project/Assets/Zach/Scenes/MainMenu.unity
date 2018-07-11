@@ -12531,7 +12531,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1056885409}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -94.57}
+  m_LocalPosition: {x: 0, y: 0, z: -184.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 838750410}
@@ -12540,7 +12540,7 @@ RectTransform:
   m_AnchorMin: {x: 0.33121103, y: 0.6675136}
   m_AnchorMax: {x: 0.5878123, y: 0.7277258}
   m_AnchoredPosition: {x: -0.022095025, y: 0.08633971}
-  m_SizeDelta: {x: -0.94368947, y: -0.7421527}
+  m_SizeDelta: {x: 103.06, y: 31.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1056885411
 MonoBehaviour:
@@ -12574,7 +12574,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Spacenstein 3D
+  m_Text: 'The Elder Scrolls VII: Wolfenstein Remastered'
 --- !u!222 &1056885412
 CanvasRenderer:
   m_ObjectHideFlags: 0
