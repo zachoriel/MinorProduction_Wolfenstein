@@ -273,6 +273,10 @@ public class Gun : MonoBehaviour
                 {
                     buttonsTarget.Instructions();
                 }
+                else if (buttonsTarget.tag == "QuitButton")
+                {
+                    buttonsTarget.Quit();
+                }
             }
 
             // Knockback (not currently used in any meaningful way)
